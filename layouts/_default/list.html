@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>
+    Posts: {{.Content}}
+</h1>
+
+<hr>
+{{ range .Pages }}
+<div class="row">
+    <div class="col-sm-3">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+    <div class="col-sm-4">
+        {{.PublishDate.Format "January 2006"}}
+    </div>
+</div>
+{{ end }}
+
+{{end}}

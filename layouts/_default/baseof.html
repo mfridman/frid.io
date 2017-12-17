@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:500" rel="stylesheet"> 
+
+    {{ partial "custom_css.html" . }}
+</head>
+
+
+<body>
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                {{ partial "navbar" . }}
+                <div class="mt-4">
+                    {{ block "main" . }} {{end}}
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    {{ partial "footer" . }}
+
+    {{ partial "bottom" . }}
+</body>
+
+</html>
