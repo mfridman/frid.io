@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/google-2017/mindreader/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/plaid-2017/echo/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
   </url>
@@ -38,7 +48,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/2017/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -48,13 +58,31 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/command-substitution/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/ctf/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mfridman.github.com/frid.io/ctf/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/docker/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/google/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,6 +117,12 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/lfi/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/lsb/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -97,6 +131,12 @@
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/pico/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/plaid/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,12 +160,25 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/</loc>
-    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/web/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/xor/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mfridman.github.com/frid.io/ctf/google-2017/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -135,6 +188,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/ctf/plaid-2017/</loc>
+    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

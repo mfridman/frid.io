@@ -6,10 +6,36 @@
     <description>Recent content in Ctf on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.github.com/frid.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mindreader</title>
+      <link>https://mfridman.github.com/frid.io/ctf/google-2017/mindreader/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/google-2017/mindreader/</guid>
+      <description>2017 was a tough one. Nonetheless, big thanks to  for hosting an event.
+Challenge: Can you read my mind? No hints.
+All you get is an input box:
+Checking the page source doesn&amp;rsquo;t reveal anything fruitful. In hindsight the name=&amp;quot;f&amp;quot; may have been a clue, but it&amp;rsquo;s subtle. (spoiler: f for file)
+1234567891011 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, what do you want to read?&amp;lt;/p&amp;gt; &amp;lt;form method=&amp;#34;GET&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;txt&amp;#34; name=&amp;#34;f&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;Read&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Echo</title>
+      <link>https://mfridman.github.com/frid.io/ctf/plaid-2017/echo/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/plaid-2017/echo/</guid>
+      <description>Challenge: If you hear enough, you may hear the whispers of a key&amp;hellip;
+If you see app.py well enough, you will notice the UI sucks&amp;hellip;
+No hints.
+PPP (plaid parliament of pwning) puts on one of the best online Jeopardy CTFs. I wish I had more time that weekend (runs for 48hrs only) and a full team, either way I decided to give it a go.
+Disclaimer, was not solved within the allotted time.</description>
+    </item>
     
     <item>
       <title>Little School Bus</title>

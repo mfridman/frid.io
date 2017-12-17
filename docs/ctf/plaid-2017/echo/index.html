@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:500" rel="stylesheet"> 
+
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.2em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.6em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+</style>
+</head>
+
+
+<body>
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+            </li>
+            <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
+                <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+            </a>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    Echo&nbsp;&nbsp;
+    <small class="text-muted" style="font-size:0.5em">Monday, Apr 24, 2017</small>
+</h1>
+
+    <small class="text-muted">
+    
+        <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/plaid">plaid</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/docker">docker</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/web">web</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/xor">xor</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/command-substitution">command substitution</a>&nbsp;&nbsp;
+    
+</small>
+
+<hr>
+
+
+<p>Challenge:  If you hear enough, you may hear the whispers of a key&hellip;<br />
+If you see <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1cfc40d">app.py</a> well enough, you will notice the UI sucks&hellip;</p>
+
+<p>No hints.</p>
+
+<hr />
+
+<p>PPP (plaid parliament of pwning) puts on one of the best online Jeopardy CTFs. I wish I had more time that weekend (runs for 48hrs only) and a full team, either way I decided to give it a go.</p>
+
+<p>Disclaimer, was not solved within the allotted time.</p>
+
+<p>Alright, we have a flask app and the UI sucks. You enter some text:<br />
+<img src="https://mfridman.github.com/frid.io/img/tweetInput.png" alt="" style="width: 500px;"/></p>
+
+<p>and it spits back an audio file of the inputted text:<br />
+<img src="https://mfridman.github.com/frid.io/img/tweetAudio.png" alt=""/></p>
+
+<p>Taking a closer look at <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1cfc40d">app.py</a> we see a few interesting things:</p>
+
+<ol>
+<li><p>a <img src="https://mfridman.github.com/frid.io/svg/docker-icon.svg" alt="" style="height: 36px;"/> container spawns and processes input tweets (140 chars max/tweet)</p></li>
+
+<li><p>the flag is &ldquo;encrypted&rdquo; with a bitwise XOR</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag:
+      c <span style="color:#555">=</span> <span style="color:#f60">0</span>
+      towrite <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#39;&#39;</span>
+      <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#f60">65000</span> <span style="color:#555">-</span> <span style="color:#f60">1</span>):
+          k <span style="color:#555">=</span> random<span style="color:#555">.</span>randint(<span style="color:#f60">0</span>,<span style="color:#f60">127</span>)
+          c <span style="color:#555">=</span> c <span style="color:#555">^</span> k
+          towrite <span style="color:#555">+=</span> <span style="color:#366">chr</span>(k)
+
+      f<span style="color:#555">.</span>write(towrite <span style="color:#555">+</span> <span style="color:#366">chr</span>(c <span style="color:#555">^</span> <span style="color:#366">ord</span>(x)))</code></pre></div>
+<ul>
+<li>To decrypt each flag char you need the last <code>c</code> and <code>c</code> starts life at 0.<br /></li>
+<li>Each <code>k</code> is written to file <strong>(this is important!)</strong><br />
+<br /></li>
+</ul></li>
+
+<li><p>three items are mounted from host to the container: <code>-v {path}:/share</code></p>
+
+<table>
+<thead>
+<tr>
+<th>host</th>
+<th>container</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>host_path/input</td>
+<td>/share/input</td>
+</tr>
+
+<tr>
+<td>host_path/out/</td>
+<td>/share/out/</td>
+</tr>
+
+<tr>
+<td>host_path/flag</td>
+<td>/share/flag</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>the docker container was readily available on <a href="https://hub.docker.com/r/lumjjb/echo_container/">dockerhub</a>, with the interesting bit being <a href="https://gist.github.com/mfridman/6fd4fa93f68ee61a5c52e1fe7893b6bb">run.py</a>. This converts each tweet TTS (text-to-speech) and stores the corresponding .wav files at /share/out/</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull lumjjb/echo_container
+docker run -it lumjjb/echo_container /bin/bash
+cat run.py</code></pre></div>
+<ul>
+<li>Examining <a href="https://gist.github.com/mfridman/6fd4fa93f68ee61a5c52e1fe7893b6bb">run.py</a> a bit closer we have <a href="http://tldp.org/LDP/abs/html/commandsub.html">command substitution</a> available via <code>l</code>. Awesome!<br />
+<br /></li>
+</ul>
+
+<p><code>call([&quot;sh&quot;,&quot;-c&quot;, &quot;espeak &quot; + &quot; -w &quot; + OUTPUT_PATH + str(i) + &quot;.wav \&quot;&quot; + l + &quot;\&quot;&quot;])</code></p></li>
+</ol>
+
+<p>So let&rsquo;s start asking the container questions. My preference is <code>$(...)</code> instead of backticks (<a href="http://mywiki.wooledge.org/BashFAQ/082">Why is $(&hellip;) preferred over `` (backticks)?</a>)</p>
+
+<p>tweet_1: $(wc -c /share/flag)  = <code>2470000 flag</code></p>
+
+<p>Cool, the flag file is 2,470,000 bytes. We know a single flag char consumes 65,000 bytes (64,999 k values + &lsquo;encrypted&rsquo; x). <strong>So the flag length is 38</strong>.</p>
+
+<p>Here is where I got stuck. I was so focused on getting /share/flag <em>out</em> of the container I overlooked a very important part of the challenge, there was no need to get the flag out. All the processing could be done on the container.</p>
+
+<p><code>/share/flag</code> has all values of k, which enables solving for c before the last XOR.</p>
+
+<p>Here is code that would &lsquo;decrypt&rsquo; the flag:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">with</span> <span style="color:#366">open</span> (<span style="color:#c30"></span><span style="color:#c30">&#34;/share/flag&#34;</span>, <span style="color:#c30"></span><span style="color:#c30">&#34;rb&#34;</span>) <span style="color:#069;font-weight:bold">as</span> f:
+    x<span style="color:#555">=</span><span style="color:#f60">65000</span>
+    <span style="color:#069;font-weight:bold">while</span> True:
+        b <span style="color:#555">=</span> f<span style="color:#555">.</span>read(x)
+        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> b:
+            <span style="color:#069;font-weight:bold">break</span>
+        c<span style="color:#555">=</span><span style="color:#f60">0</span>
+        <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(x<span style="color:#555">-</span><span style="color:#f60">1</span>):
+            c <span style="color:#555">=</span> c <span style="color:#555">^</span> <span style="color:#366">ord</span>(b[i])
+        <span style="color:#069;font-weight:bold">print</span> c <span style="color:#555">^</span> <span style="color:#366">ord</span>(b[x<span style="color:#555">-</span><span style="color:#f60">1</span>])</code></pre></div>
+<p>Each tweet is 140 characters max. Maybe there is a perl one liner? Most likely, but instead I  wrote some &#x1f40d; code into /tmp and ran it.</p>
+
+<p>tweet_1</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#069;font-weight:bold">$(</span><span style="color:#366">echo</span> <span style="color:#c30">&#34;with open (\&#34;/share/flag\&#34;, \&#34;rb\&#34;) as f:\n\tx=65000\n\twhile True:\n\t\tb = f.read(x)\n\t\tif not b:\n\t\t\tbreak&#34;</span> &gt; /tmp/s.py<span style="color:#069;font-weight:bold">)</span></code></pre></div>
+<p>tweet_2</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#069;font-weight:bold">$(</span><span style="color:#366">echo</span> <span style="color:#c30">&#34;\t\tc=0\n\t\tfor i in range(x-1):\n\t\t\tc = c ^ ord(b[i])\n\t\tprint c ^ ord(b[x-1])&#34;</span> &gt;&gt; /tmp/s.py<span style="color:#069;font-weight:bold">)</span></code></pre></div>
+<p><strong>tweet_3</strong></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#069;font-weight:bold">$(</span>python /tmp/s.py<span style="color:#069;font-weight:bold">)</span></code></pre></div>
+<p>audio from tweet_3 (3.wav) gave us the ASCII int</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#555">&gt;&gt;&gt;</span> flag <span style="color:#555">=</span> [<span style="color:#f60">80</span>, <span style="color:#f60">67</span>, <span style="color:#f60">84</span>, <span style="color:#f60">70</span>, <span style="color:#f60">123</span>, <span style="color:#f60">76</span>, <span style="color:#f60">49</span>, <span style="color:#f60">53</span>, <span style="color:#f60">115</span>, <span style="color:#f60">116</span>, <span style="color:#f60">51</span>, <span style="color:#f60">110</span>, <span style="color:#f60">95</span>, <span style="color:#f60">84</span>, <span style="color:#f60">48</span>, <span style="color:#f60">95</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">108</span>, <span style="color:#f60">97</span>, <span style="color:#f60">125</span>]
+<span style="color:#555">&gt;&gt;&gt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;</span><span style="color:#555">.</span>join(<span style="color:#366">chr</span>(x) <span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag)</code></pre></div>
+<p><strong>PCTF{L15st3n_T0__reee_reeeeee_reee_la}</strong></p>
+
+<h2 id="ppp-well-done">PPP well done!</h2>
+
+<hr />
+
+<h4 id="failed-attempts">Failed attempts</h4>
+
+<ol>
+<li><p>Tried getting the last 3 k values and x for each flag char and brute forcing all the possible combinations. This was not fruitful and didn&rsquo;t seem like the right approach. Cannot solve without having all the k values.</p></li>
+
+<li><p>tweet_1: <code>blank</code> , tweet_2: <code>cat /share/flag &gt;&gt; /share/out/1.wav</code> and then download 1.wav but this failed because ffmpeg could not recognize the file format and no .wav was generated in the first place.</p></li>
+
+<li><p>I tried to get /share/flag off the container.</p>
+
+<ul>
+<li><code>apt-get install</code> rsync, netcat, etc, etc. But none of those worked.<br />
+<br /></li>
+</ul></li>
+
+<li><p>I tried to setup a python TCP client and send the /share/flag back to a listening port but that did not work. Wait a second, <code>--network=none</code>, which means that container is lacking a network interface.</p></li>
+</ol>
+
+<p><iframe src="https://giphy.com/embed/1PIGU0cftC2pG" width="240" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/picard-1PIGU0cftC2pG"></a></p></p>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <footer class="row justify-content-center footer">
+    Proudly made with&nbsp;
+    <a href="https://gohugo.io">Hugo</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="22px">)
+    &nbsp;and hosted by
+    <a href="https://github.com">&nbsp;Github</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/github.svg" alt="" width="24px">)
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

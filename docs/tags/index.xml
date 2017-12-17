@@ -6,7 +6,7 @@
     <description>Recent content in Tags on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.github.com/frid.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,18 +14,45 @@
     <item>
       <title>2017</title>
       <link>https://mfridman.github.com/frid.io/tags/2017/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/2017/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Command Substitution</title>
+      <link>https://mfridman.github.com/frid.io/tags/command-substitution/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/command-substitution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ctf</title>
       <link>https://mfridman.github.com/frid.io/tags/ctf/</link>
-      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://mfridman.github.com/frid.io/tags/docker/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>https://mfridman.github.com/frid.io/tags/google/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/google/</guid>
       <description></description>
     </item>
     
@@ -75,6 +102,15 @@
     </item>
     
     <item>
+      <title>Lfi</title>
+      <link>https://mfridman.github.com/frid.io/tags/lfi/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/lfi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lsb</title>
       <link>https://mfridman.github.com/frid.io/tags/lsb/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
@@ -89,6 +125,15 @@
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/pico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plaid</title>
+      <link>https://mfridman.github.com/frid.io/tags/plaid/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/plaid/</guid>
       <description></description>
     </item>
     
@@ -116,6 +161,24 @@
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/steganography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://mfridman.github.com/frid.io/tags/web/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xor</title>
+      <link>https://mfridman.github.com/frid.io/tags/xor/</link>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/xor/</guid>
       <description></description>
     </item>
     
