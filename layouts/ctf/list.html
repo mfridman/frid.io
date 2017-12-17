@@ -1,38 +1,28 @@
 {{ define "main" }}
 <h1>
-    <a href="{{ .Site.BaseURL }}ctf">CTF</a> Writeups: {{.Content}}
-    {{if .Pages}}
+    <a href="{{ .Site.BaseURL }}ctf">CTF</a> Writeups: {{.Content}} {{if .Pages}}
     <small class="text-muted">{{ .Title }}</small>
     {{end}}
-    <img class="rounded float-right ml-3" src="{{ .Site.BaseURL }}svg/ctf.svg" alt="" width="80px">
+    <!-- <img class="rounded float-right ml-3" src="{{ .Site.BaseURL }}svg/ctf.svg" alt="" width="80px"> -->
 </h1>
 
 
-<hr> 
-{{ if .Sections }}
-{{ range .Sections }}
-<div class="row">
-    <div class="col-sm-3">
+<hr> {{ if .Sections }} {{ range .Sections }}
+<dl class="row">
+    <dt class="col-sm-6">
         <a href="{{ .Permalink }}">{{.Title}}</a>
-    </div>
-    <div class="col-sm-9">
+    </dt>
+    <dd class="col-sm-6">
         <small>{{ .Data.Pages | len }}</small>
-    </div>
-</div>
-{{end}}
-{{end}}
-
-{{ if .Pages }}
-{{ range .Pages }}
-<div class="row">
-    <div class="col-sm-3">
+    </dd>
+</dl>
+{{end}} {{end}} {{ if .Pages }} {{ range .Pages }}
+<dl class="row">
+    <dt class="col-sm-6">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>
-    <div class="col-sm-4">
+    </dt>
+    <dd class="col-sm-6">
         {{.PublishDate.Format "January 2006"}}
-    </div>
-</div>
-{{ end }}
-{{ end }}
-
-{{end}}
+    </dd>
+</dl>
+{{ end }} {{ end }} {{end}}
