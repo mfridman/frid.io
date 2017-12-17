@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="410px" width="312px" enable-background="new 0 0 311.5 410" viewBox="0 0 311.5 410">
+        <rect height="150" width="187" stroke="#000" stroke-miterlimit="10" y="79.2" x="63" stroke-width="4" fill="#B5B5B6"/>
+      <polygon points="251 300 66.5 300 51.3 311 260 311"/>
+      <polygon points="139 347 50.6 347 37.9 356 131 357"/>
+      <polygon points="140 343 140 398 131 410 130 351"/>
+      <polygon points="172 344 260 345 265 351 176 352"/>
+      <polygon points="172 342 172 396 176 405 177 346"/>
+        <rect height="45.1" width="164" stroke="#000" stroke-miterlimit="10" y="268" x="74.1" stroke-width="4" fill="#B5B5B6"/>
+        <rect height="32.5" width="86.3" stroke="#000" stroke-miterlimit="10" y="313" x="51.6" stroke-width="4" fill="#B5B5B6"/>
+        <linearGradient id="SVGID_1_" y2="-85.9" gradientUnits="userSpaceOnUse" x2="228" gradientTransform="matrix(1 0 0 -1 -21 215)" y1="-142" x1="248">
+        <stop stop-color="#B5B4B5" offset="0"/>
+        <stop stop-color="#B4B4B4" offset=".0019"/>
+        <stop stop-color="#9B9B9C" offset=".150"/>
+        <stop stop-color="#7F8081" offset=".295"/>
+        <stop stop-color="#666769" offset=".434"/>
+        <stop stop-color="#4F4F51" offset=".565"/>
+        <stop stop-color="#373738" offset=".687"/>
+        <stop stop-color="#151515" offset=".797"/>
+        <stop offset=".883"/>
+      </linearGradient>
+        <rect height="32.5" width="86.3" stroke="#000" stroke-miterlimit="10" y="313" x="174" stroke-width="4" fill="url(#SVGID_1_)"/>
+        <rect height="50.5" width="90.5" stroke="#000" stroke-miterlimit="10" y="358" x="39.1" stroke-width="4" fill="#B5B5B6"/>
+        <rect height="50.5" width="86.3" stroke="#000" stroke-miterlimit="10" y="353" x="177" stroke-width="4" fill="#B5B5B6"/>
+          <rect height="116" width="116" stroke="#000" stroke-miterlimit="10" y="2.1" x="98.2" stroke-width="4" fill="#B5B5B6"/>
+        <rect y="13.7" x="110" height="93.3" width="93.3"/>
+        <polygon points="209 130 107 130 98.2 119 215 119"/>
+      <polygon points="232 255 84.2 255 72 267 240 267"/>
+        <linearGradient id="SVGID_2_" y2="-15.3" gradientUnits="userSpaceOnUse" x2="177" gradientTransform="matrix(1 0 0 -1 -21 215)" y1="-52.3" x1="177">
+        <stop stop-color="#B5B4B5" offset="0"/>
+        <stop stop-color="#B4B4B4" offset=".0021"/>
+        <stop stop-color="#9B9B9C" offset=".169"/>
+        <stop stop-color="#7F8081" offset=".332"/>
+        <stop stop-color="#666769" offset=".489"/>
+        <stop stop-color="#4F4F51" offset=".637"/>
+        <stop stop-color="#373738" offset=".774"/>
+        <stop stop-color="#151515" offset=".898"/>
+        <stop offset=".995"/>
+      </linearGradient>
+        <rect height="37" width="74.9" stroke="#000" stroke-miterlimit="10" y="230" x="119" stroke-width="4" fill="url(#SVGID_2_)"/>
+      <polygon stroke="#000" stroke-width="4" stroke-miterlimit="10" points="240 153 234 147 237 144 232 139 229 142 224 137 209 152 194 137 188 143 183 138 178 143 183 148 178 153 208 183 209 183 209 183 214 178 216 180 221 174 219 173" fill="#E81953"/>
+      <polygon stroke="#000" stroke-width="4" stroke-miterlimit="10" points="62.6 140 17.4 140 17.4 113 29.2 96.9 62.6 96.9" fill="#B5B5B6"/>
+        <rect height="52.3" width="19.9" stroke="#000" stroke-miterlimit="10" y="140" x="24.7" stroke-width="4" fill="#B5B5B6"/>
+      <polygon stroke="#000" stroke-width="4" stroke-miterlimit="10" points="49.9 192 31.9 192 27.4 192 21 192 3 192 3 296 11.3 296 27.4 296 27.4 247 34.6 247 34.6 276 40.1 276 56.2 276 56.2 192" fill="#B5B5B6"/>
+      <polygon stroke="#000" stroke-width="4" stroke-miterlimit="10" points="250 139 295 139 295 112 284 96 250 96" fill="#B5B5B6"/>
+        <rect height="52.3" width="19.9" stroke="#000" stroke-miterlimit="10" y="139" x="268" stroke-width="4" fill="#B5B5B6"/>
+      <polygon stroke="#000" stroke-width="4" stroke-miterlimit="10" points="263 191 281 191 285 191 292 191 310 191 310 295 302 295 285 295 285 246 278 246 278 275 273 275 257 275 257 191" fill="#B5B5B6"/>
+    </svg>

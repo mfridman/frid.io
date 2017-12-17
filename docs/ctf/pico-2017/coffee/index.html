@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:500" rel="stylesheet"> 
+
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.2em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.6em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+</style>
+</head>
+
+
+<body>
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+            </li>
+            <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
+                <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+            </a>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    coffee&nbsp;&nbsp;
+    <small class="text-muted" style="font-size:0.5em">Friday, Apr 14, 2017</small>
+</h1>
+
+    <small class="text-muted">
+    
+        <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/pico">pico</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/java">java</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/reverse">reverse</a>&nbsp;&nbsp;
+    
+</small>
+
+<hr>
+<p>Challenge: You found a suspicious USB drive in a jar of pickles. It contains this file</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ file freeThePickles.class
+freeThePickles.class: compiled Java class data, version <span style="color:#f60">52</span>.0 <span style="color:#555">(</span>Java <span style="color:#f60">1</span>.8<span style="color:#555">)</span></code></pre></div>
+<p>Hint: Is there a way to get the source of the program?</p>
+
+<hr />
+
+<p>Although this challenge didn&rsquo;t call for it, if you want to disassemble a class file use <code>javap</code> like so&hellip;</p>
+
+<p><code>javap -verbose freeThePickles.class &gt; freeThePickles</code></p>
+
+<p>Anyways, back to the challenge. I used a &ldquo;cloud-based&rdquo; decompiler, <a href="http://www.javadecompilers.com">javadecompilers.com</a>, with the JDCore decompiler option and it spat back the source code:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Base64.Decoder</span><span style="color:#555">;</span>
+
+<span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">problem</span> <span style="color:#555">{</span>
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#c0f">problem</span><span style="color:#555">()</span> <span style="color:#555">{}</span>
+
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> String <span style="color:#c0f">get_flag</span><span style="color:#555">()</span> <span style="color:#555">{</span> String str1 <span style="color:#555">=</span> <span style="color:#c30">&#34;Hint: Don&#39;t worry about the schematics&#34;</span><span style="color:#555">;</span>
+    String str2 <span style="color:#555">=</span> <span style="color:#c30">&#34;eux_Z]\\ayiqlog`s^hvnmwr[cpftbkjd&#34;</span><span style="color:#555">;</span>
+    String str3 <span style="color:#555">=</span> <span style="color:#c30">&#34;Zf91XhR7fa=ZVH2H=QlbvdHJx5omN2xc&#34;</span><span style="color:#555">;</span>
+    <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> arrayOfByte1 <span style="color:#555">=</span> str2<span style="color:#555">.</span><span style="color:#309">getBytes</span><span style="color:#555">();</span>
+    <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> arrayOfByte2 <span style="color:#555">=</span> str3<span style="color:#555">.</span><span style="color:#309">getBytes</span><span style="color:#555">();</span>
+    <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[]</span> arrayOfByte3 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#078;font-weight:bold">byte</span><span style="color:#555">[</span>arrayOfByte2<span style="color:#555">.</span><span style="color:#309">length</span><span style="color:#555">];</span>
+    <span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span><span style="color:#078;font-weight:bold">int</span> i <span style="color:#555">=</span> 0<span style="color:#555">;</span> i <span style="color:#555">&lt;</span> arrayOfByte2<span style="color:#555">.</span><span style="color:#309">length</span><span style="color:#555">;</span> i<span style="color:#555">++)</span>
+    <span style="color:#555">{</span>
+      arrayOfByte3<span style="color:#555">[</span>i<span style="color:#555">]</span> <span style="color:#555">=</span> arrayOfByte2<span style="color:#555">[(</span>arrayOfByte1<span style="color:#555">[</span>i<span style="color:#555">]</span> <span style="color:#555">-</span> 90<span style="color:#555">)];</span>
+    <span style="color:#555">}</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span>java<span style="color:#555">.</span><span style="color:#309">util</span><span style="color:#555">.</span><span style="color:#309">Arrays</span><span style="color:#555">.</span><span style="color:#309">toString</span><span style="color:#555">(</span>java<span style="color:#555">.</span><span style="color:#309">util</span><span style="color:#555">.</span><span style="color:#309">Base64</span><span style="color:#555">.</span><span style="color:#309">getDecoder</span><span style="color:#555">().</span><span style="color:#309">decode</span><span style="color:#555">(</span>arrayOfByte3<span style="color:#555">)));</span>
+    <span style="color:#069;font-weight:bold">return</span> <span style="color:#069;font-weight:bold">new</span> String<span style="color:#555">(</span>java<span style="color:#555">.</span><span style="color:#309">util</span><span style="color:#555">.</span><span style="color:#309">Base64</span><span style="color:#555">.</span><span style="color:#309">getDecoder</span><span style="color:#555">().</span><span style="color:#309">decode</span><span style="color:#555">(</span>arrayOfByte3<span style="color:#555">));</span>
+  <span style="color:#555">}</span>
+
+  <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">static</span> <span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">main</span><span style="color:#555">(</span>String<span style="color:#555">[]</span> paramArrayOfString<span style="color:#555">)</span> <span style="color:#555">{</span>
+    System<span style="color:#555">.</span><span style="color:#309">out</span><span style="color:#555">.</span><span style="color:#309">println</span><span style="color:#555">(</span><span style="color:#c30">&#34;Nothing to see here&#34;</span><span style="color:#555">);</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">}</span></code></pre></div>
+<p>For shits and giggles I rewrote the above logic with python &#x1f40d;</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">base64</span>
+str2 <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;eux_Z]</span><span style="color:#c30;font-weight:bold">\\</span><span style="color:#c30">ayiqlog`s^hvnmwr[cpftbkjd&#34;</span>
+str3 <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;Zf91XhR7fa=ZVH2H=QlbvdHJx5omN2xc&#34;</span>
+arrayOfByte1 <span style="color:#555">=</span> str2<span style="color:#555">.</span>encode()
+arrayOfByte2 <span style="color:#555">=</span> str3<span style="color:#555">.</span>encode()
+arrayOfByte3 <span style="color:#555">=</span> []
+i <span style="color:#555">=</span> <span style="color:#f60">0</span>
+<span style="color:#069;font-weight:bold">while</span> i <span style="color:#555">&lt;</span> <span style="color:#f60">32</span>:
+    a <span style="color:#555">=</span> arrayOfByte2[(arrayOfByte1[i]<span style="color:#555">-</span><span style="color:#f60">90</span>)]
+    i <span style="color:#555">=</span> i <span style="color:#555">+</span> <span style="color:#f60">1</span>
+    arrayOfByte3<span style="color:#555">.</span>append(a)
+
+letters <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;</span>
+<span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> arrayOfByte3:
+    letters <span style="color:#555">=</span> letters <span style="color:#555">+</span> <span style="color:#366">chr</span>(i)
+flag <span style="color:#555">=</span> base64<span style="color:#555">.</span>b64decode(letters)<span style="color:#555">.</span>decode(<span style="color:#c30"></span><span style="color:#c30">&#34;utf-8&#34;</span>)
+<span style="color:#069;font-weight:bold">print</span>(flag)</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python3 freeThePickles.py
+flag_<span style="color:#555">{</span>pretty_cool_huh<span style="color:#555">}</span></code></pre></div>
+<p>The intended solution was to probably throw the decrypting function <code>get_flag()</code> into <code>main()</code>, recompile the .java file with <code>javac</code> and execute.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <footer class="row justify-content-center footer">
+    Proudly made with&nbsp;
+    <a href="https://gohugo.io">Hugo</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="22px">)
+    &nbsp;and hosted by
+    <a href="https://github.com">&nbsp;Github</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/github.svg" alt="" width="24px">)
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

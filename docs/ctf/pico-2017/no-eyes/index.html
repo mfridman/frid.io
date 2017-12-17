@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:500" rel="stylesheet"> 
+
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.2em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.6em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+</style>
+</head>
+
+
+<body>
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+            </li>
+            <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
+                <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+            </a>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    No Eyes&nbsp;&nbsp;
+    <small class="text-muted" style="font-size:0.5em">Friday, Apr 14, 2017</small>
+</h1>
+
+    <small class="text-muted">
+    
+        <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/pico">pico</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/sql-injection">sql injection</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/half-blind">half blind</a>&nbsp;&nbsp;
+    
+</small>
+
+<hr>
+
+
+<p>Challenge: The website isn&rsquo;t really me much, but you can still get the admin password, right?</p>
+
+<p>Hint: Sometimes an error message can be just as useful</p>
+
+<hr />
+
+<p>This one was <em>really</em> rewarding.</p>
+
+<p>So, the landing page looked like this:</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/landing_page.png" alt=""/></p>
+
+<p>Based on the description we assume the username is <em>admin</em> so let&rsquo;s focus on the password field.</p>
+
+<p>Entering a single quote results in an error, great, there is a problem with the query, we know the syntax and it appears to be injectable.</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/sql_error.png" alt=""/></p>
+
+<h4 id="injectables">Injectables</h4>
+
+<p><code>' and 1=1--</code> results in an <em>Incorrect Password</em>.</p>
+
+<p><code>' or 1=1--</code> results in an interesting message:</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/login.png" alt=""/></p>
+
+<p>We were stuck here for a bit, but, one night I got an idea based on these 2 pieces of information:</p>
+
+<ol>
+<li>We&rsquo;re specifically looking for the admin password<br /></li>
+<li>We know the query for the password field, so let&rsquo;s ask it specific questions about the password<br />
+<br /></li>
+</ol>
+
+<p>The query we used moving forward was: <code>' or pass LIKE &quot;%&quot;--</code> which also gave the interesting message:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Login Functionality Not Complete. Flag is 63 characters</code></pre></div>
+<p><strong>Note the use of the LIKE operator</strong></p>
+
+<p>Does the password start with&hellip;?<br />
+<code>' or pass LIKE &quot;a%&quot;--</code> : Incorrect Password.<br />
+<code>' or pass LIKE &quot;b%&quot;--</code> : Incorrect Password.<br />
+[&hellip;]<br />
+<code>' or pass LIKE &quot;n%&quot;--</code> : <strong>Login Functionality Not Complete. Flag is 63 characters</strong><br />
+<code>' or pass LIKE &quot;o%&quot;--</code> : Incorrect Password.</p>
+
+<p>Alright, now we&rsquo;re getting somewhere. The first letter of the password is <strong>n</strong></p>
+
+<p>A bit of Go code, found on <a href="https://github.com/mfridman/ctf-tools/blob/master/sqlInjection/halfBlind/main.go">github</a>, and a few POST requests later, 1,215 to be exact:</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/noEyes.gif" alt=""/></p>
+
+<p>&hellip;and our flag is:</p>
+
+<p><strong>not_all_errors_should_be_shown_fb83c582ee9b64d1f446cfd01702e7c5</strong></p>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <footer class="row justify-content-center footer">
+    Proudly made with&nbsp;
+    <a href="https://gohugo.io">Hugo</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="22px">)
+    &nbsp;and hosted by
+    <a href="https://github.com">&nbsp;Github</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/github.svg" alt="" width="24px">)
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

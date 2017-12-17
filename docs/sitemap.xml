@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</loc>
+    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/pico-2017/coffee/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/</loc>
+    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/blog/</loc>
+    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/2017/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/ctf/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/half-blind/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/hugo/</loc>
+    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/java/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/jekyll/</loc>
+    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/least-significant-bit/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/lsb/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/pico/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/reverse/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/sql-injection/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/steganography/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/google-2017/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/pico-2017/</loc>
+    <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/ctf/plaid-2017/</loc>
+  </url>
+  
+</urlset>

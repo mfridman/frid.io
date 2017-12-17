@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:500" rel="stylesheet"> 
+
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.2em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.6em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+</style>
+</head>
+
+
+<body>
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+            </li>
+            <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
+                <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+            </a>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    Little School Bus&nbsp;&nbsp;
+    <small class="text-muted" style="font-size:0.5em">Friday, Apr 14, 2017</small>
+</h1>
+
+    <small class="text-muted">
+    
+        <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/pico">pico</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/steganography">steganography</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/lsb">lsb</a>&nbsp;&nbsp;
+    
+        <a href="https://mfridman.github.com/frid.io/tags/least-significant-bit">least significant bit</a>&nbsp;&nbsp;
+    
+</small>
+
+<hr>
+
+
+<p>Had a blast participating with a few local <a href="https://dc416.com/">DC416</a> folks in the 2017 picoCTF!</p>
+
+<p>Challenge: Can you help me find the data in this littleschoolbus.bmp?</p>
+
+<p>Hint: Look at least significant bit (LSB) encoding!!</p>
+
+<hr />
+
+<p>In retrospect the solution was fairly straightforward, but, tunnel vision got the best of me. Thankfully in the end I ended up learning quite a bit about steganography and LSB. (disclaimer, it was actually solved by a teammate)</p>
+
+<p>Here was the image:</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/littleschoolbus.bmp" alt=""/></p>
+
+<p>Ran <code>java -jar Stegsolve.jar</code> to view each bit plane on its own. Click <a href="http://www.caesum.com/handbook/stego.htm">stegsolve</a> and look for the Stegsolve download link.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#09f;font-style:italic"># install
+</span><span style="color:#09f;font-style:italic"></span>wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+
+<span style="color:#09f;font-style:italic"># launch/run
+</span><span style="color:#09f;font-style:italic"></span>java -jar stegsolve.jar</code></pre></div>
+<p>File &gt; Open &gt; image, cycle through the planes. Interesting, there is something in the bottom-left corner of the image.</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/alpha_red_plane.bmp" alt=""/></p>
+
+<p>Here is just that bottom row: <img src="https://mfridman.github.com/frid.io/img/alpha_red_plane_crop.bmp" alt="pic7" style="width: 300px;"/></p>
+
+<p>The image is 252px × 199px (w x h). Let&rsquo;s concentrate on that last row, the 199th row; either crop out the pixels or write some code.</p>
+
+<p>I opted to write some Go code, which you can find on <a href="https://github.com/mfridman/ctf-tools/tree/master/steganography/parseLSB">github</a></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./lsbParse-linux littleschoolbus.bmp
+
+flag<span style="color:#555">{</span>remember_kids_protect_your_headers_afb3<span style="color:#555">}</span></code></pre></div>
+<p>The idea was to grab each byte&rsquo;s LSB in sequence and construct a new binary message. Then read <em>that</em> binary in sequence to get the flag.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Binary</th>
+<th align="right">ASCII</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">01100110</td>
+<td align="right">f</td>
+</tr>
+
+<tr>
+<td align="left">01101100</td>
+<td align="right">l</td>
+</tr>
+
+<tr>
+<td align="left">01100001</td>
+<td align="right">a</td>
+</tr>
+
+<tr>
+<td align="left">01100111</td>
+<td align="right">g</td>
+</tr>
+
+<tr>
+<td align="left">&hellip;</td>
+<td align="right">&hellip;</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<p>I overcomplicated the challenge by thinking there was an image <em>within</em> the image, (inspiration drawn from this <a href="http://www.datagenetics.com/blog/march12012/index.html">site</a>, kudos, great resource).</p>
+
+<p>Long story short, I took all the LSB&rsquo;s in sequence and read them in chunks of 3; obtaining values between 000-111 (decimal 0-7) to construct an 8-bit greyscale image.</p>
+
+<p><strong>Nothing fruitful</strong> in the reconstructed 8-bit greyscale image. Although it was a failed attempt it was fun.</p>
+
+<p>(this portion was written in python w/ pyplot )<br />
+<img src="https://mfridman.github.com/frid.io/img/convert8bit-schoolbus.png" alt="pic8" style="width: 750px;"/></p>
+
+<p>For fun, I pulled the image from <a href="http://www.datagenetics.com/blog/march12012/index.html">DataGenetic&rsquo;s site</a> and extracted the Flanker.</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/convert8bit-skyline.png" alt="pic8" style="width: 750px;"/></p>
+
+<h4 id="useful-resources">Useful Resources:</h4>
+
+<p><a href="http://www.dragonwins.com/domains/getteched/bmp/bmpfileformat.htm">bmp-format</a></p>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <footer class="row justify-content-center footer">
+    Proudly made with&nbsp;
+    <a href="https://gohugo.io">Hugo</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="22px">)
+    &nbsp;and hosted by
+    <a href="https://github.com">&nbsp;Github</a>&nbsp;(<img src="https://mfridman.github.com/frid.io/svg/github.svg" alt="" width="24px">)
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on frid.io</title>
+    <link>https://mfridman.github.com/frid.io/tags/</link>
+    <description>Recent content in Tags on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mfridman.github.com/frid.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017</title>
+      <link>https://mfridman.github.com/frid.io/tags/2017/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ctf</title>
+      <link>https://mfridman.github.com/frid.io/tags/ctf/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Half Blind</title>
+      <link>https://mfridman.github.com/frid.io/tags/half-blind/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/half-blind/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://mfridman.github.com/frid.io/tags/hugo/</link>
+      <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://mfridman.github.com/frid.io/tags/java/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>https://mfridman.github.com/frid.io/tags/jekyll/</link>
+      <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Least Significant Bit</title>
+      <link>https://mfridman.github.com/frid.io/tags/least-significant-bit/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/least-significant-bit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lsb</title>
+      <link>https://mfridman.github.com/frid.io/tags/lsb/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/lsb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pico</title>
+      <link>https://mfridman.github.com/frid.io/tags/pico/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/pico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse</title>
+      <link>https://mfridman.github.com/frid.io/tags/reverse/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/reverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql Injection</title>
+      <link>https://mfridman.github.com/frid.io/tags/sql-injection/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steganography</title>
+      <link>https://mfridman.github.com/frid.io/tags/steganography/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/steganography/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

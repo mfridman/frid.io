@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frid.io</title>
+    <link>https://mfridman.github.com/frid.io/</link>
+    <description>Recent content on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Dec 2017 00:52:08 -0500</lastBuildDate>
+    
+	<atom:link href="https://mfridman.github.com/frid.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>From Jekyll to Hugo</title>
+      <link>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</link>
+      <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</guid>
+      <description>Done and Launched.
+Still work in progress (WIP), but here we are.</description>
+    </item>
+    
+    <item>
+      <title>Little School Bus</title>
+      <link>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</guid>
+      <description>Had a blast participating with a few local DC416 folks in the 2017 picoCTF!
+Challenge: Can you help me find the data in this littleschoolbus.bmp?
+Hint: Look at least significant bit (LSB) encoding!!
+In retrospect the solution was fairly straightforward, but, tunnel vision got the best of me. Thankfully in the end I ended up learning quite a bit about steganography and LSB. (disclaimer, it was actually solved by a teammate)</description>
+    </item>
+    
+    <item>
+      <title>No Eyes</title>
+      <link>https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/</guid>
+      <description>Challenge: The website isn&amp;rsquo;t really me much, but you can still get the admin password, right?
+Hint: Sometimes an error message can be just as useful
+This one was really rewarding.
+So, the landing page looked like this:
+Based on the description we assume the username is admin so let&amp;rsquo;s focus on the password field.
+Entering a single quote results in an error, great, there is a problem with the query, we know the syntax and it appears to be injectable.</description>
+    </item>
+    
+    <item>
+      <title>coffee</title>
+      <link>https://mfridman.github.com/frid.io/ctf/pico-2017/coffee/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/pico-2017/coffee/</guid>
+      <description>Challenge: You found a suspicious USB drive in a jar of pickles. It contains this file
+$ file freeThePickles.class freeThePickles.class: compiled Java class data, version 52.0 (Java 1.8) Hint: Is there a way to get the source of the program?
+Although this challenge didn&amp;rsquo;t call for it, if you want to disassemble a class file use javap like so&amp;hellip;
+javap -verbose freeThePickles.class &amp;gt; freeThePickles
+Anyways, back to the challenge. I used a &amp;ldquo;cloud-based&amp;rdquo; decompiler, javadecompilers.</description>
+    </item>
+    
+  </channel>
+</rss>

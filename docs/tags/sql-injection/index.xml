@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql Injection on frid.io</title>
+    <link>https://mfridman.github.com/frid.io/tags/sql-injection/</link>
+    <description>Recent content in Sql Injection on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mfridman.github.com/frid.io/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No Eyes</title>
+      <link>https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/</link>
+      <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/</guid>
+      <description>Challenge: The website isn&amp;rsquo;t really me much, but you can still get the admin password, right?
+Hint: Sometimes an error message can be just as useful
+This one was really rewarding.
+So, the landing page looked like this:
+Based on the description we assume the username is admin so let&amp;rsquo;s focus on the password field.
+Entering a single quote results in an error, great, there is a problem with the query, we know the syntax and it appears to be injectable.</description>
+    </item>
+    
+  </channel>
+</rss>
