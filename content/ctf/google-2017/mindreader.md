@@ -1,7 +1,6 @@
 ---
 title: mindreader
 date: 2017-06-23
-draft: true
 tags: [ctf,google,2017,lfi]
 ---
 

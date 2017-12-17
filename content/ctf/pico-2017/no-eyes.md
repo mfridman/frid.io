@@ -1,5 +1,5 @@
 ---
-title: "No Eyes"
+title: No Eyes
 date: 2017-04-14
 tags: [ctf,pico,2017,sql injection,half blind]
 ---

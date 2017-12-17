@@ -1,7 +1,6 @@
 ---
-title: "Echo"
+title: Echo
 date: 2017-04-24
-draft: true
 tags: [ctf,plaid,2017,docker,web,xor,command substitution]
 ---
 
