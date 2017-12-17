@@ -1,0 +1,16 @@
+baseURL: "https://mfridman.github.com/frid.io/"
+languageCode: en-us
+title: frid.io
+publishDir: docs
+
+blackfriday:
+    extensions: [hardLineBreak]
+
+pygmentsCodeFences: true
+# pygmentsStyle: vs
+pygmentsStyle: manni
+linenos: inline
+
+canonifyURLs: true 
+
+staticDir: ["static"]
