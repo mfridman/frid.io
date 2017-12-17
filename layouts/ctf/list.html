@@ -9,10 +9,10 @@
 
 <hr> {{ if .Sections }} {{ range .Sections }}
 <dl class="row">
-    <dt class="col-sm-6">
+    <dt class="col-6">
         <a href="{{ .Permalink }}">{{.Title}}</a>
     </dt>
-    <dd class="col-sm-6">
+    <dd class="col-6">
         <small>{{ .Data.Pages | len }}</small>
     </dd>
 </dl>
