@@ -12,13 +12,13 @@ It's 2017, and I think I found some time! Early days but work in progress.
 
 ### About
 
-I enjoy tackling technical and digital problems. Life-long learner. Lots of interesting folks out there.
+I like tackling problems, mostly digital. Life-long learner. If life were like that -  I'd enjoy an endless for loop of writing code (mainly Go), drinking ☕ and learning something new.
 
-My age, divided by 2.14, is the number of years I've been a dog owner. &#10084; &#128054;
+My age, divided by 2.14, is the number of years I've been a proud dog owner. &#10084; &#128054;
 
-I enjoy building computers & servers. One day I hope to _seriously_ get into electronics and the IoT
+One day I hope to _seriously_ get into electronics and that thing they call IoT
 
-I sometimes run, bike, snowboard, squash, read and capture digital &#128681;s
+Sometimes I run, bike, snowboard, squash, read and capture digital &#128681;s
 
   <!-- Embed 500px pic -->
   <!-- <div class='pixels-photo'>
