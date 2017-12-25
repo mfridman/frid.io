@@ -6,7 +6,7 @@
     <description>Recent content in Tags on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Dec 2017 21:04:50 -0500</lastBuildDate>
     
 	<atom:link href="https://mfridman.github.com/frid.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>2017</title>
       <link>https://mfridman.github.com/frid.io/tags/2017/</link>
-      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/2017/</guid>
       <description></description>
@@ -116,6 +116,15 @@
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/tags/lsb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perspectives</title>
+      <link>https://mfridman.github.com/frid.io/tags/perspectives/</link>
+      <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/tags/perspectives/</guid>
       <description></description>
     </item>
     

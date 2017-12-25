@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/blog/year-end-2017/</loc>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</loc>
     <lastmod>2017-12-17T00:52:08-05:00</lastmod>
   </url>
@@ -34,7 +39,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/</loc>
-    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
   </url>
   
   <url>
@@ -43,12 +48,12 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/blog/</loc>
-    <lastmod>2017-12-17T00:52:08-05:00</lastmod>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/2017/</loc>
-    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -129,6 +134,12 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/perspectives/</loc>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/pico/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -160,7 +171,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/</loc>
-    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
