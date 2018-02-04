@@ -1,7 +1,6 @@
 ---
 title: "Validating host keys in Go's ssh package"
 date: 2017-09-04
-draft: true
 tags: [golang,ssh,hostkey,HostKeyCallback]
 ---
 
