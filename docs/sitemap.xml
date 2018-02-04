@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/ctf/google-2017/mindreader/</loc>
     <lastmod>2017-06-23T00:00:00+00:00</lastmod>
   </url>
@@ -53,6 +58,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/golang/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -90,6 +96,12 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/golang/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/google/</loc>
     <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -98,6 +110,18 @@
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/half-blind/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/hostkey/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/hostkeycallback/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -164,6 +188,12 @@
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/sql-injection/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/ssh/</loc>
+    <lastmod>2017-09-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

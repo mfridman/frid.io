@@ -33,6 +33,19 @@ Still work in progress (WIP), but here we are.</description>
     </item>
     
     <item>
+      <title>Validating host keys in Go&#39;s ssh package</title>
+      <link>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</link>
+      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</guid>
+      <description>So you upgraded the package: go get -u -v golang.org/x/crypto/...
+and got an error: ssh: must specify HostKeyCallback
+A quick google search returns this great post Golang SSH Security, as well as issue#19767 and e4e2799.
+Briefly, prior to the patch users could omit HostKeyCallback from ClientConfig, allowing SSH connections to bypass host key checking and &amp;ldquo;just work&amp;rdquo;.
+Given the onus is on the client to verify the identity of the host, this was a step in the right direction in terms of security.</description>
+    </item>
+    
+    <item>
       <title>mindreader</title>
       <link>https://mfridman.github.com/frid.io/ctf/google-2017/mindreader/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
