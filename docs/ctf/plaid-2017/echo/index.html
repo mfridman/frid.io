@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
+    <meta name="author" content="Michael Fridman">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -14,7 +14,7 @@
     body {
         font-family: 'Nunito', sans-serif;
         background-color: #fdfdfd;
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .navbar {
@@ -49,6 +49,14 @@
     }
 
      
+
+    hr {
+        border: 0;
+        height: 10;
+        margin: 30px 0 30px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
 </style>
 </head>
 
@@ -68,17 +76,20 @@
 
     <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
         <ul class="navbar-nav">
-            <li class="nav-item px-3">
+            <li class="nav-item pl-4">
                 <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
             </li>
-            <li class="nav-item px-3">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/golang/">g<img src="http://mfridman.com/assets/svg-icons/gopher-icon.svg" alt="" width="24px">lang</a>
             </li>
-            <li class="nav-item px-3">
+            <li class="nav-item pl-4">
                 <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
             </li>
-            <li class="nav-item px-3">
+            <li class="nav-item pl-4">
                 <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
             </li>
         </ul>
     </div>
@@ -86,30 +97,29 @@
                 <div class="mt-4">
                     
 <h1>
-    Echo&nbsp;&nbsp;
-    <small class="text-muted" style="font-size:0.5em">Monday, Apr 24, 2017</small>
+    Echo
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Monday, Apr 24, 2017 &nbsp;&nbsp; | &nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/plaid">plaid</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/docker">docker</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/web">web</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/xor">xor</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/command-substitution">command substitution</a>&nbsp;&nbsp; 
+        
+    </small>
 </h1>
 
-    <small class="text-muted">
-    
-        <a href="https://mfridman.github.com/frid.io/tags/ctf">ctf</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/plaid">plaid</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/2017">2017</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/docker">docker</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/web">web</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/xor">xor</a>&nbsp;&nbsp;
-    
-        <a href="https://mfridman.github.com/frid.io/tags/command-substitution">command substitution</a>&nbsp;&nbsp;
-    
-</small>
-
-<hr>
-
+<hr> 
 
 <p>Challenge:  If you hear enough, you may hear the whispers of a key&hellip;<br />
 If you see <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1cfc40d">app.py</a> well enough, you will notice the UI sucks&hellip;</p>
@@ -245,8 +255,7 @@ cat run.py</code></pre></div>
 </ol>
 
 <p><iframe src="https://giphy.com/embed/1PIGU0cftC2pG" width="240" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/picard-1PIGU0cftC2pG"></a></p></p>
-
-
+ 
                 </div>
             </div>
         </div>
