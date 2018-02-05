@@ -20,7 +20,7 @@
       <description>So you upgraded the package: go get -u -v golang.org/x/crypto/...
 and got an error: ssh: must specify HostKeyCallback
 A quick google search returns this great post Golang SSH Security, as well as issue#19767 and e4e2799.
-Briefly, prior to the patch users could omit HostKeyCallback from ClientConfig, allowing SSH connections to bypass host key checking and &amp;ldquo;just work&amp;rdquo;.
+Briefly, prior to the patch users could omit ssh.HostKeyCallback from ssh.ClientConfig, allowing SSH connections to bypass host key checking and &amp;ldquo;just work&amp;rdquo;.
 Given the onus is on the client to verify the identity of the host, this was a step in the right direction in terms of security.</description>
     </item>
     

@@ -210,6 +210,10 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/golang/toolkit/</loc>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/web/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
     <priority>0</priority>

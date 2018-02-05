@@ -181,22 +181,30 @@
                 <div class="mt-4">
                     
 <h1>
-    Posts: 
+    Toolkit
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Monday, Jan 1, 0001 &nbsp;&nbsp; | &nbsp;&nbsp; 
+        
+    </small>
 </h1>
 
-<hr>
+<hr> 
 
-<div class="row">
-    <div class="col-sm-3">
-        April 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/ctf/pico-2017/coffee/">coffee</a>
-    </div>
-</div>
+<h4 id="upgrade-go-version-mac">Upgrade Go version (Mac)</h4>
 
+<p>Always be wary of things you find on the internet that use a combination of wget, tar and sudo.</p>
 
+<p><a href="https://golang.org/dl/">Go downloads</a></p>
 
+<pre class="prettyprint lang-bash linenums">
+# remove old version
+sudo rm -rf /usr/local/go
+# download a Go version, redirect output to stdout (quietly), pipe into tar and print version
+wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz && go version
+# go version go1.5.2 darwin/amd64
+</pre>
+ 
                 </div>
             </div>
         </div>
