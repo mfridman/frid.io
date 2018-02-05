@@ -10,27 +10,27 @@ and got an error: `ssh: must specify HostKeyCallback`
 
 A quick google search returns this great post [Golang SSH Security], as well as [issue#19767] and [e4e2799].
 
-Briefly, prior to the patch users could omit `HostKeyCallback` from `ClientConfig`, allowing SSH connections to bypass host key checking and "just work".
+Briefly, prior to the patch users could omit `ssh.HostKeyCallback` from `ssh.ClientConfig`, allowing SSH connections to bypass host key checking and "just work".
 
 Given the onus is on the client to verify the identity of the host, this was a step in the right direction in terms of security. E.g., [MITM attack]
 
 **For sake of clarity, neither Go or the docs had issues. It was users misusing the library.**
 
-<br>
+<hr>
 
 So what can you do?
 
-1.use `InsecureIgnoreHostKey()`, allowing almost any host key to be used.
+1.use `ssh.InsecureIgnoreHostKey()`, allowing almost any host key to be used.
 
 > It should not be used for production code.
 
-2.use `FixedHostKey()` and pass in a key from known_hosts file, typically `$HOME/.ssh/known_hosts`
+2.use `ssh.FixedHostKey()` and pass in a key from known_hosts file, typically `$HOME/.ssh/known_hosts`
 
-<br>
+<hr>
 
 For an example check out [ExampleHostKeyCheck()], which assumes standard port
 
-Some gotchas, if you have many hosts with varying ports on a single domain/IP address the above snippet will match the **first occurrence**, return _an_ incorrect host key to the caller and `ssh.Dial` will eventually fail:
+Some gotchas, if you have many hosts with varying ports on a single domain or IP address the above snippet will match the **first occurrence**, return _an_ incorrect host key to the caller and `ssh.Dial()` will eventually fail:
 
 `ssh: handshake failed: ssh: host key mismatch`
 
@@ -38,34 +38,34 @@ Another issue is if you have many hosts to check, you don't want the entire prog
 
 Furthermore, for non-standard ports you'll need to modify the above snippet. Because non-standard ports have hostnames enclosed with square brackets followed by a colon and the port number:
 
-```
+<pre class="prettyprint linenums">
 [ssh.example.com]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
 [ssh.example.com]:1999,[93.184.216.34]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
-```
+</pre>
 
 <hr>
 
 A slightly different approach may be to validate the port: [validatePort()]
 
-```go
+<pre class="prettyprint lang-go linenums">
 port, err := validatePort(SSHport)
 if err != nil {
     // handle error
 }
-```
+</pre>
 
 Then pass hostname & port into a slightly modified ExampleHostKeyCheck function: [checkHostKey()]
 
-```go
+<pre class="prettyprint lang-go linenums">
 hostKey, err := checkHostKey(hostname, port)
 if err != nil {
     // handle error
 }
-```
+</pre>
 
-Setup `ssh.ClientConfig` with `ssh.FixedHostKey(hostKey)`
+Initialize `ssh.ClientConfig` and set `HostKeyCallback` with `ssh.FixedHostKey(hostKey)`
 
-```go
+<pre class="prettyprint lang-go linenums">
 // this is an example
 conf := &ssh.ClientConfig{
     User: username,
@@ -75,15 +75,15 @@ conf := &ssh.ClientConfig{
     HostKeyCallback: ssh.FixedHostKey(hostKey),
     Timeout: 2 * time.Second,
 }
-```
+</pre>
 
 Once the bits and pieces are in place attempt to connect to the remote server and perform an SSH handshake
 
-```go
+<pre class="prettyprint lang-go linenums">
 client, err := ssh.Dial("tcp", hostname+":"+port, conf)
-```
+</pre>
 
-At each step prior to `ssh.Dial` errors can be handled gracefully.
+At each step prior to `ssh.Dial()` errors can be handled gracefully.
 
 [Golang SSH Security]:https://bridge.grumpy-troll.org/2017/04/golang-ssh-security/
 [issue#19767]:https://github.com/golang/go/issues/19767
