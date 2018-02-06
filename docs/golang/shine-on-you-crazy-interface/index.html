@@ -191,40 +191,109 @@
                 <div class="mt-4">
                     
 <h1>
-    Posts: 
+    Shine on You Crazy Interface - #golang part1
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Monday, Feb 5, 2018 &nbsp;&nbsp; | &nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/golang">golang</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/interfaces">interfaces</a>&nbsp;&nbsp; 
+        
+    </small>
 </h1>
+
+<hr> <p>Go&rsquo;s interfaces are brilliant. It&rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.</p>
+
+<p>Simply understand that if a concrete type posses all necessary methods it, the concrete type, can <em>implicitly</em> satisfy an interface.</p>
+
+<p>In Go, interfaces are considered abstract types, meaning we do not know what an interface really <em>is</em>, only what it can <em>do</em>.</p>
+
+<p>The Go standard library makes use of interfaces, let&rsquo;s take a look at an example. Say we have the following:</p>
+
+<p>Full example can be found here: <a href="https://play.golang.org/p/f9NkR_oSMo1">https://play.golang.org/p/f9NkR_oSMo1</a></p>
+
+<pre class="prettyprint lang-go">
+type song struct {
+    name    string
+    release time.Time
+}
+
+type songs []song
+
+func (s songs) String() string {
+    var ss []string
+    for i := range s {
+        ss = append(ss, s[i].name+" "+fmt.Sprint(s[i].release.Year()))
+    }
+    return strings.Join(ss, ", ")
+}
+
+s := songs{
+    {"Comfortably Numb", time.Date(1979, time.November, 0, 0, 0, 0, 0, time.UTC)},
+    {"Interstellar Overdrive", time.Date(1967, time.August, 0, 0, 0, 0, 0, time.UTC)},
+    {"Time", time.Date(1973, time.March, 0, 0, 0, 0, 0, time.UTC)},
+    {"High Hopes", time.Date(1994, time.March, 0, 0, 0, 0, 0, time.UTC)},
+}
+
+fmt.Println(s)
+// Comfortably Numb 1979, Interstellar Overdrive 1967, Time 1973, High Hopes 1994
+</pre>
+
+<p>Say we want to sort the above based on <em>release date</em> so we can listen to Pink Floyd in chronological order. We could write our own sorting function, but instead, let&rsquo;s see if we can implement the <a href="https://golang.org/pkg/sort/#Sort">sort.Sort</a> from the standard library:</p>
+
+<pre class="prettyprint lang-go">
+func Sort(data Interface)
+// where Interface is an abstract type that has three methods
+type Interface interface {
+    // comments omitted for brevity
+    Len() int
+    Less(i, j int) bool
+    Swap(i, j int)
+}
+</pre>
+
+<p>So to implement <code>sort.Interface</code> we write the following three methods for our <code>songs</code> type:</p>
+
+<pre class="prettyprint lang-go">
+func (s songs) Len() int {
+    return len(s)
+}
+
+func (s songs) Less(i, j int) bool {
+    return s[i].release.Before(s[j].release)
+}
+
+func (s songs) Swap(i, j int) {
+    s[i], s[j] = s[j], s[i]
+}
+</pre>
+
+<p>The <code>sort.Sort</code> function doesn&rsquo;t care about the underlying type. So long as the type has behavior through its methods that implements <code>Len</code>, <code>Less</code> and <code>Swap</code> it can be sorted&hellip; (usually)</p>
+
+<pre class="prettyprint lang-go">
+sort.Sort(s)
+fmt.Println(s)
+// Interstellar Overdrive 1967, Time 1973, Comfortably Numb 1979, High Hopes 1994
+</pre>
+
+<p><strong>Note</strong> as of Go 1.8 it&rsquo;s even easier to implement slice sort. See <a href="https://golang.org/doc/go1.8#sort_slice">go1.8#sort_slice</a></p>
+
+<p>Full example can be found here: <a href="https://play.golang.org/p/8b2OokpqsLA">https://play.golang.org/p/8b2OokpqsLA</a></p>
+
+<pre class="prettyprint lang-go">
+// to implement sort.Slice all we need is the Less method from above, omit Len and Swap entirely
+// func Slice(slice interface{}, less func(i, j int) bool)
+
+sort.Slice(s, s.Less)
+fmt.Println(s)
+// Interstellar Overdrive 1967, Time 1973, Comfortably Numb 1979, High Hopes 1994
+</pre>
 
 <hr>
 
-<div class="row">
-    <div class="col-sm-3">
-        April 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/">Little School Bus</a>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-3">
-        April 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/ctf/pico-2017/no-eyes/">No Eyes</a>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-3">
-        April 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/ctf/pico-2017/coffee/">coffee</a>
-    </div>
-</div>
-
-
-
+<p>To wrap things up, we were able to leverage a standard library sorting function through an interface. Our concrete type <code>songs</code> implicitly implemented the <code>sort.Sort</code> function because it had the necessary behavior (methods). The interface type <code>sort.Interface</code> defined the contract between <code>sort.Sort</code> and its caller. Awesome!</p>
+ 
                 </div>
             </div>
         </div>

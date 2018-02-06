@@ -6,10 +6,22 @@
     <description>Recent content on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2017 21:04:50 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 20:07:41 -0500</lastBuildDate>
     
 	<atom:link href="https://mfridman.github.com/frid.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shine on You Crazy Interface - #golang part1</title>
+      <link>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/</link>
+      <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/</guid>
+      <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
+Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
+In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
+The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at an example.</description>
+    </item>
     
     <item>
       <title>Year End 2017</title>
@@ -111,14 +123,15 @@ Anyways, back to the challenge. I used a &amp;ldquo;cloud-based&amp;rdquo; decom
     </item>
     
     <item>
-      <title>Toolkit</title>
+      <title>Toolkit (WIP)</title>
       <link>https://mfridman.github.com/frid.io/golang/toolkit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.github.com/frid.io/golang/toolkit/</guid>
-      <description> Upgrade Go version (Mac) Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
+      <description>Slowly migrating commonly used things here&amp;hellip;
+Upgrade Go version (Mac) Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
 Go downloads
-# remove old version sudo rm -rf /usr/local/go # download a Go version, redirect output to stdout (quietly), pipe into tar and print version wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz &amp;&amp; go version # go version go1.5.2 darwin/amd64  </description>
+# remove old version sudo rm -rf /usr/local/go # download a Go version, redirect output to stdout (quietly), pipe into tar and print version wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz &amp;&amp; go version # go version go1.</description>
     </item>
     
   </channel>
