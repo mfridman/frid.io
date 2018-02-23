@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/golang/a-new-mongodb-go-driver/</loc>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/</loc>
     <lastmod>2018-02-05T20:07:41-05:00</lastmod>
   </url>
@@ -49,7 +54,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/</loc>
-    <lastmod>2018-02-05T20:07:41-05:00</lastmod>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
   </url>
   
   <url>
@@ -63,7 +68,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/golang/</loc>
-    <lastmod>2018-02-05T20:07:41-05:00</lastmod>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
   </url>
   
   <url>
@@ -95,6 +100,12 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/database/</loc>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/docker/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -102,7 +113,7 @@
   
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/golang/</loc>
-    <lastmod>2018-02-05T20:07:41-05:00</lastmod>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -173,6 +184,18 @@
   </url>
   
   <url>
+    <loc>https://mfridman.github.com/frid.io/tags/mongodb/</loc>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/nosql/</loc>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mfridman.github.com/frid.io/tags/perspectives/</loc>
     <lastmod>2017-12-24T21:04:50-05:00</lastmod>
     <priority>0</priority>
@@ -187,6 +210,12 @@
   <url>
     <loc>https://mfridman.github.com/frid.io/tags/plaid/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mfridman.github.com/frid.io/tags/rethinkdb/</loc>
+    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
     <priority>0</priority>
   </url>
   
