@@ -190,67 +190,64 @@
 </nav>
                 <div class="mt-4">
                     
-<p>
-    <p>The Go programming language is fascinating, from its idioms to the community. Over the past few years learning <em>and</em> writing Go has been one of the most enjoyable and mentally stimulating experiences.</p>
+<h1>
+    Shine on You Crazy Interface - #golang part2
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Monday, Feb 5, 2018 &nbsp;&nbsp; | &nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/golang">golang</a>&nbsp;&nbsp; 
+        
+            <a href="https://mfridman.github.com/frid.io/tags/interfaces">interfaces</a>&nbsp;&nbsp; 
+        
+    </small>
+</h1>
 
-<p>I don&rsquo;t consider it the &ldquo;shiny&rdquo; &ldquo;new&rdquo; &ldquo;cool&rdquo; thing, but more so a tool for writing maintainable code.</p>
+<hr> <p>No interface discussion is complete without talking about the <a href="https://golang.org/pkg/fmt/#Stringer">fmt.Stringer</a> interface. This is a classic when introducing the topic of interfaces.</p>
 
-<p><img src="https://mfridman.github.com/frid.io/img/gophermega2.png" alt="gophermega" style="height: 62px;"/> The gopher mascot was designed by <a href="http://reneefrench.blogspot.com/">Renee French</a> / <a href="https://creativecommons.org/licenses/by/3.0/">CC 3.0</a>. For more info check out the <a href="https://blog.golang.org/gopher">Go Blog</a></p>
+<p>Notice in <a href="https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/">part1</a> we actually made use of this interface to format the <code>songs</code> type.</p>
 
-<p>I&rsquo;d like to use this space to jot down all things Go, anything from snippets to more in-depth posts. If you have questions or constructive criticism, feel free to reach out <a href="mailto:mf192@icloud.com"><i class="fa fa-envelope-o" style="color: #9CC1CE"></i></a>.</p>
+<pre class="prettyprint lang-go">
+func (s songs) String() string {
+    var ss []string
+    for i := range s {
+        ss = append(ss, s[i].name+" "+fmt.Sprint(s[i].release.Year()))
+    }
+    return strings.Join(ss, ", ")
+}
+</pre>
 
-</p>
-   
+<p>When we called a print function the output was nicely formatted:</p>
 
-<hr>
+<pre class="prettyprint lang-go">
+fmt.Println(s)
+// Comfortably Numb 1979, Interstellar Overdrive 1967, Time 1973, High Hopes 1994
+</pre>
 
-<div class="row">
-    <div class="col-sm-3">
-        February 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
-    </div>
-</div>
+<p>If we remove the above <code>String()</code> method the output for the <code>song</code> type would be:</p>
 
-<div class="row">
-    <div class="col-sm-3">
-        February 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - #golang part1</a>
-    </div>
-</div>
+<pre class="prettyprint lang-go">
+fmt.Println(s)
+// [{Comfortably Numb {0 62445772800 <nil>}} {Interstellar Overdrive {0 62059132800 <nil>}} {Time {0 62235302400 <nil>}} {High Hopes {0 62897990400 <nil>}}]
+</pre>
 
-<div class="row">
-    <div class="col-sm-3">
-        February 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - #golang part2</a>
-    </div>
-</div>
+<p>So let&rsquo;s take a step back and look at the <code>fmt.Stringer</code> interface:</p>
 
-<div class="row">
-    <div class="col-sm-3">
-        September 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/">Validating host keys in Go&#39;s ssh package</a>
-    </div>
-</div>
+<pre class="prettyprint lang-go">
+type Stringer interface {
+    String() string
+}
+</pre>
 
-<div class="row">
-    <div class="col-sm-3">
-        January 0001
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.github.com/frid.io/golang/toolkit/">Toolkit (WIP)</a>
-    </div>
-</div>
+<p>To satisfy the Stringer interface our concrete type must have a method with the <code>String() string</code> signature, which we already saw above.</p>
 
+<p>By satisfying the Stringer interface we can take advantage of functions throughout the standard library that leverage this interface to print values. Most notably this will be used with the <code>fmt</code> package, where we call <code>fmt.Println</code> and the output will be formatted according to our representation of the value.</p>
 
+<p>WIP&hellip;</p>
 
+<pre class="prettyprint lang-go">
+</pre>
+ 
                 </div>
             </div>
         </div>

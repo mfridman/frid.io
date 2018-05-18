@@ -2,10 +2,7 @@
 title: "Shine on You Crazy Interface - #golang part2"
 date: 2018-02-05T20:07:41-05:00
 tags: [golang,interfaces]
-draft: true
 ---
-
-WIP
 
 No interface discussion is complete without talking about the [fmt.Stringer](https://golang.org/pkg/fmt/#Stringer) interface. This is a classic when introducing the topic of interfaces.
 
@@ -47,6 +44,7 @@ To satisfy the Stringer interface our concrete type must have a method with the 
 
 By satisfying the Stringer interface we can take advantage of functions throughout the standard library that leverage this interface to print values. Most notably this will be used with the `fmt` package, where we call `fmt.Println` and the output will be formatted according to our representation of the value.
 
+WIP...
 
 <pre class="prettyprint lang-go">
 </pre>

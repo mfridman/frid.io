@@ -36,6 +36,17 @@ The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at 
     </item>
     
     <item>
+      <title>Shine on You Crazy Interface - #golang part2</title>
+      <link>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface2/</link>
+      <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface2/</guid>
+      <description>No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
+Notice in part1 we actually made use of this interface to format the songs type.
+func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name+&#34; &#34;+fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:</description>
+    </item>
+    
+    <item>
       <title>Year End 2017</title>
       <link>https://mfridman.github.com/frid.io/blog/year-end-2017/</link>
       <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
