@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>frid.io</title>
-    <link>https://mfridman.github.com/frid.io/golang/</link>
+    <link>https://frid.io/golang/</link>
     <description>Recent content on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Feb 2018 17:36:50 -0500</lastBuildDate>
     
-	<atom:link href="https://mfridman.github.com/frid.io/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frid.io/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A mongoDB Go Driver - by the mongoDB folks</title>
-      <link>https://mfridman.github.com/frid.io/golang/a-new-mongodb-go-driver/</link>
+      <link>https://frid.io/golang/a-new-mongodb-go-driver/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/a-new-mongodb-go-driver/</guid>
+      <guid>https://frid.io/golang/a-new-mongodb-go-driver/</guid>
       <description>So this is exciting, the mongoDB team is working on an official mongoDB Go driver. The official announcement can be found at MongoDB Go Driver Alpha 1 released
 For those interested why mongoDB chose to write a driver from the ground-up as apposed to forking mgo read their engineering blog
 The repo can be found on github mongo-go-drive and bug reports should be filed over on jira.mongodb.org
@@ -25,10 +25,10 @@ I&amp;rsquo;ve been wanting to give mongoDB a fair shot, and now seems to be the
     
     <item>
       <title>Shine on You Crazy Interface - #golang part1</title>
-      <link>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/</link>
+      <link>https://frid.io/golang/shine-on-you-crazy-interface/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface/</guid>
+      <guid>https://frid.io/golang/shine-on-you-crazy-interface/</guid>
       <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
 Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
 In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
@@ -37,10 +37,10 @@ The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at 
     
     <item>
       <title>Shine on You Crazy Interface - #golang part2</title>
-      <link>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface2/</link>
+      <link>https://frid.io/golang/shine-on-you-crazy-interface2/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/shine-on-you-crazy-interface2/</guid>
+      <guid>https://frid.io/golang/shine-on-you-crazy-interface2/</guid>
       <description>No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
 Notice in part1 we actually made use of this interface to format the songs type.
 func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name+&#34; &#34;+fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:</description>
@@ -48,10 +48,10 @@ func (s songs) String() string { var ss []string for i := range s { ss = append(
     
     <item>
       <title>Validating host keys in Go&#39;s ssh package</title>
-      <link>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</link>
+      <link>https://frid.io/golang/go-ssh-hostkey/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</guid>
+      <guid>https://frid.io/golang/go-ssh-hostkey/</guid>
       <description>So you upgraded the package: go get -u -v golang.org/x/crypto/...
 and got an error: ssh: must specify HostKeyCallback
 A quick google search returns this great post Golang SSH Security, as well as issue#19767 and e4e2799.
@@ -61,10 +61,10 @@ Given the onus is on the client to verify the identity of the host, this was a s
     
     <item>
       <title>Toolkit (WIP)</title>
-      <link>https://mfridman.github.com/frid.io/golang/toolkit/</link>
+      <link>https://frid.io/golang/toolkit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/toolkit/</guid>
+      <guid>https://frid.io/golang/toolkit/</guid>
       <description>Slowly migrating commonly used things here&amp;hellip;
 Upgrade Go version (Mac) Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
 Go downloads

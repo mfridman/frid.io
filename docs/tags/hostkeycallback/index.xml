@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hostkeycallback on frid.io</title>
-    <link>https://mfridman.github.com/frid.io/tags/hostkeycallback/</link>
+    <link>https://frid.io/tags/hostkeycallback/</link>
     <description>Recent content in Hostkeycallback on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mfridman.github.com/frid.io/tags/hostkeycallback/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frid.io/tags/hostkeycallback/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Validating host keys in Go&#39;s ssh package</title>
-      <link>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</link>
+      <link>https://frid.io/golang/go-ssh-hostkey/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/golang/go-ssh-hostkey/</guid>
+      <guid>https://frid.io/golang/go-ssh-hostkey/</guid>
       <description>So you upgraded the package: go get -u -v golang.org/x/crypto/...
 and got an error: ssh: must specify HostKeyCallback
 A quick google search returns this great post Golang SSH Security, as well as issue#19767 and e4e2799.

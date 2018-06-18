@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lsb on frid.io</title>
-    <link>https://mfridman.github.com/frid.io/tags/lsb/</link>
+    <link>https://frid.io/tags/lsb/</link>
     <description>Recent content in Lsb on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mfridman.github.com/frid.io/tags/lsb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frid.io/tags/lsb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Little School Bus</title>
-      <link>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</link>
+      <link>https://frid.io/ctf/pico-2017/little-schoolbus/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/ctf/pico-2017/little-schoolbus/</guid>
+      <guid>https://frid.io/ctf/pico-2017/little-schoolbus/</guid>
       <description>Had a blast participating with a few local DC416 folks in the 2017 picoCTF!
 Challenge: Can you help me find the data in this littleschoolbus.bmp?
 Hint: Look at least significant bit (LSB) encoding!!

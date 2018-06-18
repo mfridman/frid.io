@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>frid.io</title>
-    <link>https://mfridman.github.com/frid.io/blog/</link>
+    <link>https://frid.io/blog/</link>
     <description>Recent content on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2017 21:04:50 -0500</lastBuildDate>
     
-	<atom:link href="https://mfridman.github.com/frid.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frid.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Year End 2017</title>
-      <link>https://mfridman.github.com/frid.io/blog/year-end-2017/</link>
+      <link>https://frid.io/blog/year-end-2017/</link>
       <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/blog/year-end-2017/</guid>
+      <guid>https://frid.io/blog/year-end-2017/</guid>
       <description>I don&amp;rsquo;t care much for &amp;ldquo;annual&amp;rdquo; events, i.e., taking action x because y rotations around the sun. But, I do believe in allocating time aside for reflecting and setting future goals. It just so happens that time is now, and now is end-of-year.
 The meetup game in Toronto continues to be strong. Lots of interesting folks. Meetups I try regularly attend: DC416, Docker-Toronto, Go-Toronto.
 A few members of DC416 and I started playing as a Team capturing digital flags.</description>
@@ -24,10 +24,10 @@ A few members of DC416 and I started playing as a Team capturing digital flags.<
     
     <item>
       <title>From Jekyll to Hugo</title>
-      <link>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</link>
+      <link>https://frid.io/blog/from-jekyll-to-hugo/</link>
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</guid>
+      <guid>https://frid.io/blog/from-jekyll-to-hugo/</guid>
       <description>Done and Launched.
 Still a work in progress (WIP), but here we are.
 To start local server, bound to link:
@@ -36,10 +36,10 @@ hugo server -D --disableFastRender</description>
     
     <item>
       <title>Generate GPG key, add to GitHub and verify identity</title>
-      <link>https://mfridman.github.com/frid.io/blog/gpg-and-all-that/</link>
+      <link>https://frid.io/blog/gpg-and-all-that/</link>
       <pubDate>Sat, 17 Jun 2017 00:11:24 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/blog/gpg-and-all-that/</guid>
+      <guid>https://frid.io/blog/gpg-and-all-that/</guid>
       <description>But why? GPG signature verification
 A few gotchas.
  Make sure to verify the email addresses associated with your GPG key.

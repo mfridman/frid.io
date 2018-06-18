@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Perspectives on frid.io</title>
-    <link>https://mfridman.github.com/frid.io/tags/perspectives/</link>
+    <link>https://frid.io/tags/perspectives/</link>
     <description>Recent content in Perspectives on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Dec 2017 21:04:50 -0500</lastBuildDate>
     
-	<atom:link href="https://mfridman.github.com/frid.io/tags/perspectives/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://frid.io/tags/perspectives/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Year End 2017</title>
-      <link>https://mfridman.github.com/frid.io/blog/year-end-2017/</link>
+      <link>https://frid.io/blog/year-end-2017/</link>
       <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
       
-      <guid>https://mfridman.github.com/frid.io/blog/year-end-2017/</guid>
+      <guid>https://frid.io/blog/year-end-2017/</guid>
       <description>I don&amp;rsquo;t care much for &amp;ldquo;annual&amp;rdquo; events, i.e., taking action x because y rotations around the sun. But, I do believe in allocating time aside for reflecting and setting future goals. It just so happens that time is now, and now is end-of-year.
 The meetup game in Toronto continues to be strong. Lots of interesting folks. Meetups I try regularly attend: DC416, Docker-Toronto, Go-Toronto.
 A few members of DC416 and I started playing as a Team capturing digital flags.</description>
