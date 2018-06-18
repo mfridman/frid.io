@@ -19,7 +19,7 @@
 
     .navbar {
         font-family: 'Roboto Mono', monospace;
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 
     .center {
@@ -165,7 +165,7 @@
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
     <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
-        <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+        <img src="https://mfridman.github.com/frid.io/svg/lovebot-icon.svg" alt="lovebot" width="28px"> F
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -175,19 +175,19 @@
     <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
         <ul class="navbar-nav">
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">home</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/golang/">g<img src="http://mfridman.com/assets/svg-icons/gopher-icon.svg" alt="" width="24px">lang</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/golang/">g<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="24px">lang</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">blog</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">ctf</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">about</a>
             </li>
         </ul>
     </div>
@@ -224,7 +224,7 @@ freeThePickles.class: compiled Java class data, version <span style="color:#f60"
 
 <p><code>javap -verbose freeThePickles.class &gt; freeThePickles</code></p>
 
-<p>Anyways, back to the challenge. I used a &ldquo;cloud-based&rdquo; decompiler, <a href="http://www.javadecompilers.com">javadecompilers.com</a>, with the JDCore decompiler option and it spat back the source code:</p>
+<p>Anyways, back to the challenge. I used a &ldquo;cloud-based&rdquo; decompiler, javadecompilers.com (not https:// site), with the JDCore decompiler option and it spat back the source code:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">java.util.Base64.Decoder</span><span style="color:#555">;</span>
 
 <span style="color:#069;font-weight:bold">public</span> <span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">problem</span> <span style="color:#555">{</span>

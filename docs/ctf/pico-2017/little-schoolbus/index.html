@@ -19,7 +19,7 @@
 
     .navbar {
         font-family: 'Roboto Mono', monospace;
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 
     .center {
@@ -165,7 +165,7 @@
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
     <a class="navbar-brand px-3 mt-2" href="https://mfridman.github.com/frid.io/">M
-        <img src="http://mfridman.com/assets/svg-icons/lovebot-icon.svg" alt="lovebot" width="28px"> F
+        <img src="https://mfridman.github.com/frid.io/svg/lovebot-icon.svg" alt="lovebot" width="28px"> F
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -175,19 +175,19 @@
     <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
         <ul class="navbar-nav">
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/">Home</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/">home</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/golang/">g<img src="http://mfridman.com/assets/svg-icons/gopher-icon.svg" alt="" width="24px">lang</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/golang/">g<img src="https://mfridman.github.com/frid.io/svg/gopher-icon.svg" alt="" width="24px">lang</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">Blog</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/blog/">blog</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">CTF</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/ctf/">ctf</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">About</a>
+                <a class="nav-link" href="https://mfridman.github.com/frid.io/about/">about</a>
             </li>
         </ul>
     </div>
@@ -231,9 +231,9 @@
 
 <p><img src="https://mfridman.github.com/frid.io/img/littleschoolbus.bmp" alt=""/></p>
 
-<p>Ran <code>java -jar Stegsolve.jar</code> to view each bit plane on its own. Click <a href="http://www.caesum.com/handbook/stego.htm">stegsolve</a> and look for the Stegsolve download link.</p>
+<p>Ran <code>java -jar Stegsolve.jar</code> to view each bit plane on its own. Click caesum.com/handbook/stego.htm (not https:// site) and look for the Stegsolve download link.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#09f;font-style:italic"># install
-</span><span style="color:#09f;font-style:italic"></span>wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+</span><span style="color:#09f;font-style:italic"></span>wget caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
 chmod +x stegsolve.jar
 
 <span style="color:#09f;font-style:italic"># launch/run
@@ -246,7 +246,7 @@ chmod +x stegsolve.jar
 
 <p>The image is 252px × 199px (w x h). Let&rsquo;s concentrate on that last row, the 199th row; either crop out the pixels or write some code.</p>
 
-<p>I opted to write some Go code, which you can find on <a href="https://github.com/mfridman/ctf-tools/tree/master/steganography/parseLSB">github</a></p>
+<p>I opted to write some Go code.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./lsbParse-linux littleschoolbus.bmp
 
 flag<span style="color:#555">{</span>remember_kids_protect_your_headers_afb3<span style="color:#555">}</span></code></pre></div>
@@ -290,7 +290,7 @@ flag<span style="color:#555">{</span>remember_kids_protect_your_headers_afb3<spa
 
 <hr />
 
-<p>I overcomplicated the challenge by thinking there was an image <em>within</em> the image, (inspiration drawn from this <a href="http://www.datagenetics.com/blog/march12012/index.html">site</a>, kudos, great resource).</p>
+<p>I overcomplicated the challenge by thinking there was an image <em>within</em> the image, (inspiration drawn from this <a href="https://datagenetics.com/blog/march12012/index.html">site</a>, kudos, great resource).</p>
 
 <p>Long story short, I took all the LSB&rsquo;s in sequence and read them in chunks of 3; obtaining values between 000-111 (decimal 0-7) to construct an 8-bit greyscale image.</p>
 
@@ -299,13 +299,13 @@ flag<span style="color:#555">{</span>remember_kids_protect_your_headers_afb3<spa
 <p>(this portion was written in python w/ pyplot )<br />
 <img src="https://mfridman.github.com/frid.io/img/convert8bit-schoolbus.png" alt="pic8" style="width: 750px;"/></p>
 
-<p>For fun, I pulled the image from <a href="http://www.datagenetics.com/blog/march12012/index.html">DataGenetic&rsquo;s site</a> and extracted the Flanker.</p>
+<p>For fun, I pulled the image from <a href="https://datagenetics.com/blog/march12012/index.html">DataGenetic&rsquo;s site</a> and extracted the Flanker.</p>
 
 <p><img src="https://mfridman.github.com/frid.io/img/convert8bit-skyline.png" alt="pic8" style="width: 750px;"/></p>
 
 <h4 id="useful-resources">Useful Resources:</h4>
 
-<p><a href="http://www.dragonwins.com/domains/getteched/bmp/bmpfileformat.htm">bmp-format</a></p>
+<p>dragonwins.com/domains/getteched/bmp/bmpfileformat.htm (not https:// site)</p>
  
                 </div>
             </div>
