@@ -195,104 +195,115 @@
                 <div class="mt-4">
                     
 <h1>
-    Validating host keys in Go&#39;s ssh package
+    Generate GPG key, add to GitHub and verify identity
     <br>
     <small class="text-muted" style="font-size:0.5em">
-        Monday, Sep 4, 2017 &nbsp;&nbsp; | &nbsp;&nbsp; 
+        Saturday, Jun 17, 2017 &nbsp;&nbsp; | &nbsp;&nbsp; 
         
-            <a href="https://mfridman.github.com/frid.io/tags/golang">golang</a>&nbsp;&nbsp; 
+            <a href="https://mfridman.github.com/frid.io/tags/gpg">gpg</a>&nbsp;&nbsp; 
         
-            <a href="https://mfridman.github.com/frid.io/tags/ssh">ssh</a>&nbsp;&nbsp; 
-        
-            <a href="https://mfridman.github.com/frid.io/tags/hostkey">hostkey</a>&nbsp;&nbsp; 
-        
-            <a href="https://mfridman.github.com/frid.io/tags/hostkeycallback">HostKeyCallback</a>&nbsp;&nbsp; 
+            <a href="https://mfridman.github.com/frid.io/tags/github">github</a>&nbsp;&nbsp; 
         
     </small>
 </h1>
 
-<hr> <p>So you upgraded the package: <code>go get -u -v golang.org/x/crypto/...</code></p>
+<hr> 
 
-<p>and got an error: <code>ssh: must specify HostKeyCallback</code></p>
+<p>But why? <a href="https://blog.github.com/2016-04-05-gpg-signature-verification/">GPG signature verification</a></p>
 
-<p>A quick google search returns this great post <a href="https://bridge.grumpy-troll.org/2017/04/golang-ssh-security/">Golang SSH Security</a>, as well as <a href="https://github.com/golang/go/issues/19767">issue#19767</a> and <a href="https://go-review.googlesource.com/c/crypto/+/38701">e4e2799</a>.</p>
+<p>A few gotchas.</p>
 
-<p>Briefly, prior to the patch users could omit <code>ssh.HostKeyCallback</code> from <code>ssh.ClientConfig</code>, allowing SSH connections to bypass host key checking and &ldquo;just work&rdquo;.</p>
+<ol>
+<li><p>Make sure to <a href="(https://help.github.com/articles/verifying-your-email-address/)">verify</a> the email addresses associated with your GPG key.</p></li>
 
-<p>Given the onus is on the client to verify the identity of the host, this was a step in the right direction in terms of security. E.g., <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attack</a></p>
+<li><p>Don&rsquo;t forget to add said email(s) to your <code>.gitconfig</code> file.<br />
+e.g., <code>git config --global user.email &quot;email@example.com&quot;</code> (global setting)</p></li>
 
-<p><strong>For sake of clarity, neither Go or the docs had issues. It was users misusing the library.</strong></p>
+<li><p>Download <a href="https://gpgtools.org/">GPG suite</a>, which will enable adding key(s) to the macOS keychain.</p></li>
+</ol>
 
-<hr>
+<hr />
 
-<p>So what can you do?</p>
+<p><strong>Before proceeding</strong>, please check for existing keys and make backups!!!</p>
 
-<p>1.use <code>ssh.InsecureIgnoreHostKey()</code>, allowing almost any host key to be used.</p>
+<p>To list keys in secret keyring run: <code>gpg --list-secret-keys</code>. See <a href="https://help.github.com/articles/checking-for-existing-gpg-keys/">existing keys</a>.</p>
 
-<blockquote>
-<p>It should not be used for production code.</p>
-</blockquote>
+<p>This article is specific to macOS and makes use of <a href="https://brew.sh/">brew</a>. Run the following to check if a GPG program is already installed on your computer: <code>gpg --version</code></p>
 
-<p>2.use <code>ssh.FixedHostKey()</code> and pass in a key from known_hosts file, typically <code>$HOME/.ssh/known_hosts</code></p>
+<p>To install: <code>brew install gnupg</code><br />
+To upgrade: <code>brew upgrade gnupg</code></p>
 
-<hr>
+<p>Check out the GitHub docs for a more in-depth explanation on how to <a href="https://help.github.com/articles/generating-a-new-gpg-key/">generate a GPG key</a>.</p>
 
-<p>For an example check out <a href="https://github.com/golang/crypto/blob/81e90905daefcd6fd217b62423c0908922eadb30/ssh/example_test.go#L143">ExampleHostKeyCheck()</a>, which assumes standard port</p>
+<p><strong>TL;DR</strong> <code>gpg --full-generate-key</code> and follow prompts; if it doesn&rsquo;t work read the GitHub doc ^.</p>
 
-<p>Some gotchas, if you have many hosts with varying ports on a single domain or IP address the above snippet will match the <strong>first occurrence</strong>, return <em>an</em> incorrect host key to the caller and <code>ssh.Dial()</code> will eventually fail:</p>
+<p>If everything went okay you&rsquo;ll see a bunch of text and it&rsquo;ll display: <em>public and secret key created and signed</em>.</p>
 
-<p><code>ssh: handshake failed: ssh: host key mismatch</code></p>
+<p>Check key with the following command and note the GPG key ID, e.g., 5E6D89E5F4A1A2FC:</p>
 
-<p>Another issue is if you have many hosts to check, you don&rsquo;t want the entire program to exit due to a single failed host key check, watch out for <code>log.Fatalf</code> which is <code>Printf()</code> followed by call to <code>os.Exit(1)</code></p>
+<p><code>gpg --list-secret-keys --keyid-format LONG</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/Users/name/.gnupg/pubring.gpg
+-------------------------------
+sec   rsa4096/5E6D89E5F4A1A2FC ...</code></pre></div>
+<hr />
 
-<p>Furthermore, for non-standard ports you&rsquo;ll need to modify the above snippet. Because non-standard ports have hostnames enclosed with square brackets followed by a colon and the port number:</p>
+<p>To add <a href="https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/">GPG key to GitHub</a> navigate to Account &gt; Settings &gt; SSH and GPG keys &gt; New GPG Key.</p>
 
-<pre class="prettyprint linenums">
-[ssh.example.com]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
-[ssh.example.com]:1999,[93.184.216.34]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
-</pre>
+<p>Export key by running <code>gpg --armor --export 5E6D89E5F4A1A2FC</code>. I like to pipe long text into <code>pbcopy</code> to avoid manually copying.</p>
 
-<hr>
+<p>E.g., <code>gpg --armor --export 5E6D89E5F4A1A2FC | pbcopy</code> and paste into Github &gt; GPG keys / Add new.</p>
 
-<p>A slightly different approach may be to validate the port: <a href="https://gist.github.com/mfridman/a1c93596441bb4f5ed514e22ba483989#file-go-ssh-hostkey-go-L4">validatePort()</a></p>
+<hr />
 
-<pre class="prettyprint lang-go linenums">
-port, err := validatePort(SSHport)
-if err != nil {
-    // handle error
-}
-</pre>
+<p>A bit more configuration, <a href="https://help.github.com/articles/telling-git-about-your-gpg-key/">tell git about your GPG key</a></p>
 
-<p>Then pass hostname &amp; port into a slightly modified ExampleHostKeyCheck function: <a href="https://gist.github.com/mfridman/a1c93596441bb4f5ed514e22ba483989#file-go-ssh-hostkey-go-L17">checkHostKey()</a></p>
+<p>Configure git to sign commits: <code>git config --global commit.gpgsign true</code></p>
 
-<pre class="prettyprint lang-go linenums">
-hostKey, err := checkHostKey(hostname, port)
-if err != nil {
-    // handle error
-}
-</pre>
+<p>Tell git the absolute path to the <code>gpg</code> tool: <code>git config --global gpg.program /usr/local/bin/gpg</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/usr/local/bin/gpg -&gt; ../Cellar/gnupg/2.2.8/bin/gpg
+/usr/local/Cellar/gnupg/2.2.8/bin/gpg
+<span style="color:#09f;font-style:italic"># or 
+</span><span style="color:#09f;font-style:italic"></span>/usr/local/MacGPG2/bin/gpg</code></pre></div>
+<p>Optional:</p>
 
-<p>Initialize <code>ssh.ClientConfig</code> and set <code>HostKeyCallback</code> with <code>ssh.FixedHostKey(hostKey)</code></p>
+<p>Add no-tty to GPG config, telling it not to use terminal for output (<em>may</em> be necessary depending on your client):<br />
+<code>echo no-tty &gt;&gt; ~/.gnupg/gpg.conf</code></p>
 
-<pre class="prettyprint lang-go linenums">
-// this is an example
-conf := &ssh.ClientConfig{
-    User: username,
-    Auth: []ssh.AuthMethod{
-        ssh.Password("is{pass1234}g00Den0ugh?")
-    },
-    HostKeyCallback: ssh.FixedHostKey(hostKey),
-    Timeout: 2 * time.Second,
-}
-</pre>
+<hr />
 
-<p>Once the bits and pieces are in place attempt to connect to the remote server and perform an SSH handshake</p>
+<p>See this <a href="https://gpgtools.tenderapp.com/kb/faq/password-management">article</a> for adding the key to macOS keychain.</p>
 
-<pre class="prettyprint lang-go linenums">
-client, err := ssh.Dial("tcp", hostname+":"+port, conf)
-</pre>
+<p>Briefly, on your first git commit you&rsquo;ll get a prompt from pinetry-mac asking for your passphrase (to unlock GPG key). There is a checkbox to &ldquo;add key to keychain&rdquo;, make sure it&rsquo;s checked.</p>
 
-<p>At each step prior to <code>ssh.Dial()</code> errors can be handled gracefully.</p>
+<p>Then go to System Preferences &gt; GPG Suite (bottom-most of window) &gt; make sure &ldquo;Store in macOS Keychain&rdquo; is checked.</p>
+
+<p>Lastly, go to macOS Keychain Access utility, look for &ldquo;gnuPG&rdquo; (should be in the Password section). Double-click on your key, click Access Control tab and modify (if needed):</p>
+
+<ol>
+<li>&ldquo;Allow all applications access&rdquo; (mhmm&hellip; probably not)<br /></li>
+<li>&ldquo;Confirm before allowing access&rdquo;, this option enables you to add applications as needed. E.g., I use Tower (my fav git client for macOS).<br />
+<br /></li>
+</ol>
+
+<p>Make sure you have pinetry-mac.app listed here (located at /usr/local/MacGPG2/libexec/pinentry-mac.app)</p>
+
+<p><img src="https://mfridman.github.com/frid.io/img/mac-os-gpg-settings.png" alt="settings" style="width: 450px;"/></p>
+
+<p>Done.</p>
+
+<hr />
+
+<h3 id="extras">Extras.</h3>
+
+<h4 id="add-additional-email-s-to-your-gpg-key">Add additional email(s) to your GPG key</h4>
+
+<p><code>gpg --edit-key 5E6D89E5F4A1A2FC</code> which will drop you into <code>gpg&gt;</code>; type <code>adduid</code> and follow prompts. Type <code>save</code> / &lt;enter&gt; for Save and Quit or <code>quit</code> to exit.</p>
+
+<p>If you see an error, comment out <code>no-tty</code> from ~/.gnupg/gpg.conf</p>
+
+<p><em>gpg: Sorry, no terminal at all requested - can&rsquo;t get input</em></p>
+
+<p>NOTE: if you add another email you&rsquo;ll need to remove the old GPG key from GitHub and re-upload the edited version. Just run <code>gpg --armor --export 5E6D89E5F4A1A2FC | pbcopy</code>.</p>
  
                 </div>
             </div>

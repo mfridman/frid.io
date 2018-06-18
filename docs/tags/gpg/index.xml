@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gpg on frid.io</title>
+    <link>https://mfridman.github.com/frid.io/tags/gpg/</link>
+    <description>Recent content in Gpg on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Jun 2017 00:11:24 -0500</lastBuildDate>
+    
+	<atom:link href="https://mfridman.github.com/frid.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Generate GPG key, add to GitHub and verify identity</title>
+      <link>https://mfridman.github.com/frid.io/blog/gpg-and-all-that/</link>
+      <pubDate>Sat, 17 Jun 2017 00:11:24 -0500</pubDate>
+      
+      <guid>https://mfridman.github.com/frid.io/blog/gpg-and-all-that/</guid>
+      <description>But why? GPG signature verification
+A few gotchas.
+ Make sure to verify the email addresses associated with your GPG key.
+ Don&amp;rsquo;t forget to add said email(s) to your .gitconfig file.
+e.g., git config --global user.email &amp;quot;email@example.com&amp;quot; (global setting)
+ Download GPG suite, which will enable adding key(s) to the macOS keychain.
+  Before proceeding, please check for existing keys and make backups!!!
+To list keys in secret keyring run: gpg --list-secret-keys.</description>
+    </item>
+    
+  </channel>
+</rss>
