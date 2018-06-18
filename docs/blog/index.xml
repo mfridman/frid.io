@@ -29,7 +29,7 @@ A few members of DC416 and I started playing as a Team capturing digital flags.<
       
       <guid>https://mfridman.github.com/frid.io/blog/from-jekyll-to-hugo/</guid>
       <description>Done and Launched.
-Still work in progress (WIP), but here we are.
+Still a work in progress (WIP), but here we are.
 To start local server, bound to link:
 hugo server -D --disableFastRender</description>
     </item>
