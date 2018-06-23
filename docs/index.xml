@@ -164,6 +164,16 @@ Anyways, back to the challenge. I used a &amp;ldquo;cloud-based&amp;rdquo; decom
     </item>
     
     <item>
+      <title>Dealing with files in Go</title>
+      <link>https://frid.io/golang/working-with-files/</link>
+      <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/working-with-files/</guid>
+      <description>File existence Useful when you want to have consistency checking file existence, with a bit more granularity.
+func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success, file exists, exit early if err == nil { return true, nil } // check for an os.ErrNotExist, &#34;file does not exist&#34;. Return false and no errors. if os.IsNotExist(err) { return false, nil } // error from stat return false, err }  Used as follows:</description>
+    </item>
+    
+    <item>
       <title>Toolkit (WIP)</title>
       <link>https://frid.io/golang/toolkit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

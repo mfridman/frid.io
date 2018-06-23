@@ -63,6 +63,11 @@
   </url>
   
   <url>
+    <loc>https://frid.io/golang/working-with-files/</loc>
+    <lastmod>2016-03-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frid.io/</loc>
     <lastmod>2018-02-22T17:36:50-05:00</lastmod>
   </url>
@@ -118,6 +123,12 @@
   <url>
     <loc>https://frid.io/tags/docker/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/files/</loc>
+    <lastmod>2016-03-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
