@@ -64,9 +64,10 @@ A few members of DC416 and I started playing as a Team capturing digital flags.<
       
       <guid>https://frid.io/blog/from-jekyll-to-hugo/</guid>
       <description>Done and Launched.
-Still a work in progress (WIP), but here we are.
-To start local server, bound to link:
-hugo server -D --disableFastRender</description>
+Still a work in progress [WIP], but here we are.
+To start local server: hugo server -D --disableFastRender
+link
+Really liking Hugo so far!</description>
     </item>
     
     <item>
