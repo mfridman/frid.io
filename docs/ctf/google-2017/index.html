@@ -29,11 +29,16 @@
         text-align: center;
     }
 
-    .git-purple{
+    .git-purple {
         color: #6e5494;
     }
 
-    .h1, h1{
+    .warning-color{
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
         font-size: 1.8em;
     }
 
@@ -61,10 +66,6 @@
 
      
 
-    pre{
-        font-size: 80%;
-    }
-
     hr {
         border: 0;
         height: 10;
@@ -81,14 +82,24 @@
 
      
 
-    code{
+    code {
         font-size: 80%;
         color: #0086b3;
     }
 
-    .prettyprint {
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
         font-size: 80%;
-        background: #fff;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
         font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
         border: 0 !important;
     }
@@ -114,7 +125,7 @@
     li.L8,
     li.L9 {
         padding-left: 1em;
-        background-color: #fff;
+        background-color: #f6f8fa;
         list-style-type: decimal
     }
 
@@ -161,6 +172,11 @@
         .fun {
             color: #900
         }
+    }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
     }
 </style>
 
@@ -218,7 +234,7 @@
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted">
+    <div class="col-sm-3 text-muted py-1">
         Jun 2017
     </div>
     <div class="col-sm-8">

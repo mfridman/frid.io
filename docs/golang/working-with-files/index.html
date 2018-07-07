@@ -217,40 +217,79 @@
     </div>
 </nav>
                 <div class="mt-4">
-                    
+                     
+
+<h2 class="text-left">Dealing with files in Go</h2>
 
 
+<hr> 
 
-<h2 id="hi-i-m-mike-a-href-mailto-mf192-icloud-com-i-class-fa-fa-envelope-pl-3-style-color-9cc1ce-i-a">Hi, I&rsquo;m Mike <a href="mailto:mf192@icloud.com"><i class="fa fa-envelope pl-3" style="color: #9CC1CE"></i></a></h2>
+<h3 id="file-existence">File existence</h3>
 
-<p><del>Eventually, I will find <i>time</i> to update this domain</del><br />
-<del>2011,2012,2013,2014(new domain),2015,2016</del></p>
+<p>Useful when you want to have consistency checking file existence, with a bit more granularity.</p>
 
-<p>It&rsquo;s 2017(new domain), and I think I found some time! Early days but work in progress.</p>
+<pre class="prettyprint lang-go">
+func exists(file string) (bool, error) {
+    _, err := os.Stat(file)
+    // stat success, file exists, exit early
+    if err == nil {
+        return true, nil
+    }
+    // check for an os.ErrNotExist, "file does not exist". Return false and no errors.
+    if os.IsNotExist(err) {
+        return false, nil
+    }
+    // error from stat
+    return false, err
+}
+</pre>
 
-<hr />
+<p>Used as follows:</p>
 
-<h3 id="about">About</h3>
+<pre class="prettyprint lang-go">
+if ok, err := exists(f); err != nil {
+    return err // this is a true error
+} else if !ok {
+    // file does not exist
+} 
+// file exists...
+</pre>
 
-<p>I spend most of my time in the technology space. Keeping an open mind and learning new ideas &amp; concepts while drinking coffee and sometimes tea <i class="fas fa-coffee"></i>.</p>
+<h3 id="creating-files">Creating files</h3>
 
-<p>My age, divided by 2.14, is the number of years I&rsquo;ve been a proud dog owner. &#10084; 🐶</p>
+<p>This will truncate an existing file, no questions asked.</p>
 
-<p>One day I&rsquo;d like to get back into electronics as a hobby; maybe build a <a href="https://www.defcon.org/html/links/dc-badge.html">defcon</a> badge.</p>
+<pre class="prettyprint lang-go">
+f, err := os.Create(filename)
+if err != nil {
+    // error
+}
+if err = f.Close(); err != nil {
+    // error
+}
+</pre>
 
-<p>Sometimes I run, bike, snowboard, squash, read and capture digital 🚩s.</p>
+<p>A slightly better approach is to use <code>os.OpenFile</code>, because it enables tuning <em>how</em> the file is opened through <a href="https://golang.org/pkg/os/#pkg-constants">flags</a>. Append only, fail hard if file exists, etc.</p>
 
-<p><!-- Embed 500px pic --><br />
-  <!-- <div class='pixels-photo'>
-    <p>
-      <img src='https://drscdn.500px.org/photo/106998565/m%3D900/7bd66357668a048e065e0b6b810e9807' alt='Macro glimpse of the IoT by Michael Fridman on 500px.com'>
-    </p>
-    <a href='https://500px.com/photo/106998565/macro-glimpse-of-the-iot-by-michael-fridman' alt='Macro glimpse of the IoT by Michael Fridman on 500px.com'></a>
-  </div>
-  <script type='text/javascript' src='https://500px.com/embed.js'></script> --></p>
+<pre class="prettyprint lang-go">
+// open write-only file, create if non-existent, append data when writing
+f, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 
+// open read-write file, create if non-existent only, error if exists
+// can check for os.ErrExist err by calling os.IsExist()
+f, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE|os.O_EXCL, 0644)
 
+// open read-write file, create if non-existent, truncate if exists (similar behavior to os.Create())
+f, err := os.OpenFile(filename, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0644)
 
+if err != nil {
+    // error
+}
+if err := f.Close(){
+    // error
+}
+</pre>
+ 
                 </div>
             </div>
         </div>

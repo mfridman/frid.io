@@ -92,7 +92,7 @@ Given the onus is on the client to verify the identity of the host, this was a s
 Challenge: Can you read my mind? No hints.
 All you get is an input box:
 Checking the page source doesn&amp;rsquo;t reveal anything fruitful. In hindsight the name=&amp;quot;f&amp;quot; may have been a clue, but it&amp;rsquo;s subtle. (spoiler: f for file)
-1234567891011 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, what do you want to read?&amp;lt;/p&amp;gt; &amp;lt;form method=&amp;#34;GET&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;txt&amp;#34; name=&amp;#34;f&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;Read&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;</description>
+1 2 3 4 5 6 7 8 9 10 11  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, what do you want to read?</description>
     </item>
     
     <item>
@@ -174,13 +174,27 @@ func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success
     </item>
     
     <item>
-      <title>Toolkit (WIP)</title>
-      <link>https://frid.io/golang/toolkit/</link>
+      <title>Go, from around the web</title>
+      <link>https://frid.io/around_the_web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/golang/toolkit/</guid>
-      <description>Slowly migrating commonly used things here&amp;hellip;
-Upgrade Go version (Mac) Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
+      <guid>https://frid.io/around_the_web/</guid>
+      <description>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original creators for their time and contribution(s).
+In due time I&amp;rsquo;d like to:
+ add tags to the content below
+ automate syncing Go-related articles from my Pocket account
+ add a section highlighting notable corners of the internet, i.e., folks and orgs who have a tonne of great Go content
+  Some items are marked with , these are just my favorites.</description>
+    </item>
+    
+    <item>
+      <title>My Go notes</title>
+      <link>https://frid.io/my_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/my_notes/</guid>
+      <description>Slowly migrating commonly used items and internal notes to this space&amp;hellip;
+Upgrade Go version (Mac)  Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
 Go downloads
 # remove old version sudo rm -rf /usr/local/go # download a Go version, redirect output to stdout (quietly), pipe into tar and print version wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz &amp;&amp; go version # go version go1.</description>
     </item>

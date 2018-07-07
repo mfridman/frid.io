@@ -21,7 +21,7 @@
 Challenge: Can you read my mind? No hints.
 All you get is an input box:
 Checking the page source doesn&amp;rsquo;t reveal anything fruitful. In hindsight the name=&amp;quot;f&amp;quot; may have been a clue, but it&amp;rsquo;s subtle. (spoiler: f for file)
-1234567891011 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, what do you want to read?&amp;lt;/p&amp;gt; &amp;lt;form method=&amp;#34;GET&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;txt&amp;#34; name=&amp;#34;f&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;Read&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;</description>
+1 2 3 4 5 6 7 8 9 10 11  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello, what do you want to read?</description>
     </item>
     
   </channel>

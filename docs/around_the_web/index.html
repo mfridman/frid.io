@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
+    <meta name="author" content="Michael Fridman">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
+    
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.1em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .git-purple {
+        color: #6e5494;
+    }
+
+    .warning-color{
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
+        font-size: 1.8em;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+
+    hr {
+        border: 0;
+        height: 10;
+        margin: 30px 0 30px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+
+     
+
+     
+
+     
+
+    code {
+        font-size: 80%;
+        color: #0086b3;
+    }
+
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .pln {
+        color: #333
+    }
+
+    ol.linenums {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #ccc
+    }
+
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+        padding-left: 1em;
+        background-color: #f6f8fa;
+        list-style-type: decimal
+    }
+
+    @media screen {
+        .str {
+            color: #183691
+        }
+        .kwd {
+            color: #a71d5d
+        }
+        .com {
+            color: #969896
+        }
+        .typ {
+            color: #0086b3
+        }
+        .lit {
+            color: #0086b3
+        }
+        .pun {
+            color: #333
+        }
+        .opn {
+            color: #333
+        }
+        .clo {
+            color: #333
+        }
+        .tag {
+            color: navy
+        }
+        .atn {
+            color: #795da3
+        }
+        .atv {
+            color: #183691
+        }
+        .dec {
+            color: #333
+        }
+        .var {
+            color: teal
+        }
+        .fun {
+            color: #900
+        }
+    }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
+    }
+</style>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+
+</head>
+
+
+<body onload="PR.prettyPrint()">
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
+        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://gophercon.ca/static/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/blog/">blog</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/about/">about</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                     
+
+<h2 class="text-left">Go, from around the web</h2>
+
+
+<hr> <p>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original creators for their time and contribution(s).</p>
+
+<p>In due time I&rsquo;d like to:</p>
+
+<ol>
+<li>add tags to the content below<br /></li>
+<li>automate syncing Go-related articles from my Pocket account<br /></li>
+<li>add a section highlighting notable corners of the internet, i.e., folks and orgs who have a tonne of great Go content<br />
+<br /></li>
+</ol>
+
+<p>Some items are marked with <i class="fas fa-star-half warning-color"></i>, these are just my favorites. I don&rsquo;t necessarily agree with some viewpoints, idioms, styles, etc. but it&rsquo;s worthy to keep them around to foster healthy discussions.</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h3 class="text-left">Blogs & Posts</h3>
+            <ul>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://peter.bourgon.org/go-for-industrial-programming/">Go for Industrial Programming</a><br /></li>
+<li><a href="https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7">Go’s march to low-latency GC</a><br /></li>
+<li><a href="https://segment.com/blog/5-advanced-testing-techniques-in-go/">5 advanced testing techniques in Go</a><br /></li>
+<li><a href="https://research.swtch.com/vgo-intro">Go += Package Versioning (Go &amp; Versioning, Part 1)</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://about.sourcegraph.com/go/advanced-testing-in-go">Advanced Testing in Go</a><br /></li>
+<li><a href="https://www.sohamkamani.com/blog/golang/2018-06-17-golang-using-context-cancellation/">Using context cancellation in Go?</a><br />
+<a href="https://brianketelsen.com/web-assembly-and-go-a-look-to-the-future/">Web Assembly and Go: A look to the future</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html">Self-referential functions and the design of options</a><br /></li>
+<li><a href="https://medium.com/@hackintoshrao/daily-code-optimization-using-benchmarks-and-profiling-in-golang-gophercon-india-2016-talk-874c8b4dc3c5">Daily code optimization using benchmarks and profiling in Golang</a><br /></li>
+<li><a href="http://mycodesmells.com/post/profiling-with-pprof">Profiling with pprof</a><br /></li>
+<li><a href="https://blog.golang.org/race-detector">Introducing the Go Race Detector</a><br /></li>
+<li><a href="https://medium.com/@cep21/gos-append-is-not-always-thread-safe-a3034db7975">Go’s append is not always thread safe</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3">Learning Go’s Concurrency Through Illustrations</a><br /></li>
+<li><a href="http://cs-guy.com/blog/2015/01/test-main/">TestMain—What is it Good For?</a><br /></li>
+<li><a href="https://www.oreilly.com/learning/run-strikingly-fast-parallel-file-searches-in-go-with-sync-errgroup">Run strikingly fast parallel file searches in Go with sync.ErrGroup</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://commandcenter.blogspot.com/2017/12/error-handling-in-upspin.html">Error handling in Upspin</a><br /></li>
+<li><a href="https://blog.nelhage.com/2016/03/design-for-testability/">Design for Testability</a>, not Go specific but a good read<br /></li>
+<li><a href="https://splice.com/blog/lesser-known-features-go-test/">Lesser-Known Features of Go Test</a><br /></li>
+<li><a href="https://blog.nelhage.com/2016/12/how-i-test/">How I Write Tests</a><br /></li>
+<li><a href="https://commandercoriander.net/blog/2018/03/30/go-interfaces/">A Note on Using Go Interfaces Well</a><br /></li>
+<li><a href="https://blog.charmes.net/post/reverse-proxy-go/">Reverse Proxy in Go</a><br /></li>
+<li><a href="https://hackernoon.com/golang-clean-archithecture-efd6d7c43047">Trying Clean Architecture on Golang</a><br /></li>
+<li><a href="https://www.goinggo.net/2017/02/package-oriented-design.html">Package Oriented Design</a><br /></li>
+<li><a href="https://www.goinggo.net/2017/01/develop-your-design-philosophy.html">Develop Your Design Philosophy</a><br /></li>
+<li><a href="https://www.goinggo.net/2017/02/design-philosophy-on-packaging.html">Design Philosophy On Packaging</a><br /></li>
+<li><a href="https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1">Standard Package Layout</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://rakyll.org/style-packages/">Style guideline for Go packages</a><br /></li>
+<li><a href="http://goinbigdata.com/how-to-correctly-serialize-json-string-in-golang/">How To Correctly Serialize JSON String In Golang</a><br /></li>
+<li><a href="https://thenewstack.io/understanding-golang-type-system/">Understanding Golang Type System</a><br /></li>
+<li><a href="https://blog.gopheracademy.com/advent-2016/advanced-encoding-decoding/">Advanced Encoding and Decoding Techniques in Go GopherAcademy</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis">Functional options for friendly APIs</a><br /></li>
+<li><a href="https://www.calhoun.io/using-functional-options-instead-of-method-chaining-in-go/">Using functional options instead of method chaining in Go</a><br /></li>
+<li><a href="https://flaviocopes.com/go-tags/">Go Tags explained</a><br /></li>
+<li><a href="https://sosedoff.com/2016/07/16/golang-struct-tags.html">Custom struct field tags in Golang</a><br /></li>
+<li><a href="https://medium.com/@Martynas/formatting-date-and-time-in-golang-5816112bf098">Formatting date and time in Golang</a><br /></li>
+<li><a href="https://blog.robphoenix.com/go/aligning-text-in-go-with-tabwriter/">Aligning Text in Go with text/tabwriter</a><br /></li>
+<li><a href="https://medium.com/@povilasve/go-advanced-tips-tricks-a872503ac859">Go advanced testing tips &amp; tricks</a><br /></li>
+<li><a href="http://blog.golang.org/generate">Generating code</a><br /></li>
+<li><a href="https://medium.com/@cep21/aspects-of-a-good-go-library-7082beabb403">Aspects of a good Go library</a><br /></li>
+<li><a href="http://attilaolah.eu/2014/09/10/json-and-struct-composition-in-go/">JSON and struct composition in Go</a><br /></li>
+<li><a href="https://dev.to/ericnormand/global-mutable-state">Global Mutable State</a><br /></li>
+<li><a href="https://medium.com/@matryer/golang-advent-calendar-day-seventeen-io-reader-in-depth-6f744bb4320b">io.Reader in depth</a><br /></li>
+<li><a href="https://talks.golang.org/2012/10things.slide#1">10 things you (probably) don&rsquo;t know about Go</a><br /></li>
+<li><a href="https://travix.io/factory-method-pattern-in-go-2e09b233453e">Factory Method pattern in Go</a><br /></li>
+<li><a href="https://spino.tech/blog/important-go-interfaces/">Important interfaces that every Go developer should know</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://dmitri.shuralyov.com/idiomatic-go">Idiomatic Go</a><br /></li>
+<li><a href="http://elliotchance.postach.io/permalink/b173670e1d">godoc: Tips &amp; Tricks</a><br /></li>
+<li><a href="http://idiomaticgo.com/post/best-practice/accept-interfaces-return-structs/">Accept interfaces return concrete types · Craig Brookes</a><br /></li>
+<li><a href="https://medium.com/@matryer/stopping-goroutines-golang-1bf28799c1cb">Stopping Goroutines</a><br /></li>
+<li><a href="https://upgear.io/blog/simple-golang-retry-function/">Simple Golang Retry Function</a><br /></li>
+<li><a href="https://vincent.bernat.im/en/blog/2017-makefile-build-golang">A Makefile for your Go project</a><br /></li>
+<li><a href="https://golangtutorials.blogspot.com/2011/06/memory-variables-in-memory-and-pointers.html">Memory, variables in memory, and pointers</a><br /></li>
+<li><a href="https://blog.komand.com/build-a-simple-cli-tool-with-golang">Building a Simple CLI Tool with Golang</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://peter.bourgon.org/go-best-practices-2016/">Go best practices, six years in</a><br /></li>
+<li><a href="https://bridge.grumpy-troll.org/2017/04/golang-ssh-security/">Golang SSH Security</a><br /></li>
+<li><a href="https://divan.github.io/posts/go_concurrency_visualize/">Visualizing Concurrency in Go</a><br /></li>
+<li><a href="https://hackernoon.com/dancing-with-go-s-mutexes-92407ae927bf">Dancing with Go’s Mutexes</a><br /></li>
+<li><a href="https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779">Don’t use Go’s default HTTP client (in production)</a><br /></li>
+<li><a href="https://dave.cheney.net/2016/08/20/solid-go-design">SOLID Go Design</a><br /></li>
+<li><a href="http://matthewbrown.io/2016/01/23/factory-pattern-in-golang/">The factory method pattern in Go</a><br /></li>
+<li><a href="http://blog.ralch.com/tutorial/design-patterns/golang-factory-method/">Desing Patterns in Golang: Factory Method</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="http://www.minaandrawos.com/2014/09/25/class-factory-in-golang-google-go/">A Class Factory in Golang</a><br /></li>
+<li><a href="http://grisha.org/blog/2017/04/27/simplistic-go-web-app">Building a Go Web App in 2017</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://blog.cloudflare.com/the-complete-guide-to-golang-net-http-timeouts/">The complete guide to Go net/http timeouts</a><br /></li>
+<li><a href="http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/">50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs</a><br /></li>
+<li><a href="http://thenewstack.io/cli-command-line-programming-with-go/">CLI: Command Line Programming with Go</a><br /></li>
+</ul>
+
+        </div>
+        <div class="col-md">
+            <h3 class="text-left">Videos</h3>
+            <ul>
+<li><a href="https://youtu.be/F8nrpe0XWRg">Go with Versions</a><br /></li>
+<li><a href="https://youtu.be/rFejpH_tAHM">Simplicity is Complicated</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://youtu.be/KBZlN0izeiY">Understanding Channels</a><br /></li>
+<li><a href="https://youtu.be/5buaPyJ0XeQ">Do not fear first class functions</a><br /></li>
+<li><a href="https://youtu.be/tIm8UkSf6RA">Building APIs</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://youtu.be/EOpj9aZ8Kfo">The Art of Testing</a><br /></li>
+<li><a href="https://youtu.be/QDDwwePbDtw">Advanced Go Concurrency Patterns</a><br /></li>
+<li><a href="https://youtu.be/f6kdp27TYZs">Go Concurrency Patterns</a><br /></li>
+<li><a href="https://youtu.be/jEG4Qyo_4Bc">Slices: Performance through cache-friendliness</a><br /></li>
+<li><i class="fas fa-xs fa-star-half warning-color"></i><a href="https://youtu.be/yszygk1cpEc">Advanced Testing with Go, Mitchell Hashimoto</a><br /></li>
+<li><a href="https://youtu.be/ndmB0bj7eyw">Testing Techniques, Andrew Gerrand</a><br /></li>
+<li><a href="https://youtu.be/yeetIgNeIkc">Idiomatic Go Tricks</a><br /></li>
+<li><a href="https://youtu.be/yKQOunhhf4A">Concurrency made easy</a><br /></li>
+</ul>
+
+        </div>
+    </div>
+</div>
+ 
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="text-center">
+        <footer class="footer">
+    Made with
+    <a href="https://gohugo.io">Hugo</a> and hosted by
+    <a href="https://github.com">
+        <i class="fab fa-lg fa-github-alt git-purple" ></i>
+    </a>
+</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

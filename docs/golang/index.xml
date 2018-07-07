@@ -69,17 +69,5 @@ Given the onus is on the client to verify the identity of the host, this was a s
 func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success, file exists, exit early if err == nil { return true, nil } // check for an os.ErrNotExist, &#34;file does not exist&#34;. Return false and no errors. if os.IsNotExist(err) { return false, nil } // error from stat return false, err }  Used as follows:</description>
     </item>
     
-    <item>
-      <title>Toolkit (WIP)</title>
-      <link>https://frid.io/golang/toolkit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://frid.io/golang/toolkit/</guid>
-      <description>Slowly migrating commonly used things here&amp;hellip;
-Upgrade Go version (Mac) Always be wary of things you find on the internet that use a combination of wget, tar and sudo.
-Go downloads
-# remove old version sudo rm -rf /usr/local/go # download a Go version, redirect output to stdout (quietly), pipe into tar and print version wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz &amp;&amp; go version # go version go1.</description>
-    </item>
-    
   </channel>
 </rss>

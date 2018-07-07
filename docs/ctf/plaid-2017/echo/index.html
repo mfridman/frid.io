@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
     <meta name="author" content="Michael Fridman">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -29,11 +29,16 @@
         text-align: center;
     }
 
-    .git-purple{
+    .git-purple {
         color: #6e5494;
     }
 
-    .h1, h1{
+    .warning-color{
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
         font-size: 1.8em;
     }
 
@@ -61,10 +66,6 @@
 
      
 
-    pre{
-        font-size: 80%;
-    }
-
     hr {
         border: 0;
         height: 10;
@@ -81,14 +82,24 @@
 
      
 
-    code{
+    code {
         font-size: 80%;
         color: #0086b3;
     }
 
-    .prettyprint {
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
         font-size: 80%;
-        background: #fff;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
         font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
         border: 0 !important;
     }
@@ -114,7 +125,7 @@
     li.L8,
     li.L9 {
         padding-left: 1em;
-        background-color: #fff;
+        background-color: #f6f8fa;
         list-style-type: decimal
     }
 
@@ -162,6 +173,11 @@
             color: #900
         }
     }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
+    }
 </style>
 
     
@@ -201,29 +217,10 @@
     </div>
 </nav>
                 <div class="mt-4">
-                    
-<h1>
-    Echo
-    <br>
-    <small class="text-muted" style="font-size:0.5em">
-        Monday, Apr 24, 2017 &nbsp;&nbsp; | &nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/ctf">ctf</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/plaid">plaid</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/2017">2017</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/docker">docker</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/web">web</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/xor">xor</a>&nbsp;&nbsp; 
-        
-            <a href="https://frid.io/tags/command-substitution">command substitution</a>&nbsp;&nbsp; 
-        
-    </small>
-</h1>
+                     
+
+<h2 class="text-left">Echo</h2>
+
 
 <hr> 
 
@@ -252,7 +249,7 @@ If you see <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1c
 <li><p>the flag is &ldquo;encrypted&rdquo; with a bitwise XOR</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag:
       c <span style="color:#555">=</span> <span style="color:#f60">0</span>
-      towrite <span style="color:#555">=</span> <span style="color:#c30"></span><span style="color:#c30">&#39;&#39;</span>
+      towrite <span style="color:#555">=</span> <span style="color:#c30">&#39;&#39;</span>
       <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#f60">65000</span> <span style="color:#555">-</span> <span style="color:#f60">1</span>):
           k <span style="color:#555">=</span> random<span style="color:#555">.</span>randint(<span style="color:#f60">0</span>,<span style="color:#f60">127</span>)
           c <span style="color:#555">=</span> c <span style="color:#555">^</span> k
@@ -316,7 +313,7 @@ cat run.py</code></pre></div>
 <p><code>/share/flag</code> has all values of k, which enables solving for c before the last XOR.</p>
 
 <p>Here is code that would &lsquo;decrypt&rsquo; the flag:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">with</span> <span style="color:#366">open</span> (<span style="color:#c30"></span><span style="color:#c30">&#34;/share/flag&#34;</span>, <span style="color:#c30"></span><span style="color:#c30">&#34;rb&#34;</span>) <span style="color:#069;font-weight:bold">as</span> f:
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">with</span> <span style="color:#366">open</span> (<span style="color:#c30">&#34;/share/flag&#34;</span>, <span style="color:#c30">&#34;rb&#34;</span>) <span style="color:#069;font-weight:bold">as</span> f:
     x<span style="color:#555">=</span><span style="color:#f60">65000</span>
     <span style="color:#069;font-weight:bold">while</span> True:
         b <span style="color:#555">=</span> f<span style="color:#555">.</span>read(x)
@@ -336,7 +333,7 @@ cat run.py</code></pre></div>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#069;font-weight:bold">$(</span>python /tmp/s.py<span style="color:#069;font-weight:bold">)</span></code></pre></div>
 <p>audio from tweet_3 (3.wav) gave us the ASCII int</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#555">&gt;&gt;&gt;</span> flag <span style="color:#555">=</span> [<span style="color:#f60">80</span>, <span style="color:#f60">67</span>, <span style="color:#f60">84</span>, <span style="color:#f60">70</span>, <span style="color:#f60">123</span>, <span style="color:#f60">76</span>, <span style="color:#f60">49</span>, <span style="color:#f60">53</span>, <span style="color:#f60">115</span>, <span style="color:#f60">116</span>, <span style="color:#f60">51</span>, <span style="color:#f60">110</span>, <span style="color:#f60">95</span>, <span style="color:#f60">84</span>, <span style="color:#f60">48</span>, <span style="color:#f60">95</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">114</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">101</span>, <span style="color:#f60">95</span>, <span style="color:#f60">108</span>, <span style="color:#f60">97</span>, <span style="color:#f60">125</span>]
-<span style="color:#555">&gt;&gt;&gt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;&#34;</span><span style="color:#555">.</span>join(<span style="color:#366">chr</span>(x) <span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag)</code></pre></div>
+<span style="color:#555">&gt;&gt;&gt;</span> <span style="color:#c30">&#34;&#34;</span><span style="color:#555">.</span>join(<span style="color:#366">chr</span>(x) <span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag)</code></pre></div>
 <p><strong>PCTF{L15st3n_T0__reee_reeeeee_reee_la}</strong></p>
 
 <h2 id="ppp-well-done">PPP well done!</h2>
@@ -379,12 +376,9 @@ cat run.py</code></pre></div>
 </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
