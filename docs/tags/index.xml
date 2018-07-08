@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Client</title>
+      <link>https://frid.io/tags/client/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Command Substitution</title>
       <link>https://frid.io/tags/command-substitution/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
@@ -284,7 +293,7 @@
     <item>
       <title>Upspin</title>
       <link>https://frid.io/tags/upspin/</link>
-      <pubDate>Mon, 25 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/upspin/</guid>
       <description></description>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://frid.io/blog/upspin-part-2/</loc>
+    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frid.io/golang/a-new-mongodb-go-driver/</loc>
     <lastmod>2018-02-22T17:36:50-05:00</lastmod>
   </url>
@@ -74,7 +79,7 @@
   
   <url>
     <loc>https://frid.io/</loc>
-    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -83,7 +88,7 @@
   
   <url>
     <loc>https://frid.io/blog/</loc>
-    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
+    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -99,6 +104,12 @@
   
   <url>
     <loc>https://frid.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/client/</loc>
+    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -297,7 +308,7 @@
   
   <url>
     <loc>https://frid.io/tags/upspin/</loc>
-    <lastmod>2017-12-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

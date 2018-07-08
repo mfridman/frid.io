@@ -6,10 +6,26 @@
     <description>Recent content on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Feb 2018 17:36:50 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://frid.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Upspin part 2: Configuring an Upspin user</title>
+      <link>https://frid.io/blog/upspin-part-2/</link>
+      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/blog/upspin-part-2/</guid>
+      <description>Intro
+ Installing the tools
+ 1 - Download binaries directly
+ 2 - Use Go to pull and build
+  Creating a user
+ Testing your user
+  Intro To access data within the Upspin world one does not require a directory or storage server. Think of yourself as a client, i.e., a user, that was granted access to another user&amp;rsquo;s data.
+For the sake of this tutorial I&amp;rsquo;ll be hosting a publicly accessible file that any Upspin user can access.</description>
+    </item>
     
     <item>
       <title>A mongoDB Go Driver - by the mongoDB folks</title>

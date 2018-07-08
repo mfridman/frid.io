@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
+    <meta name="author" content="Michael Fridman">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
+    
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.1em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .git-purple {
+        color: #6e5494;
+    }
+
+    .warning-color{
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
+        font-size: 1.8em;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+
+    hr {
+        border: 0;
+        height: 10;
+        margin: 30px 0 30px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+
+     
+
+     
+
+     
+
+    code {
+        font-size: 80%;
+        color: #0086b3;
+    }
+
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .pln {
+        color: #333
+    }
+
+    ol.linenums {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #ccc
+    }
+
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+        padding-left: 1em;
+        background-color: #f6f8fa;
+        list-style-type: decimal
+    }
+
+    @media screen {
+        .str {
+            color: #183691
+        }
+        .kwd {
+            color: #a71d5d
+        }
+        .com {
+            color: #969896
+        }
+        .typ {
+            color: #0086b3
+        }
+        .lit {
+            color: #0086b3
+        }
+        .pun {
+            color: #333
+        }
+        .opn {
+            color: #333
+        }
+        .clo {
+            color: #333
+        }
+        .tag {
+            color: navy
+        }
+        .atn {
+            color: #795da3
+        }
+        .atv {
+            color: #183691
+        }
+        .dec {
+            color: #333
+        }
+        .var {
+            color: teal
+        }
+        .fun {
+            color: #900
+        }
+    }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
+    }
+</style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121978585-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</head>
+
+
+<body onload="PR.prettyPrint()">
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
+        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://gophercon.ca/static/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/blog/">blog</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/about/">about</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    Upspin part 2: Configuring an Upspin user
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Jun 2018 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspin">upspin</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/client">client</a>&nbsp;&nbsp;
+        
+        
+    </small>
+</h1>
+
+<hr> 
+
+<ul>
+<li><a href="#intro">Intro</a><br /></li>
+<li><a href="#install-the-upspin-tools">Installing the tools</a><br />
+
+<ul>
+<li><a href="#1-download-binaries-directly">1 - Download binaries directly</a><br /></li>
+<li><a href="#2-use-go-to-pull-and-build">2 - Use Go to pull and build</a><br /></li>
+</ul></li>
+<li><a href="#creating-an-upspin-user">Creating a user</a><br /></li>
+<li><a href="#testing-your-upspin-user">Testing your user</a><br />
+<br /></li>
+</ul>
+
+<h3 id="intro">Intro</h3>
+
+<p>To access data within the Upspin world one does not require a directory or storage server. Think of yourself as a client, i.e., a user, that was granted access to another user&rsquo;s data.</p>
+
+<p>For the sake of this tutorial I&rsquo;ll be hosting a publicly accessible file that any Upspin user can access. This is a great way to test if everything is setup correctly, available at:</p>
+
+<p><code>frid.mike@gmail.com/Public/mikes_fav_book.txt</code></p>
+
+<p>Out of the box all commands should work on a <i class="fab fa-apple"></i>, but there is no reason <i class="fab fa-linux"></i> users can&rsquo;t follow along.</p>
+
+<hr />
+
+<h4 id="install-the-upspin-tools">Install the Upspin tools</h4>
+
+<p>There are two methods, pick one, if unsure choose option 1:</p>
+
+<h5 id="1-download-binaries-directly">1 - Download binaries directly</h5>
+
+<p>Download and extract the tools inside a directory listed in your system <code>$PATH</code>. E.g., I&rsquo;ll create <code>$HOME/upspin</code> directory and add it to my <code>$PATH</code>.</p>
+
+<p>The files originate from the <a href="https://upspin.io/dl/">Download Upspin</a> page.</p>
+
+<pre class="prettyprint lang-sh">
+mkdir $HOME/upspin && cd $_
+# if you don't have wget, install homebrew from https://brew.sh/ and then wget like so:
+# brew install wget
+wget https://upspin.io/dl/upspin.darwin_amd64.tar.gz
+tar xvzf upspin.darwin_amd64.tar.gz && rm upspin.darwin_amd64.tar.gz
+ls -1
+# you should see at least the following:
+README
+cacheserver
+upspin
+upspin-audit
+upspin-ui
+upspinfs
+# permanently add the upspin tools to your PATH
+echo -e export PATH="$PATH:$HOME/upspin" >> ~/.bash_profile && . ~/.bash_profile
+# check installation
+upspin -version
+# oops
+-bash: upspin: command not found
+# good
+Build time: Jun 27 01:13:37 2018 UTC
+Git hash:   1e73992b518722f8eb59d37ad70df02179063d76
+</pre>
+
+<h5 id="2-use-go-to-pull-and-build">2 - Use Go to pull and build</h5>
+
+<p>If you&rsquo;re a Go user and understand what this means you can install the tools to <code>$GOPATH/bin</code></p>
+
+<pre class="prettyprint lang-sh">
+go get -u upspin.io/cmd/...
+# check installation
+upspin -version
+# oops
+-bash: upspin: command not found
+# good
+devel
+# if you check your $GOPATH/bin or $GOBIN you should at least see the following:
+ls -1tr $GOPATH/bin
+upspin-setupstorage
+upbox
+storeserver
+keyserver
+cacheserver
+upspin
+frontend
+dirserver
+upspin-audit
+upspinfs
+upspinserver
+
+go get -u augie.upspin.io/cmd/upspin-ui
+# which adds
+upspin-ui
+</pre>
+
+<p>At this point, do we care about all those binaries? Nope, all we need for the next few sections are:</p>
+
+<p><code>upspin</code> and <code>upspin-ui</code></p>
+
+<hr />
+
+<h3 id="creating-an-upspin-user">Creating an Upspin user</h3>
+
+<p>To create an Upspin user you&rsquo;ll need a valid email address; think of this as a user name. The email address is used <strong>one-time</strong> to verify your identity.</p>
+
+<p>To reiterate, this email address will receive a total of ONE confirmation email. It cannot be used to recover your keys, and if someone hijacks your email they CANNOT gain access to your keys. As far as Upspin is concerned, once you click on the confirmation link you can abandon or delete your email account (not saying you should, just making a point).</p>
+
+<p>Your email address, i.e., user name, is how the Upspin world identifies you and your files.</p>
+
+<p>In my opinion the shorter the email the better. A typical command looks like this:</p>
+
+<pre class="prettyprint lang-sh">
+upspin get frid.mike@gmail.com/Public/file.txt
+# where frid.mike@gmail.com is my $HOME within the Upspin world
+</pre>
+
+<p>Also note: sharable links contain email addresses, e.g., <a href="https://upspin.mfridman.com/frid.mike@gmail.com/Public">https://upspin.mfridman.com/frid.mike@gmail.com/Public</a></p>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> Lastly, the email address is permanently added to the <a href="https://key.upspin.io/log">keyserver log</a>. I don&rsquo;t think it&rsquo;s a big deal, but this may be of importance to you.</p>
+
+<p>Now let&rsquo;s create a user, thankfully this process has been made easy with the <code>upspin-ui</code> tool. Hop over to your terminal and run:</p>
+
+<pre class="prettyprint lang-sh">
+upspin-ui
+# opens a browser window at http://localhost:8000/#
+</pre>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/upspin-ui.png" alt="upspin-ui.png" style="max-width: 500px;"/>
+</div>
+
+<p>Once you enter a valid email address and click Sign Up a few things will happen:</p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/upspin-ui-2.png" alt="upspin-ui-2.png" style="max-width: 500px;"/>
+</div>
+
+<ol>
+<li>a directory with 2 files is created <code>$HOME/.ssh/fridman0101@gmail.com</code><br />
+<code>public.upspinkey</code><br />
+<code>secret.upspinkey</code><br /></li>
+<li>a human-readable &ldquo;secret seed&rdquo; string will be displayed (see above screenshot, albeit blurred)<br />
+<i class="fas fa-exclamation-triangle warning-color"></i> Write this down and store it in a secure, private place.<br />
+<i class="fas fa-exclamation-triangle warning-color"></i> Do not share your secret key or this string with anyone.<br /></li>
+<li>look out for a confirmation email from noreply@upspin.io. Open the email and click on the link:<br />
+<em>An account for &ldquo;fridman0101@gmail.com&rdquo; has been registered with the key server.</em><br /></li>
+<li>the <a href="https://upspin.io/doc/config.md">upspin config file</a> is created at <code>$HOME/upspin/config</code><br />
+<br /></li>
+</ol>
+
+<p>Once you click <em>Ok, I wrote it down</em> you&rsquo;ll be presented with an option to create servers, we&rsquo;ll be skipping this step.</p>
+
+<p>Creating an Upspin server will be covered in a separate post.</p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/upspin-ui-3.png" alt="upspin-ui-2.png" style="max-width: 500px;"/>
+</div>
+
+<p>Quit out of the browser and ^C (Control-C) to stop <code>upspin-ui</code>.</p>
+
+<p>Side note, to see &ldquo;Configure your Upspin Servers&rdquo; options again, open your <code>$HOME/upspin/config</code> file and remove these lines:</p>
+
+<p><code>dirserver:</code> and <code>storeserver:</code></p>
+
+<p>then restart upspin-ui</p>
+
+<p>For a quick one-liner on the mac:</p>
+
+<pre class="prettyprint lang-sh">
+sed -i '' -e '/^dirserver/d;/^storeserver/d' $HOME/upspin/config && upspin-ui
+</pre>
+
+<hr />
+
+<h3 id="testing-your-upspin-user">Testing your Upspin user</h3>
+
+<p>Congrats, if all went well your Upspin user should be setup. Try to read a public file I&rsquo;ve setup within the Upspin world</p>
+
+<pre class="prettyprint lang-sh">
+upspin get frid.mike@gmail.com/Public/mikes_fav_book.txt
+# ...
+</pre>
+
+<p><code>upspin get</code>: <em>writes to standard output the contents identified by the Upspin path</em></p>
+
+<p>But what is an Upspin path?</p>
+
+<p>From the <a href="https://upspin.io/doc/overview.md">docs</a>: <em>Every Upspin file name has the same basic structure. It begins with the user&rsquo;s name—an email address—followed by a slash-separated Unix-like path name</em></p>
+
+<p>Example of an Upspin path: <code>frid.mike@gmail.com/Public/mikes_fav_book.txt</code>, don&rsquo;t get hung up on the email address portion, just make a mental conversion between your email address and <code>$HOME</code>, so it feels like <code>$HOME/Public/mikes_fav_book.txt</code> within the Upspin world.</p>
+ 
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="text-center">
+        <footer class="footer">
+    Made with
+    <a href="https://gohugo.io">Hugo</a> and hosted by
+    <a href="https://pages.github.com/">
+        <i class="fab fa-lg fa-github-alt git-purple"></i>
+    </a>
+</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
