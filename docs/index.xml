@@ -58,6 +58,15 @@ A few members of DC416 and I started playing as a Team capturing digital flags.<
     </item>
     
     <item>
+      <title>Upspin part 1: My $HOME</title>
+      <link>https://frid.io/blog/upspin-part-1/</link>
+      <pubDate>Mon, 25 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/blog/upspin-part-1/</guid>
+      <description>Background For some time I imagined a world where all I&amp;rsquo;d need to access my data was something, be it a laptop, cellphone or embedded microchip, that would authenticate me and grant access to all data available to me. In this world I could bring said authentication anywhere, e.g., a library or Chiba City, and start accessing data with whatever tools available. Imagine a keyboard, mouse and monitor at the library or tablet at an airport.</description>
+    </item>
+    
+    <item>
       <title>From Jekyll to Hugo</title>
       <link>https://frid.io/blog/from-jekyll-to-hugo/</link>
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>

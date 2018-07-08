@@ -231,93 +231,72 @@ if (!doNotTrack) {
     </div>
 </nav>
                 <div class="mt-4">
-                     
+                    
+<h1>
+    Upspin part 1: My $HOME
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Dec 2017 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspin">upspin</a>&nbsp;&nbsp;
+        
+        
+    </small>
+</h1>
 
-<h2 class="text-left">Validating host keys in Go&#39;s ssh package</h2>
+<hr> 
 
+<h3 id="background">Background</h3>
 
-<hr> <p>So you upgraded the package: <code>go get -u -v golang.org/x/crypto/...</code></p>
+<p>For some time I imagined a world where all I&rsquo;d need to access my data was something, be it a laptop, cellphone or embedded microchip, that would authenticate me and grant access to all data available to me. In this world I could bring said authentication anywhere, e.g., a library or Chiba City, and start accessing data with whatever tools available. Imagine a keyboard, mouse and monitor at the library or tablet at an airport.</p>
 
-<p>and got an error: <code>ssh: must specify HostKeyCallback</code></p>
+<p>Once authenticated such a system would allow &ldquo;mounting&rdquo; data from the cloud to whatever my current device was. No matter the hardware I&rsquo;d always be accessing the same data. As a user it would feel as if the data was local to that device, i.e., my cloud data mounted locally, my <code>$HOME</code>.</p>
 
-<p>A quick google search returns this great post <a href="https://bridge.grumpy-troll.org/2017/04/golang-ssh-security/">Golang SSH Security</a>, as well as <a href="https://github.com/golang/go/issues/19767">issue#19767</a> and <a href="https://go-review.googlesource.com/c/crypto/+/38701">e4e2799</a>.</p>
+<p>The data itself would be:</p>
 
-<p>Briefly, prior to the patch users could omit <code>ssh.HostKeyCallback</code> from <code>ssh.ClientConfig</code>, allowing SSH connections to bypass host key checking and &ldquo;just work&rdquo;.</p>
+<ol>
+<li>encrypted<br /></li>
+<li>live in the cloud<br /></li>
+<li>be vendor agnostic<br /></li>
+<li>accessible <sup>24</sup>&frasl;<sub>7</sub><br />
+<br /></li>
+</ol>
 
-<p>Given the onus is on the client to verify the identity of the host, this was a step in the right direction in terms of security. E.g., <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attack</a></p>
+<p>No longer would I concern myself with &ldquo;transferring&rdquo; a notes.txt file saved locally on device A to device B, or &ldquo;downloading&rdquo; a large folder composed of videos onto a USB to share with friends. It&rsquo;s beyond the scope of this post to highlight the shortcomings of modern-day cloud storage systems within the context of this idea.</p>
 
-<p><strong>For sake of clarity, neither Go or the docs had issues. It was users misusing the library.</strong></p>
+<p>The point is <strong>simplicity</strong>, in addition to the above.</p>
 
-<hr>
+<p>This has been on my mind for some time. So when I heard about an <a href="https://youtu.be/ENLWEfi0Tkg">experimental project called Upspin</a> I was immediately intrigued.</p>
 
-<p>So what can you do?</p>
+<p class="text-muted ita"><em>Data should simply be available to any program with authenticated access rights. And of course for any person with those rights</em></p>
 
-<p>1.use <code>ssh.InsecureIgnoreHostKey()</code>, allowing almost any host key to be used.</p>
+<p>&hellip; from <a href="https://commandcenter.blogspot.com/2017/10/the-upspin-manifesto-on-ownership-and.html">The Upspin manifesto: On the ownership and sharing of data</a>.</p>
 
-<blockquote>
-<p>It should not be used for production code.</p>
-</blockquote>
+<p>That vision closely resembles, on some level, the abstract system I&rsquo;ve been envisioning. I could go into more detail, but I feel comfortable pointing the reader at the above manifesto, as Rob did a fine job articulating what we used to have, where we are now and why we need a system such as Upspin. For a more detailed overview also see the <a href="https://upspin.io/doc/overview.md">Upspin Overview</a></p>
 
-<p>2.use <code>ssh.FixedHostKey()</code> and pass in a key from known_hosts file, typically <code>$HOME/.ssh/known_hosts</code></p>
+<p>Some useful resources:</p>
 
-<hr>
+<ul>
+<li><a href="https://upspin.io/doc/">Official Docs</a><br /></li>
+<li><a href="https://groups.google.com/forum/#!forum/upspin">Google Groups - Upspin</a><br /></li>
+<li><a href="https://github.com/upspin/upspin">github.com/upspin/upspin</a><br />
+<br /></li>
+</ul>
 
-<p>For an example check out <a href="https://github.com/golang/crypto/blob/81e90905daefcd6fd217b62423c0908922eadb30/ssh/example_test.go#L143">ExampleHostKeyCheck()</a>, which assumes standard port</p>
+<p>Subsequent posts will cover:</p>
 
-<p>Some gotchas, if you have many hosts with varying ports on a single domain or IP address the above snippet will match the <strong>first occurrence</strong>, return <em>an</em> incorrect host key to the caller and <code>ssh.Dial()</code> will eventually fail:</p>
+<ul>
+<li><a href="https://frid.io/blog/upspin-part-2">setting up a client to access data within the Upspin world</a><br /></li>
+<li>a server to host data<br /></li>
+<li>a typical workflow for using Upspin<br /></li>
+<li><a href="https://frid.io/blog/upspin-part-5">advanced tips and tricks</a><br />
+<br /></li>
+</ul>
 
-<p><code>ssh: handshake failed: ssh: host key mismatch</code></p>
-
-<p>Another issue is if you have many hosts to check, you don&rsquo;t want the entire program to exit due to a single failed host key check, watch out for <code>log.Fatalf</code> which is <code>Printf()</code> followed by call to <code>os.Exit(1)</code></p>
-
-<p>Furthermore, for non-standard ports you&rsquo;ll need to modify the above snippet. Because non-standard ports have hostnames enclosed with square brackets followed by a colon and the port number:</p>
-
-<pre class="prettyprint linenums">
-[ssh.example.com]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
-[ssh.example.com]:1999,[93.184.216.34]:1999 ssh-rsa AAAAB3Nza...vguvx+81N1xaw==
-</pre>
-
-<hr>
-
-<p>A slightly different approach may be to validate the port: <a href="https://gist.github.com/mfridman/a1c93596441bb4f5ed514e22ba483989#file-go-ssh-hostkey-go-L4">validatePort()</a></p>
-
-<pre class="prettyprint lang-go linenums">
-port, err := validatePort(SSHport)
-if err != nil {
-    // handle error
-}
-</pre>
-
-<p>Then pass hostname &amp; port into a slightly modified ExampleHostKeyCheck function: <a href="https://gist.github.com/mfridman/a1c93596441bb4f5ed514e22ba483989#file-go-ssh-hostkey-go-L17">checkHostKey()</a></p>
-
-<pre class="prettyprint lang-go linenums">
-hostKey, err := checkHostKey(hostname, port)
-if err != nil {
-    // handle error
-}
-</pre>
-
-<p>Initialize <code>ssh.ClientConfig</code> and set <code>HostKeyCallback</code> with <code>ssh.FixedHostKey(hostKey)</code></p>
-
-<pre class="prettyprint lang-go linenums">
-// this is an example
-conf := &ssh.ClientConfig{
-    User: username,
-    Auth: []ssh.AuthMethod{
-        ssh.Password("is{pass1234}g00Den0ugh?")
-    },
-    HostKeyCallback: ssh.FixedHostKey(hostKey),
-    Timeout: 2 * time.Second,
-}
-</pre>
-
-<p>Once the bits and pieces are in place attempt to connect to the remote server and perform an SSH handshake</p>
-
-<pre class="prettyprint lang-go linenums">
-client, err := ssh.Dial("tcp", hostname+":"+port, conf)
-</pre>
-
-<p>At each step prior to <code>ssh.Dial()</code> errors can be handled gracefully.</p>
+<div class="text-center">
+    <img src="https://frid.io/img/augie.jpg" alt="augie" style="max-width: 100px;"/><strong>Augie</strong> is the <a href="https://upspin.io/doc/mascot.md">Upspin mascot</a>, designed by Renee French.
+</div>
  
                 </div>
             </div>
