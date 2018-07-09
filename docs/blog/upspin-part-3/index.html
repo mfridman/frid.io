@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
+    <meta name="author" content="Michael Fridman">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
+    
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.1em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .git-purple {
+        color: #6e5494;
+    }
+
+    .warning-color{
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
+        font-size: 1.8em;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+
+    hr {
+        border: 0;
+        height: 10;
+        margin: 30px 0 30px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+
+     
+
+     
+
+     
+
+    code {
+        font-size: 80%;
+        color: #0086b3;
+    }
+
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .pln {
+        color: #333
+    }
+
+    ol.linenums {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #ccc
+    }
+
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+        padding-left: 1em;
+        background-color: #f6f8fa;
+        list-style-type: decimal
+    }
+
+    @media screen {
+        .str {
+            color: #183691
+        }
+        .kwd {
+            color: #a71d5d
+        }
+        .com {
+            color: #969896
+        }
+        .typ {
+            color: #0086b3
+        }
+        .lit {
+            color: #0086b3
+        }
+        .pun {
+            color: #333
+        }
+        .opn {
+            color: #333
+        }
+        .clo {
+            color: #333
+        }
+        .tag {
+            color: navy
+        }
+        .atn {
+            color: #795da3
+        }
+        .atv {
+            color: #183691
+        }
+        .dec {
+            color: #333
+        }
+        .var {
+            color: teal
+        }
+        .fun {
+            color: #900
+        }
+    }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
+    }
+</style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121978585-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</head>
+
+
+<body onload="PR.prettyPrint()">
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
+        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://gophercon.ca/static/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/blog/">blog</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/about/">about</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                    
+<h1>
+    Upspin part 3: Configuring an Upspin server [WIP]
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Jul 2018 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspin">upspin</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspinserver">upspinserver</a>&nbsp;&nbsp;
+        
+        
+    </small>
+</h1>
+
+<hr> 
+
+<h3 id="please-note-this-is-a-work-in-progress-and-some-items-below-may-change-without-notice">Please note: this is a work in progress and some items below may change without notice</h3>
+
+<ul>
+<li><a href="#intro">Intro</a><br /></li>
+<li><a href="#prerequisites">Prerequisites</a><br /></li>
+<li><a href="#tell-upspin-about-host-name">Tell Upspin about your host name</a><br /></li>
+<li><a href="#configure-domain">Configure a custom domain</a><br /></li>
+<li><a href="#setup-a-static-ip">Setup a static IP</a><br /></li>
+<li><a href="#create-dns-record">Create a DNS record</a><br /></li>
+<li><a href="#build-upspinserver-binary-with-go">Build upspinserver binary with Go</a><br />
+
+<ul>
+<li><a href="#1-install-go-on-64-bit-x86-linux">Install Go on 64-bit x86 on Linux</a><br /></li>
+<li><a href="#2-build-upspinserver-binary">Build upspinserver binary</a><br /></li>
+</ul></li>
+<li><a href="#configure-upspinserver-on-ubuntu-18-04">Configure upspinserver on Ubuntu 18.04</a><br /></li>
+<li><a href="#test-your-installation">Test your installation</a><br />
+<br /></li>
+</ul>
+
+<h3 id="intro">Intro</h3>
+
+<p>In this tutorial we&rsquo;ll be setting up an <code>upspinserver</code> on an Ubuntu 18.04 x64 VM on <a href="https://www.digitalocean.com/">DigitalOcean</a>.</p>
+
+<p>Our <code>upspinserver</code> will be composed of a directory and store server, aka dir/store. In theory you could host them separately, but for simplicity we&rsquo;ll keep them together on the same machine.</p>
+
+<p>As a side note, the <code>upspin-ui</code> command can automate an Upspin deployment to GCP, but we&rsquo;ll be taking the manual route.</p>
+
+<p><strong>Do remember it&rsquo;s irrelevant which platform you choose.</strong></p>
+
+<p>The official docs can be found here: <a href="https://upspin.io/doc/server_setup.md">Setting up upspinserver</a>.</p>
+
+<hr />
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In <a href="https://frid.io/blog/upspin-part-2">part 2</a> you already setup an Upspin user. For this tutorial I&rsquo;ll be using: <code>fridman0101@gmail.com</code></p>
+
+<p>You should also have an Internet domain where you can add DNS records. I&rsquo;ll be using: <code>upspin.online</code></p>
+
+<p>and the host name of the server (for both dir/store) will be: <code>my.upspin.online</code></p>
+
+<hr />
+
+<h3 id="tell-upspin-about-host-name">Tell Upspin about host name</h3>
+
+<p>We do not need to run <code>upspin signup</code> because we already created a user with <code>upspin-ui</code> in <a href="https://frid.io/blog/upspin-part-2">part 2</a>.</p>
+
+<p>Instead we need to tell the Upspin world that we have chosen a location for our dir/store server, accessible at the same host name.</p>
+
+<p>Currently the <a href="https://key.upspin.io/log">keyserver</a> has no knowledge our dir/store server:</p>
+
+<pre><code>&quot;Dirs&quot;:null,&quot;Stores&quot;:null
+</code></pre>
+
+<p>So we modify our <code>$HOME/upspin/config</code> file by adding <code>dirserver:</code> and <code>storeserver:</code>, substitute with your own domain.</p>
+
+<p>Again, for the sake of this tutorial dir/store will live on the same machine and accessible with a single host name.</p>
+
+<pre class="prettyprint lang-sh">
+username: fridman0101@gmail.com
+dirserver: my.upspin.online
+storeserver: my.upspin.online
+packing: ee
+cmdflags:
+  cacheserver:
+    writethrough
+</pre>
+
+<pre class="prettyprint lang-sh">
+upspin user | upspin user -put
+# which will update the keyserver 
+# upspin: user: local configuration differs from public record in key server:
+# dirs in configuration: [remote,my.upspin.online:443]
+# dirs in key server: []
+</pre>
+
+<p>Now the <a href="https://key.upspin.io/log">keyserver</a> will return:</p>
+
+<pre><code>&quot;Dirs&quot;:[&quot;remote,my.upspin.online:443&quot;],&quot;Stores&quot;:[&quot;remote,my.upspin.online:443&quot;]
+</code></pre>
+
+<hr />
+
+<h3 id="configure-domain">Configure domain</h3>
+
+<p>We will not be using the <code>-cluster</code> flag, because dir/store live on the same machine.</p>
+
+<p><em>When -cluster is not specified, keys for a single user (upspin@domain) are generated</em></p>
+
+<pre class="prettyprint lang-sh">
+upspin setupdomain -domain=upspin.online
+# which will return a bunch of text...
+</pre>
+
+<p>A few things to note:</p>
+
+<ol>
+<li>The &ldquo;secret seed&rdquo;:<br />
+<i class="fas fa-exclamation-triangle warning-color"></i> Write this down and store it in a secure, private place.<br />
+<i class="fas fa-exclamation-triangle warning-color"></i> Do not share your secret key or this string with anyone.<br /></li>
+<li><code>$HOME/upspin/deploy/upspin.online</code> is created<br />
+<br /></li>
+</ol>
+
+<p>Next we need to prove that our user name, <code>fridman0101@gmail.com</code> is the same user that owns (or has access to) the domain <code>upspin.online</code></p>
+
+<p>This step will vary depending on your internet domain registrar, here is an example for <a href="https://www.namecheap.com/">namecheap</a>:</p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/name-cheap-1.png" alt="name-cheap-1.png" class="img-fluid"/>
+</div>
+
+<p>Domain List &gt; Advanced DNS &gt; add a TXT record as specified in the resulting text from the <code>upspin setupdomain -domain=upspin.online</code> command.</p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/name-cheap-2.png" alt="name-cheap-2.png" class="img-fluid"/>
+</div>
+
+<p>At this point you&rsquo;ll be waiting either a few minutes or a few hours for changes to propagate. You can run the following command to check the status:</p>
+
+<pre class="prettyprint lang-sh">
+host -t TXT upspin.online
+# should return
+# upspin.online descriptive text "upspin:a4386744462680e3c2243ce4cd409eb49402452f6a241..."
+
+# oops
+# .. has no TXT record
+# either keep waiting or double-check your configuration (consult the official Upspin docs if necessary)
+</pre>
+
+<hr />
+
+<h4 id="setup-a-static-ip">Setup a static IP</h4>
+
+<p>This step will be carried out on your cloud provider, e.g., AWS, GCP, Linode, etc. in my case it&rsquo;s DigitalOcean.</p>
+
+<p>You&rsquo;ll want your VM to have a static IP. On DigitalOcean navigate to Networking &gt; Floating IPs and assign your droplet a floating, i.e., static, IPv4 address.</p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/digital-ocean-1.png" alt="digital-ocean-1.png" class="img-fluid" width=75%/>
+</div>
+
+<hr />
+
+<h4 id="create-dns-record">Create DNS record</h4>
+
+<p>Now we tell our registrar that our subdomain, <code>my.upspin.online</code>, should point at the static IP of our VM.</p>
+
+<p>Here is a screenshot from namecheap or follow this <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-do-i-create-a-subdomain-for-my-domain">guide</a></p>
+
+<div class="text-center pb-3">
+    <img  src="https://frid.io/img/name-cheap-3.png" alt="name-cheap-3.png" class="img-fluid"/>
+</div>
+
+<hr />
+
+<h3 id="build-upspinserver-binary-with-go">Build upspinserver binary with Go</h3>
+
+<p>We&rsquo;re now going to <code>ssh</code> to our remote VM, in my case it&rsquo;s a droplet on DigitalOcean running:</p>
+
+<pre class="prettyprint lang-sh">
+lsb_release -d
+# Description:  Ubuntu 18.04 LTS
+</pre>
+
+<h5 id="1-install-go-on-64-bit-x86-linux">1 - Install Go on 64-bit x86 Linux</h5>
+
+<pre class="prettyprint lang-sh">
+wget -qO- https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz | sudo tar -C /usr/local -xz
+export PATH=$PATH:/usr/local/go/bin # or add to .bash_profile
+go version
+# go version go1.10.3 linux/amd64
+</pre>
+
+<h5 id="2-build-upspinserver-binary">2 - Build upspinserver binary</h5>
+
+<pre class="prettyprint lang-sh">
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+# or add exports to .bash_profile
+
+go get -u upspin.io/cmd/upspinserver
+# this will install the binary to $HOME/go/bin
+</pre>
+
+<hr />
+
+<h3 id="configure-upspinserver-on-ubuntu-18-04">Configure upspinserver on Ubuntu 18.04</h3>
+
+<p>We&rsquo;ll setup a non-root user, in my case it&rsquo;ll be <code>mfridman</code>, substitute your own.</p>
+
+<p>These commands must be executed as <code>root</code></p>
+
+<pre class="prettyprint lang-sh">
+useradd -m mfridman -s /bin/bash
+# passwd mfridman # no need for passwd, just keeping this here
+su mfridman
+cd $HOME
+mkdir -p upspin/letsencrypt
+mkdir .ssh
+chmod 0700 .ssh
+# copy your public key (for easy ssh access) to .ssh/authorized_keys
+vi .ssh/authorized_keys
+chmod 0600 .ssh/authorized_keys
+</pre>
+
+<pre class="prettyprint lang-sh">
+# create a systemd file, assumes you're running systemd
+touch /etc/systemd/system/upspinserver.service
+</pre>
+
+<p>add the following systemd service definition to the above .service file</p>
+
+<pre><code>[Unit]
+Description=Upspin server
+
+[Service]
+ExecStart=/home/mfridman/upspinserver
+User=mfridman
+Group=mfridman
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+
+<p>Copy the <code>upspinserver</code> to our newly created user&rsquo;s home directory and change its ownership:</p>
+
+<pre class="prettyprint lang-sh">
+# we're doing this because we were previously logged in as root
+cp $HOME/go/bin/upspinserver /home/mfridman && chown mfridman:mfridman /home/mfridman/upspinserver
+</pre>
+
+<p>This chunk is copied directly from the <a href="https://upspin.io/doc/server_setup_ubuntu.md">official docs</a></p>
+
+<p><em>Normally only user root can bind ports below 1024. Instead of running upspinserver as root (which is generally discouraged), we will grant the upspinserver binary this capability by using setcap (as root):</em></p>
+
+<pre class="prettyprint lang-sh">
+setcap cap_net_bind_service=+ep /home/mfridman/upspinserver
+</pre>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> <em>Note that you need to run this setcap command whenever the upspinserver binary is updated.</em></p>
+
+<p>And finally enable the upspinserver systemd service (as root):</p>
+
+<pre class="prettyprint lang-sh">
+systemctl enable --now /etc/systemd/system/upspinserver.service
+# to stop service 
+systemctl stop upspinserver.service
+# start
+systemctl start upspinserver.service
+# view logs 
+journalctl -f -u upspinserver
+</pre>
+
+<p>Is it working? open a web browser and navigate to your host name, i.e., subdomain, <a href="https://my.upspin.online">https://my.upspin.online</a> and you should see <em>Unconfigured Upspin Server</em></p>
+
+<p>Also, the server at this point is running in &ldquo;setup mode&rdquo;. If you check the logs there will be a line that&rsquo;ll read:</p>
+
+<p><em>unable to read configuration: open /home/mfridman/upspin/server/serverconfig.json: no such file or directory</em></p>
+
+<p>This is good, real good!</p>
+
+<h3 id="configure-upspinserver">Configure upspinserver</h3>
+
+<p>Now we go back to our local machine, where we ran the command <code>upspin setupdomain -domain=upspin.online</code> in the <a href="#configure-domain">Configure a custom domain</a> section and run:</p>
+
+<p>Note that this command does A LOT.</p>
+
+<p><em>It registers the user created by &lsquo;setupdomain&rsquo; domain with the key server,<br />
+copies the configuration files from $where/$domain to the upspinserver and<br />
+restarts it, puts the Writers file, and makes the root for the calling user.</em></p>
+
+<pre class="prettyprint lang-sh">
+upspin setupserver -host=my.upspin.online -domain=upspin.online
+# should see 
+# Successfully put "upspin@upspin.online" to the key server.
+# Configured upspinserver at "my.upspin.online:443".
+# Created root "fridman0101@gmail.com".
+</pre>
+
+<p>Side note, if you mess up navigate to <a href="https://frid.io/blog/upspin-part-5">advanced tips and tricks</a>, I&rsquo;ll have a section on fixing this up.</p>
+
+<p>On the remote server, you&rsquo;ll notice a new folder <code>/home/mfridman/upspin/server</code> which contains a bunch of goodies.</p>
+
+<p>If you open the browser and navigate to your Upspin URL: <a href="https://my.upspin.online/">https://my.upspin.online/</a> it should return a <code>404</code></p>
+
+<h3 id="test-your-installation">Test your installation</h3>
+
+<p>Place a file into the Upspin world:</p>
+
+<pre class="prettyprint lang-sh">
+echo "We made it" | upspin put fridman0101@gmail.com/made-it.txt
+</pre>
+
+<p>Retrieve that file</p>
+
+<pre class="prettyprint lang-sh">
+upspin get fridman0101@gmail.com/made-it.txt
+# We made it
+</pre>
+ 
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="text-center">
+        <footer class="footer">
+    Made with
+    <a href="https://gohugo.io">Hugo</a> and hosted by
+    <a href="https://pages.github.com/">
+        <i class="fab fa-lg fa-github-alt git-purple"></i>
+    </a>
+</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

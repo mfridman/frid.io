@@ -6,10 +6,40 @@
     <description>Recent content on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://frid.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Upspin part 5: Advanced tips and tricks [WIP]</title>
+      <link>https://frid.io/blog/upspin-part-5/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/blog/upspin-part-5/</guid>
+      <description>Please note: this is a work in progress and some items below may change without notice  FUSE daemon, upspinfs and cacheserver
+ I lost my Domain keys, now what?
+  FUSE daemon, upspinfs and cacheserver The bread and butter of Upspin is being able to bring your remote data into the local namespace, so those items look and feel as if they are part of the local file tree.</description>
+    </item>
+    
+    <item>
+      <title>Upspin part 3: Configuring an Upspin server [WIP]</title>
+      <link>https://frid.io/blog/upspin-part-3/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/blog/upspin-part-3/</guid>
+      <description>Please note: this is a work in progress and some items below may change without notice  Intro
+ Prerequisites
+ Tell Upspin about your host name
+ Configure a custom domain
+ Setup a static IP
+ Create a DNS record
+ Build upspinserver binary with Go
+ Install Go on 64-bit x86 on Linux
+ Build upspinserver binary
+  Configure upspinserver on Ubuntu 18.04
+ Test your installation</description>
+    </item>
     
     <item>
       <title>Upspin part 2: Configuring an Upspin user</title>

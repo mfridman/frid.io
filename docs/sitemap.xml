@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://frid.io/blog/upspin-part-5/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/blog/upspin-part-3/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frid.io/blog/upspin-part-2/</loc>
     <lastmod>2018-06-18T00:00:00+00:00</lastmod>
   </url>
@@ -79,7 +89,7 @@
   
   <url>
     <loc>https://frid.io/</loc>
-    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -88,7 +98,7 @@
   
   <url>
     <loc>https://frid.io/blog/</loc>
-    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -99,6 +109,18 @@
   <url>
     <loc>https://frid.io/tags/2017/</loc>
     <lastmod>2017-12-24T21:04:50-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/advanced/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/cacheserver/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,6 +167,12 @@
   <url>
     <loc>https://frid.io/tags/files/</loc>
     <lastmod>2016-03-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/fuse/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -307,8 +335,26 @@
   </url>
   
   <url>
+    <loc>https://frid.io/tags/tipstricks/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://frid.io/tags/upspin/</loc>
-    <lastmod>2018-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/upspinfs/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/upspinserver/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

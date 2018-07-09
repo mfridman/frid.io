@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.42.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
@@ -233,149 +232,131 @@ if (!doNotTrack) {
 </nav>
                 <div class="mt-4">
                     
-<blockquote class="blockquote text-left small py-2">
-    <p>Stay hungry, keep learning, help others, be humble.</p>
-    <p>Jotting down today's ideas/ notes/ opinions for my future-self and others with similar interests. time.Now() changes,
-        and so may the aforementioned.</p>
-</blockquote>
+<h1>
+    Upspin part 5: Advanced tips and tricks [WIP]
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Jul 2018 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspin">upspin</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/fuse">fuse</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/cacheserver">cacheserver</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/upspinfs">upspinfs</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/advanced">advanced</a>&nbsp;&nbsp;
+        
+        
+        <a href="https://frid.io/tags/tipstricks">tips&amp;tricks</a>&nbsp;&nbsp;
+        
+        
+    </small>
+</h1>
 
-<h2>Recent:</h2>
+<hr> 
 
+<h3 id="please-note-this-is-a-work-in-progress-and-some-items-below-may-change-without-notice">Please note: this is a work in progress and some items below may change without notice</h3>
 
+<ul>
+<li><a href="#fuse-daemon-and-upspinfs">FUSE daemon, upspinfs and cacheserver</a><br /></li>
+<li><a href="#i-lost-my-domain-keys">I lost my Domain keys, now what?</a><br />
+<br /></li>
+</ul>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Jul 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/upspin-part-5/">Upspin part 5: Advanced tips and tricks [WIP]</a>
-    </div>
-</div>
+<h4 id="fuse-daemon-upspinfs-and-cacheserver">FUSE daemon, upspinfs and cacheserver</h4>
 
+<p>The bread and butter of Upspin is being able to bring your remote data into the local namespace, so those items <em>look and feel</em> as if they are part of the local file tree.</p>
 
+<p>Before we proceed we need tools:</p>
 
+<p><a href="https://github.com/osxfuse/osxfuse#build-instructions">https://github.com/osxfuse/osxfuse#build-instructions</a></p>
 
+<pre class="prettyprint lang-sh">
+brew install autoconf automake libtool gettext
+brew link --force gettext
+</pre>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Jul 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/upspin-part-3/">Upspin part 3: Configuring an Upspin server [WIP]</a>
-    </div>
-</div>
+<p>I&rsquo;ll be grabbing the latest release from <a href="https://github.com/osxfuse/osxfuse/releases/tag/osxfuse-3.8.0">github.com/osxfuse/osxfuse</a>. In this example I&rsquo;m downloading and installing <code>osxfuse-3.8.0.dmg</code> with the defaults.</p>
 
+<p>If you don&rsquo;t have FUSE, or it&rsquo;s installed incorrectly you&rsquo;ll get an error:</p>
 
+<p><em>FUSE for macOS is not installed. See <a href="https://osxfuse.github.io/">https://osxfuse.github.io/</a></em></p>
 
+<p>Next we update our Upspin config file to include a cache server (makes everything faster). By default the config file is located in <code>$HOME/upspin/config</code></p>
 
+<pre class="prettyprint lang-sh">
+echo -e "cache: yes" >> $HOME/upspin/config
+</pre>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Jun 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/upspin-part-2/">Upspin part 2: Configuring an Upspin user</a>
-    </div>
-</div>
+<p>The <code>cacheserver</code> is started automatically when you run either the <code>upspin</code> or <code>upspinfs</code> command. We can override the default behaviour with config file and flags (if supplied, flags take precedent).</p>
 
+<p>The default cache is located <code>$HOME/upspin/frid.mike@gmail.com/fscache/tmp</code></p>
 
+<p>As a personal preference I prefer the cacheserver to be in writethrough mode instead of writeback. So I add the following to my <code>$HOME/upspin/config</code></p>
 
+<pre class="prettyprint lang-sh">
+echo -e "cmdflags:\n  cacheserver:\n    writethrough\n" >> $HOME/upspin/config
+cat $HOME/upspin/config
+# would look something like this
+username: frid.mike@gmail.com
+dirserver: upspin.mfridman.com
+storeserver: upspin.mfridman.com
+packing: ee
+cmdflags:
+  cacheserver:
+    writethrough
+</pre>
 
+<p>My Upspin mountpoint is a directory located at <code>$HOME/u</code></p>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
-    </div>
-</div>
+<pre class="prettyprint lang-sh">
+mkdir $HOME/u
+upspinfs $HOME/u &
+# good
+[1] 33387
 
+cd ~/u/frid.mike@gmail.com/Public
+$ tree
+.
+├── Access
+├── augie.png
+├── gopherfest2017.webm
+├── mikes_fav_book.txt
+├── this_is_fine.jpg
+└── this_is_fine_gopher.png
 
+0 directories, 6 files
 
+# once you're finished cd home, kill the process and unmount
+cd && killall -9 upspinfs && umount $HOME/u
 
+# if you forget to kill the process you'll get an error next time
+# fuse.Mount failed: mount_osxfusefs: exit status 64
+</pre>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - #golang part1</a>
-    </div>
-</div>
+<h4 id="i-lost-my-domain-keys">I lost my Domain keys</h4>
 
+<p>Well, if you have your &ldquo;secret seed&rdquo; string you&rsquo;re in luck</p>
 
+<pre class="prettyprint lang-sh">
+upspin keygen -curve p256 -secretseed your-secret-seed-that.you-promised-to-save $HOME/upspin/deploy/frid.io
+</pre>
 
+<h3 id="how-expose-a-public-folder">How expose a /Public folder</h3>
 
+<p><a href="https://upspin.mfridman.com/frid.mike@gmail.com/Public">https://upspin.mfridman.com/frid.mike@gmail.com/Public</a></p>
 
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - #golang part2</a>
-    </div>
-</div>
+<h3 id="how-to-run-a-separate-directory-and-store-servers">How to run a separate directory and store servers</h3>
 
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Dec 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/year-end-2017/">Year End 2017</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Dec 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/upspin-part-1/">Upspin part 1: My $HOME</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Dec 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/from-jekyll-to-hugo/">From Jekyll to Hugo</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Sep 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/golang/go-ssh-hostkey/">Validating host keys in Go&#39;s ssh package</a>
-    </div>
-</div>
-
-
-
-<div class="text-center">
-    
-</div>
-
-
+<p>&hellip;</p>
+ 
                 </div>
             </div>
         </div>

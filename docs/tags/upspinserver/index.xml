@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Upspinserver on frid.io</title>
+    <link>https://frid.io/tags/upspinserver/</link>
+    <description>Recent content in Upspinserver on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://frid.io/tags/upspinserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Upspin part 3: Configuring an Upspin server [WIP]</title>
+      <link>https://frid.io/blog/upspin-part-3/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/blog/upspin-part-3/</guid>
+      <description>Please note: this is a work in progress and some items below may change without notice  Intro
+ Prerequisites
+ Tell Upspin about your host name
+ Configure a custom domain
+ Setup a static IP
+ Create a DNS record
+ Build upspinserver binary with Go
+ Install Go on 64-bit x86 on Linux
+ Build upspinserver binary
+  Configure upspinserver on Ubuntu 18.04
+ Test your installation</description>
+    </item>
+    
+  </channel>
+</rss>

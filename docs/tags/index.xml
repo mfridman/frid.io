@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Advanced</title>
+      <link>https://frid.io/tags/advanced/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/advanced/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cacheserver</title>
+      <link>https://frid.io/tags/cacheserver/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/cacheserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Client</title>
       <link>https://frid.io/tags/client/</link>
       <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
@@ -71,6 +89,15 @@
       <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/files/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuse</title>
+      <link>https://frid.io/tags/fuse/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/fuse/</guid>
       <description></description>
     </item>
     
@@ -291,11 +318,38 @@
     </item>
     
     <item>
+      <title>Tipstricks</title>
+      <link>https://frid.io/tags/tipstricks/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/tipstricks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Upspin</title>
       <link>https://frid.io/tags/upspin/</link>
-      <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/upspin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upspinfs</title>
+      <link>https://frid.io/tags/upspinfs/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/upspinfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upspinserver</title>
+      <link>https://frid.io/tags/upspinserver/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/upspinserver/</guid>
       <description></description>
     </item>
     
