@@ -83,6 +83,11 @@
   </url>
   
   <url>
+    <loc>https://frid.io/golang/goroutine-patterns/</loc>
+    <lastmod>2016-12-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frid.io/golang/working-with-files/</loc>
     <lastmod>2016-03-21T00:00:00+00:00</lastmod>
   </url>

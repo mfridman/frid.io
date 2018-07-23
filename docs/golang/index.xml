@@ -60,6 +60,17 @@ Given the onus is on the client to verify the identity of the host, this was a s
     </item>
     
     <item>
+      <title>Channel your inner communication, little goroutines</title>
+      <link>https://frid.io/golang/goroutine-patterns/</link>
+      <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/goroutine-patterns/</guid>
+      <description>Below are some patterns and ideas I&amp;rsquo;ve come across wrt channels and goroutines. Just remember&amp;hellip;
+...if you reach into your toolbox and decide to use goroutines always ask: how  and when  will those goroutines stop  This section will likely be split off into more specific posts in the future.
+limit number of working goroutines with a channel Often times you don&amp;rsquo;t need thousands of goroutines working at once, especially true when communicating with external resources, e.</description>
+    </item>
+    
+    <item>
       <title>Dealing with files in Go</title>
       <link>https://frid.io/golang/working-with-files/</link>
       <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
