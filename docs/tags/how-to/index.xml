@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How To on frid.io</title>
+    <link>https://frid.io/tags/how-to/</link>
+    <description>Recent content in How To on frid.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://frid.io/tags/how-to/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome, Go modules - part2</title>
+      <link>https://frid.io/golang/go-modules-part2/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/go-modules-part2/</guid>
+      <description>Go modules: part 1, part 2, part 3  The module commands relating to go mod may change: cl#126655, I&amp;rsquo;ll do my best to edit this post to reflect reality.
+Go module From the docs: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
+ a go.mod file is located in the root of your package. This location marks the module root, containing all packages in the root and subdirectories</description>
+    </item>
+    
+  </channel>
+</rss>

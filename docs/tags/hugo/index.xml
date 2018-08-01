@@ -21,7 +21,8 @@
 Still a work in progress [WIP], but here we are.
 To start local server: hugo server -D --disableFastRender
 link
-Really liking Hugo so far!</description>
+Really liking Hugo so far!
+To link a page within the site, e.g., part 2</description>
     </item>
     
   </channel>

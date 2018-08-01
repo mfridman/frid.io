@@ -12,19 +12,7 @@
     
     
     <item>
-      <title>Shine on You Crazy Interface - #golang part1</title>
-      <link>https://frid.io/golang/shine-on-you-crazy-interface/</link>
-      <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
-      
-      <guid>https://frid.io/golang/shine-on-you-crazy-interface/</guid>
-      <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
-Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
-In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
-The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at an example.</description>
-    </item>
-    
-    <item>
-      <title>Shine on You Crazy Interface - #golang part2</title>
+      <title>Shine on You Crazy Interface - part2</title>
       <link>https://frid.io/golang/shine-on-you-crazy-interface2/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
@@ -32,6 +20,18 @@ The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at 
       <description>No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
 Notice in part1 we actually made use of this interface to format the songs type.
 func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name+&#34; &#34;+fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:</description>
+    </item>
+    
+    <item>
+      <title>Shine on You Crazy Interface - part1</title>
+      <link>https://frid.io/golang/shine-on-you-crazy-interface/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/shine-on-you-crazy-interface/</guid>
+      <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
+Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
+In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
+The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at an example.</description>
     </item>
     
   </channel>

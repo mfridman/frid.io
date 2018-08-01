@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
+    <meta name="author" content="Michael Fridman">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
+    
+    <style type="text/css">
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #fdfdfd;
+        font-size: 1.1em;
+    }
+
+    .navbar {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.5em;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .git-purple {
+        color: #6e5494;
+    }
+
+    .warning-color {
+        color: #FDDD00;
+    }
+
+    .h1,
+    h1 {
+        font-size: 1.8em;
+    }
+
+     
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+         
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+         
+        height: 60px;
+        line-height: 60px;
+         
+    }
+
+     
+
+    hr {
+        border: 0;
+        height: 10;
+        margin: 30px 0 30px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+
+     
+
+     
+
+     
+
+    code {
+        font-size: 80%;
+        color: #0086b3;
+    }
+
+    pre {
+        padding: 10px;
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .prettyprint {
+        white-space: pre-wrap;
+        font-size: 80%;
+        background: #f6f8fa;
+        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+        border: 0 !important;
+    }
+
+    .pln {
+        color: #333
+    }
+
+    ol.linenums {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #ccc
+    }
+
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+        padding-left: 1em;
+        background-color: #f6f8fa;
+        list-style-type: decimal
+    }
+
+    @media screen {
+        .str {
+            color: #183691
+        }
+        .kwd {
+            color: #a71d5d
+        }
+        .com {
+            color: #969896
+        }
+        .typ {
+            color: #0086b3
+        }
+        .lit {
+            color: #0086b3
+        }
+        .pun {
+            color: #333
+        }
+        .opn {
+            color: #333
+        }
+        .clo {
+            color: #333
+        }
+        .tag {
+            color: navy
+        }
+        .atn {
+            color: #795da3
+        }
+        .atv {
+            color: #183691
+        }
+        .dec {
+            color: #333
+        }
+        .var {
+            color: teal
+        }
+        .fun {
+            color: #900
+        }
+    }
+
+    .newspaper {
+        column-count: 3;
+        column-width: 100px;
+    }
+    .fuchsia{
+        color: #CE3262;
+    }
+</style>
+    <style type="text/css">
+    .circle {
+        padding: 13px 20px;
+        border-radius: 50%;
+        background-color: #CE3262;
+        color: #fff;
+        max-height: 50px;
+        z-index: 2;
+    }
+
+    .how-it-works.row .col-2 {
+        align-self: stretch;
+    }
+
+    .how-it-works.row .col-2::after {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #CE3262;
+        z-index: 1;
+    }
+
+    .how-it-works.row .col-2.bottom::after {
+        height: 50%;
+        left: 50%;
+        top: 50%;
+    }
+
+    .how-it-works.row .col-2.full::after {
+        height: 100%;
+        left: calc(50% - 3px);
+    }
+
+    .how-it-works.row .col-2.top::after {
+        height: 50%;
+        top: 0;
+    }
+
+
+    .timeline div {
+        padding: 0;
+        height: 40px;
+    }
+
+    .timeline hr {
+        border-top: 3px solid #CE3262;
+        margin: 0;
+        top: 17px;
+        position: relative;
+    }
+
+    .timeline .col-2 {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .timeline .corner {
+        border: 3px solid #CE3262;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .timeline .top-right {
+        left: 50%;
+        top: -50%;
+    }
+
+    .timeline .left-bottom {
+        left: -50%;
+        top: calc(50% - 3px);
+    }
+
+    .timeline .top-left {
+        left: -50%;
+        top: -50%;
+    }
+
+    .timeline .right-bottom {
+        left: 50%;
+        top: calc(50% - 3px);
+    }
+</style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121978585-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</head>
+
+
+<body onload="PR.prettyPrint()">
+    <div class="container pt-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
+        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+        <ul class="navbar-nav">
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://gophercon.ca/static/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/blog/">blog</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
+            </li>
+            <li class="nav-item pl-4">
+                <a class="nav-link" href="https://frid.io/about/">about</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+                <div class="mt-4">
+                     
+
+<h2 class="text-left">Welcome, Go modules - part1</h2>
+
+
+<hr> <div class="text-right pb-3">
+Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>, <a href="https://frid.io/golang/go-modules-part3">part 3</a>
+</div>
+
+<p>For those strictly interested in <mark>what is it and how do I use it?</mark> head over to <span class="lead"><a href="https://frid.io/golang/go-modules-part2">part2</a></span>.</p>
+
+<p>I&rsquo;ll skip majority of the historic bits and add a timeline for context. The path towards Go modules&hellip;</p>
+
+<div class="">
+    <div class="container">
+        <h2 class="pb-3 pt-2 mb-1 text-center"></h2>
+        <!--first section-->
+        <div class="row align-items-center d-flex">
+            <div class="col-md-8">
+                <h4>
+                    <code>Makefiles</code> pre-1.0 </h4>
+                <p>In the beginning, there were <code>Makefiles</code> such as
+                    <a href="https://github.com/golang/go/blob/release-branch.r59/src/Make.inc">these</a>, scripts, maybe a <span style="font-size: 1.8rem;">🧙</span> and lots of <i class="fas fa-magic"></i></p>
+            </div>
+        </div>
+        <!--path between 1-2-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--second section-->
+        <div class="row align-items-center justify-content-end d-flex">
+            <div class="col-lg-6 text-right">
+                <h4>
+                    <code>GOPATH</code> 1.0</h4>
+                <p>An env variable pointing to a single Go workspace. Usually $HOME/go (default as of 1.8). Click
+                    <a href="https://golang.org/cmd/go/#hdr-GOPATH_environment_variable">here</a> for more details</p>
+                <p>
+                    <code>go get</code> pulls and stores third party packages inside this workspace ($GOPATH/src). Other commands:
+                    <code>go test</code>,
+                    <code>go build</code>, etc. use GOPATH to resolve imports.</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="fuchsia"><i class="fas fa-arrow-down"></i></div>
+            </div>
+        </div>
+        <!--path between 2-3-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner top-left"></div>
+            </div>
+        </div>
+        <!--third section-->
+        <div class="row align-items-center d-flex">
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="fuchsia"><i class="fas fa-arrow-down"></i></div>
+            </div>
+            <div class="col-lg-8">
+                <h4>
+                    <code>vendor</code> dir,
+                    <a href="https://github.com/golang/proposal/blob/master/design/25719-go15vendor.md">1.5</a> <i class="fas fa-caret-right"></i> 1.6
+                </h4>
+                <p>In an attempt to achieve reproducibility, availability and play nice with third party tools. Go tools also use vendor, if present and contain .go files, to resolve imports.</p>
+            </div>
+        </div>
+        <!--path between 3-4-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner top-right"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner left-bottom"></div>
+            </div>
+        </div>
+        <!--fourth section-->
+        <div class="row align-items-center justify-content-end d-flex">
+            <div class="col-lg-8 text-right">
+                <h4>Community-driven dependency managers</h4>
+                <p>There were many over the years, to list a few:<br>govendor, gb, glide, gom, godep, etc.</p>
+                <p>dep falls into it's own class. Briefly, it was a petri dish experiment
+                    to better understand the problem space of package versioning and dependency management. Some hoped it would become part of the official Go tooling. It did not. No further comment outside a big <mark>thank you</mark> to all the contributors.</p>
+            </div>
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="fuchsia"><i class="fas fa-arrow-down"></i></div>
+            </div>
+        </div>
+        <!--path between 2-3-->
+        <div class="row timeline">
+            <div class="col-2">
+                <div class="corner right-bottom"></div>
+            </div>
+            <div class="col-8">
+                <hr/>
+            </div>
+            <div class="col-2">
+                <div class="corner top-left"></div>
+            </div>
+        </div>
+        <!--third section-->
+        <div class="row align-items-center d-flex">
+            <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                <div class="display-4">🎉</div>
+            </div>
+            <div class="col-lg-6">
+                <h4>
+                    Go modules, <a href="https://groups.google.com/forum/#!msg/golang-dev/a5PqQuBljF4/61QK4JdtBgAJ">1.11</a> <i class="fas fa-caret-right"></i> 1.12
+                </h4>
+                <p>Dependency management baked right into Go. Introduces the concept of semantic import versioning and many other goodies for building modular software.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<p>I cannot express how excited I am for go modules! I vividly remember Feb. 20&rsquo;2018 (which also happens to be my birthday), when Russ released the <a href="https://research.swtch.com/vgo">Go &amp; Versioning</a> series, note the &ldquo;shorter followup posts&rdquo; section. I thought to myself, what an awesome present 🎁.</p>
+
+<p>If you haven&rsquo;t been following along, here are a few links to get you up-to-speed.</p>
+
+<ul>
+<li><p>The initial proposal found in <a href="https://github.com/golang/go/issues/24301">issue#24301</a>.</p></li>
+
+<li><p><a href="https://blog.golang.org/versioning-proposal">A Proposal for Package Versioning in Go</a> from the official blog.</p></li>
+
+<li><p>For brevity, <code>vgo</code> was an experimental (forked) version of Go that brought us an early implementation of Russ&rsquo;s proposal. As I write this, <a href="https://groups.google.com/forum/m/#!msg/golang-announce/RVR0FzIKBsU/PAxl4-ZVCAAJ">go1.11beta2</a> is released and has experimental support for <a href="https://github.com/golang/go/labels/modules">Go modules</a>. In my opinion, you can forget about <code>vgo</code> and just start using <code>go1.11beta2</code>, or <code>go1.11</code> when it lands ~ Aug 2018.</p></li>
+
+<li><p>Open GitHub issues with <a href="https://github.com/golang/go/issues?q=is%3Aopen+is%3Aissue+label%3Amodules">modules</a> label</p></li>
+</ul>
+
+<hr />
+
+<p>Key concepts:</p>
+
+<ul>
+<li><a href="https://semver.org/">semantic versioning</a> + <span class="" data-toggle="tooltip" data-placement="top" title="If an old package and a new package have the same import path, the new package must be backwards compatible with the old package."><u>import compatibility rule</u></span> = <span class="lead mark"> <a href="https://research.swtch.com/vgo-import">semantic import versioning<a/></span><br />
+<br /></li>
+</ul>
+
+<p><div class="text-center"><br />
+    <img src="https://frid.io/img/sem_imp_ver.png" alt="semantic import versioning" width="500px"/><br />
+</div><br />
+<br></p>
+
+<ul>
+<li><p>Reproducible builds are achieved by tracking dependencies in a <mark>go.mod</mark> file.</p></li>
+
+<li><p>Verifiable builds are achieved with <mark>go.sum</mark>, a file in the module root that sits alongside go.mod.</p></li>
+
+<li><p><a href="https://tip.golang.org/cmd/go/#hdr-Module_proxy_protocol">Module proxy support</a>. This one is interesting because it maintains copies of modules outside your normal <abbr title="version control system">vcs</abbr>, enabling, in theory, faster and more reliable builds.</p>
+
+<ul>
+<li>introduces the env variable <code>GOPROXY</code><br /></li>
+<li><i class="fab fa-microsoft"></i> got in early, check out the <a href="https://medium.com/@arschles/project-athens-c80606497ce1">athens project, a proxy server</a><br />
+<br /></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<p>Implementation deviations from the initial proposal and worthy highlights:</p>
+
+<ul>
+<li><p>this one improves on the usability of the Go command, splitting <code>go mod</code> flags into subcommands <a href="https://go-review.googlesource.com/c/go/+/126655">cl#126655</a>.</p></li>
+
+<li><p>relaxing the <code>replace</code> directive within the go.mod file, <a href="https://github.com/golang/go/issues/24825">issue#24825</a></p></li>
+
+<li><p>Code written prior to introduction of go modules, i.e., v2.0.0 or higher, is given an +incompatible suffix when converted to a module version, as in <mark>v2.0.0+incompatible</mark>. <a href="https://github.com/golang/go/issues/25967#issuecomment-408626868">issue#25967</a></p></li>
+
+<li><p>Initially it was proposed that vendoring should cease to exist because it&rsquo;s a duplicate of the local cache. But that is no longer the case, see this <a href="https://groups.google.com/forum/#!msg/golang-dev/FTMScX1fsYk/uEUSjBAHAwAJ">discussion</a>. I am adding this GitHub issue <a href="https://github.com/golang/go/issues/26585">comment</a> as a reminder to self for a future post.</p></li>
+
+<li><p>to easy the transition from non-module-ware Go versions (e.g., 1.10) to module-aware (1.11) this was introduced <a href="https://go-review.googlesource.com/c/go/+/109340">cl#109340</a></p></li>
+</ul>
+ 
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="text-center">
+        <footer class="footer">
+    Made with
+    <a href="https://gohugo.io">Hugo</a> and hosted by
+    <a href="https://pages.github.com/">
+        <i class="fab fa-lg fa-github-alt git-purple"></i>
+    </a>
+</footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in Tags on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Dec 2017 21:04:50 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://frid.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1.11</title>
+      <link>https://frid.io/tags/1.11/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/1.11/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>2017</title>
@@ -84,6 +93,15 @@
     </item>
     
     <item>
+      <title>Drone Ci</title>
+      <link>https://frid.io/tags/drone-ci/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/drone-ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Files</title>
       <link>https://frid.io/tags/files/</link>
       <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
@@ -111,9 +129,18 @@
     </item>
     
     <item>
+      <title>Go</title>
+      <link>https://frid.io/tags/go/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Golang</title>
       <link>https://frid.io/tags/golang/</link>
-      <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/golang/</guid>
       <description></description>
@@ -161,6 +188,15 @@
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/hostkeycallback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How To</title>
+      <link>https://frid.io/tags/how-to/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/how-to/</guid>
       <description></description>
     </item>
     
@@ -224,6 +260,15 @@
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/tags/lsb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modules</title>
+      <link>https://frid.io/tags/modules/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/tags/modules/</guid>
       <description></description>
     </item>
     

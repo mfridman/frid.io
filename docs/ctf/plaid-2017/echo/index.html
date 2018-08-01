@@ -33,7 +33,7 @@
         color: #6e5494;
     }
 
-    .warning-color{
+    .warning-color {
         color: #FDDD00;
     }
 
@@ -177,6 +177,91 @@
     .newspaper {
         column-count: 3;
         column-width: 100px;
+    }
+    .fuchsia{
+        color: #CE3262;
+    }
+</style>
+    <style type="text/css">
+    .circle {
+        padding: 13px 20px;
+        border-radius: 50%;
+        background-color: #CE3262;
+        color: #fff;
+        max-height: 50px;
+        z-index: 2;
+    }
+
+    .how-it-works.row .col-2 {
+        align-self: stretch;
+    }
+
+    .how-it-works.row .col-2::after {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #CE3262;
+        z-index: 1;
+    }
+
+    .how-it-works.row .col-2.bottom::after {
+        height: 50%;
+        left: 50%;
+        top: 50%;
+    }
+
+    .how-it-works.row .col-2.full::after {
+        height: 100%;
+        left: calc(50% - 3px);
+    }
+
+    .how-it-works.row .col-2.top::after {
+        height: 50%;
+        top: 0;
+    }
+
+
+    .timeline div {
+        padding: 0;
+        height: 40px;
+    }
+
+    .timeline hr {
+        border-top: 3px solid #CE3262;
+        margin: 0;
+        top: 17px;
+        position: relative;
+    }
+
+    .timeline .col-2 {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .timeline .corner {
+        border: 3px solid #CE3262;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .timeline .top-right {
+        left: 50%;
+        top: -50%;
+    }
+
+    .timeline .left-bottom {
+        left: -50%;
+        top: calc(50% - 3px);
+    }
+
+    .timeline .top-left {
+        left: -50%;
+        top: -50%;
+    }
+
+    .timeline .right-bottom {
+        left: 50%;
+        top: calc(50% - 3px);
     }
 </style>
     
@@ -393,6 +478,12 @@ cat run.py</code></pre></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 </body>
 
 </html>

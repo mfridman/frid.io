@@ -316,35 +316,140 @@ if (!doNotTrack) {
     </div>
 </nav>
                 <div class="mt-4">
-                    
-<h1>
-    <a href="https://frid.io/ctf">CTF</a> writeups: 
-    
-    
-    <small class="text-muted">plaid-2017</small>
-    
-    
-</h1>
-<hr>
+                     
+
+<h2 class="text-left">Welcome, Go modules - part2</h2>
 
 
+<hr> 
 
-
-
-
-<div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Apr 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://frid.io/ctf/plaid-2017/echo/">Echo</a>
-    </div>
+<div class="text-right pb-3">
+Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>, part 2, <a href="https://frid.io/golang/go-modules-part3">part 3</a>
 </div>
 
+<p>The module commands relating to <code>go mod</code> may change: <a href="https://go-review.googlesource.com/c/go/+/126655">cl#126655</a>, I&rsquo;ll do my best to edit this post to reflect reality.</p>
 
+<h3 id="go-module">Go module</h3>
 
+<p>From the <a href="https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more">docs</a>: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.</p>
 
+<ul>
+<li><p>a <code>go.mod</code> file is located in the root of your package. This location marks the <mark>module root</mark>, containing all packages in the root and subdirectories</p>
 
+<ul>
+<li>note: subtrees <em>can</em> have their own <code>go.mod</code> files and will excluded<br />
+<br /></li>
+</ul></li>
+
+<li><p>we used to have GOPATH, but instead we now have the concept of a <mark>main module</mark></p>
+
+<ul>
+<li><code>go</code> commands will try to determine if the <abbr title="present working directory">$PWD</abbr> is in the module root (remember: this is where the <code>go.mod</code> file resides)? No, look up a directory, am I in the module root? No, look up a directory, am I .., etc.<br /></li>
+<li>being inside a module root or any of its subdirectories is referred to as being in <mark>module-aware</mark> mode<br />
+<br /></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="go-mod-file">go.mod file</h3>
+
+<ul>
+<li>dependencies of your imported packages are  with <code>// indirect</code><br /></li>
+<li>if a dependency has a v2.0.0 or higher or and no <code>go.mod</code> file it&rsquo;s suffixed with <code>+incompatible</code> (likewise for pseudo-versions, e.g., <code>v2.0.1-0.yyyymmddhhmmss-abcdefabcdef+incompatible</code>)<br />
+<br /></li>
+</ul>
+
+<p>and example file:</p>
+
+<pre class="prettyprint go">
+module github.com/mfridman/srfax
+
+require (
+    github.com/mitchellh/mapstructure v0.0.0-20180715050151-f15292f7a699
+    github.com/pkg/errors v0.7.0
+)
+
+exclude github.com/pkg/errors v0.7.1
+</pre>
+
+<hr />
+
+<h3 id="gopath-mode-vs-module-aware-mode">GOPATH mode vs module-aware mode</h3>
+
+<p>In <code>go1.11beta2</code>, and <code>1.11</code>, module support isn&rsquo;t enabled by default and is controlled by the env variable <code>GO111MODULE</code>.</p>
+
+<p>Default:</p>
+
+<ul>
+<li><code>GO111MODULE=auto</code>: go commands support modules outside the GOPATH (usually <code>$HOME/go</code>)<br />
+<br /></li>
+</ul>
+
+<p>GOPATH mode:</p>
+
+<ul>
+<li><code>GO111MODULE=off</code>: disable go module support, as if you&rsquo;re on <code>1.10</code><br />
+<br /></li>
+</ul>
+
+<p>module-aware mode:</p>
+
+<ul>
+<li><code>GO111MODULE=on</code>: go commands will use go modules and never consult GOPATH to resolve imports<br />
+<br /></li>
+</ul>
+
+<p>&ndash;</p>
+
+<h3 id="commands">Commands</h3>
+
+<p>From here on we&rsquo;re assuming module-aware mode, which you can achieve in one of two ways:</p>
+
+<ol>
+<li>copy/move/start a project <em>outside</em> your $GOPATH, yes you heard right, anywhere.<br /></li>
+<li>set env variable to <code>GO111MODULE=on</code>. (option 1 is preferred)<br />
+<br /></li>
+</ol>
+
+<p>Navigate to the root of your project and run (<i class="fas fa-exclamation-triangle warning-color"></i> go.mod cannot already exist):</p>
+
+<pre class="prettyprint lang-sh">
+go mod init
+</pre>
+
+<p>this will create a <code>go.mod</code> file.</p>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> If the project is using a third-party dependency manager, e.g., dep, godep, glide, etc., then <code>go mo init</code> will <em>add</em> requirements based on the existing configuration, e.g., Gopkg.lock.</p>
+
+<p>Out of the box go commands will &ldquo;just work&rdquo;. There are no additional steps. Your favorite go commands <code>build</code>, <code>install</code>, <code>run</code>, <code>test</code> will just work.</p>
+
+<p>As you run go commands the <code>go.mod</code> file will automatically be updated and new dependencies will be downloaded to satisfy imports.</p>
+
+<p>Note the follow command:</p>
+
+<pre class="prettyprint lang-sh">
+go list
+</pre>
+
+<p>which <em>also</em> triggers the behaviour mentioned above (updating go.mod and downloading deps)</p>
+
+<hr />
+
+<h3 id="advanced-commands">Advanced commands</h3>
+
+<p>[WIP], maybe add this to its own section, advanced tips and tricks?</p>
+
+<pre class="prettyprint lang-sh">
+go mod edit   # old go mod -require ...
+go mod fix    # old go mod -fix
+go mod graph  # old go mod -graph
+go mod init   # old go mod -init
+go mod tidy   # old go mod -sync
+go mod vendor # old go mod -vendor
+go mod verify # old go mod -verify
+</pre>
+ 
                 </div>
             </div>
         </div>

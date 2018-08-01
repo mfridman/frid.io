@@ -6,10 +6,46 @@
     <description>Recent content in Golang on frid.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Feb 2018 17:36:50 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://frid.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Integrating Go modules with Drone CI</title>
+      <link>https://frid.io/golang/go-modules-part3/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/go-modules-part3/</guid>
+      <description>Go modules: part 1, part 2, part 3  This will be coming soon&amp;hellip;
+ Vendor is tailored for the dependencies of a specific module, not warming a cache.
+ 🤔 from issue#26610
+For CI/CD this may be useful, cl#126656)
+and maybe this.. issue#24250</description>
+    </item>
+    
+    <item>
+      <title>Welcome, Go modules - part2</title>
+      <link>https://frid.io/golang/go-modules-part2/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/go-modules-part2/</guid>
+      <description>Go modules: part 1, part 2, part 3  The module commands relating to go mod may change: cl#126655, I&amp;rsquo;ll do my best to edit this post to reflect reality.
+Go module From the docs: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
+ a go.mod file is located in the root of your package. This location marks the module root, containing all packages in the root and subdirectories</description>
+    </item>
+    
+    <item>
+      <title>Welcome, Go modules - part1</title>
+      <link>https://frid.io/golang/go-modules-part1/</link>
+      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/go-modules-part1/</guid>
+      <description>Go modules: part 1, part 2, part 3  For those strictly interested in what is it and how do I use it? head over to part2.
+I&amp;rsquo;ll skip majority of the historic bits and add a timeline for context. The path towards Go modules&amp;hellip;
+  Makefiles pre-1.0  In the beginning, there were Makefiles such as these, scripts, maybe a 🧙 and lots of 
+          GOPATH 1.</description>
+    </item>
     
     <item>
       <title>A mongoDB Go Driver - by the mongoDB folks</title>
@@ -24,19 +60,7 @@ I&amp;rsquo;ve been wanting to give mongoDB a fair shot, and now seems to be the
     </item>
     
     <item>
-      <title>Shine on You Crazy Interface - #golang part1</title>
-      <link>https://frid.io/golang/shine-on-you-crazy-interface/</link>
-      <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
-      
-      <guid>https://frid.io/golang/shine-on-you-crazy-interface/</guid>
-      <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
-Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
-In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
-The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at an example.</description>
-    </item>
-    
-    <item>
-      <title>Shine on You Crazy Interface - #golang part2</title>
+      <title>Shine on You Crazy Interface - part2</title>
       <link>https://frid.io/golang/shine-on-you-crazy-interface2/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
@@ -44,6 +68,18 @@ The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at 
       <description>No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
 Notice in part1 we actually made use of this interface to format the songs type.
 func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name+&#34; &#34;+fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:</description>
+    </item>
+    
+    <item>
+      <title>Shine on You Crazy Interface - part1</title>
+      <link>https://frid.io/golang/shine-on-you-crazy-interface/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://frid.io/golang/shine-on-you-crazy-interface/</guid>
+      <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
+Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
+In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.
+The Go standard library makes use of interfaces, let&amp;rsquo;s take a look at an example.</description>
     </item>
     
     <item>

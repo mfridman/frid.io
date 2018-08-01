@@ -34,7 +34,7 @@
         color: #6e5494;
     }
 
-    .warning-color{
+    .warning-color {
         color: #FDDD00;
     }
 
@@ -179,6 +179,91 @@
         column-count: 3;
         column-width: 100px;
     }
+    .fuchsia{
+        color: #CE3262;
+    }
+</style>
+    <style type="text/css">
+    .circle {
+        padding: 13px 20px;
+        border-radius: 50%;
+        background-color: #CE3262;
+        color: #fff;
+        max-height: 50px;
+        z-index: 2;
+    }
+
+    .how-it-works.row .col-2 {
+        align-self: stretch;
+    }
+
+    .how-it-works.row .col-2::after {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #CE3262;
+        z-index: 1;
+    }
+
+    .how-it-works.row .col-2.bottom::after {
+        height: 50%;
+        left: 50%;
+        top: 50%;
+    }
+
+    .how-it-works.row .col-2.full::after {
+        height: 100%;
+        left: calc(50% - 3px);
+    }
+
+    .how-it-works.row .col-2.top::after {
+        height: 50%;
+        top: 0;
+    }
+
+
+    .timeline div {
+        padding: 0;
+        height: 40px;
+    }
+
+    .timeline hr {
+        border-top: 3px solid #CE3262;
+        margin: 0;
+        top: 17px;
+        position: relative;
+    }
+
+    .timeline .col-2 {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .timeline .corner {
+        border: 3px solid #CE3262;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .timeline .top-right {
+        left: 50%;
+        top: -50%;
+    }
+
+    .timeline .left-bottom {
+        left: -50%;
+        top: calc(50% - 3px);
+    }
+
+    .timeline .top-left {
+        left: -50%;
+        top: -50%;
+    }
+
+    .timeline .right-bottom {
+        left: 50%;
+        top: calc(50% - 3px);
+    }
 </style>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
@@ -248,6 +333,45 @@ if (!doNotTrack) {
         Jul 2018
     </div>
     <div class="col-md-10">
+        <a href="https://frid.io/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-2 text-muted py-1">
+        Jul 2018
+    </div>
+    <div class="col-md-10">
+        <a href="https://frid.io/golang/go-modules-part2/">Welcome, Go modules - part2</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-2 text-muted py-1">
+        Jul 2018
+    </div>
+    <div class="col-md-10">
+        <a href="https://frid.io/golang/go-modules-part1/">Welcome, Go modules - part1</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-2 text-muted py-1">
+        Jul 2018
+    </div>
+    <div class="col-md-10">
         <a href="https://frid.io/blog/upspin-part-5/">Upspin part 5: Advanced tips and tricks [WIP]</a>
     </div>
 </div>
@@ -300,7 +424,7 @@ if (!doNotTrack) {
         Feb 2018
     </div>
     <div class="col-md-10">
-        <a href="https://frid.io/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - #golang part1</a>
+        <a href="https://frid.io/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - part2</a>
     </div>
 </div>
 
@@ -313,7 +437,7 @@ if (!doNotTrack) {
         Feb 2018
     </div>
     <div class="col-md-10">
-        <a href="https://frid.io/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - #golang part2</a>
+        <a href="https://frid.io/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - part1</a>
     </div>
 </div>
 
@@ -323,49 +447,10 @@ if (!doNotTrack) {
 
 <div class="row">
     <div class="col-md-2 text-muted py-1">
-        Dec 2017
+        Jan 2018
     </div>
     <div class="col-md-10">
-        <a href="https://frid.io/blog/year-end-2017/">Year End 2017</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Dec 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/upspin-part-1/">Upspin part 1: My $HOME</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Dec 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/blog/from-jekyll-to-hugo/">From Jekyll to Hugo</a>
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-md-2 text-muted py-1">
-        Sep 2017
-    </div>
-    <div class="col-md-10">
-        <a href="https://frid.io/golang/go-ssh-hostkey/">Validating host keys in Go&#39;s ssh package</a>
+        <a href="https://frid.io/golang/err-thoughts/">To err, or not to err</a>
     </div>
 </div>
 
@@ -396,6 +481,12 @@ if (!doNotTrack) {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 </body>
 
 </html>

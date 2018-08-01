@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://frid.io/golang/go-modules-part3/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/golang/go-modules-part2/</loc>
+    <lastmod>2018-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/golang/go-modules-part1/</loc>
+    <lastmod>2018-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://frid.io/blog/upspin-part-5/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -23,13 +38,18 @@
   </url>
   
   <url>
-    <loc>https://frid.io/golang/shine-on-you-crazy-interface/</loc>
+    <loc>https://frid.io/golang/shine-on-you-crazy-interface2/</loc>
     <lastmod>2018-02-05T20:07:41-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://frid.io/golang/shine-on-you-crazy-interface2/</loc>
-    <lastmod>2018-02-05T20:07:41-05:00</lastmod>
+    <loc>https://frid.io/golang/shine-on-you-crazy-interface/</loc>
+    <lastmod>2018-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/golang/err-thoughts/</loc>
+    <lastmod>2018-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -94,7 +114,7 @@
   
   <url>
     <loc>https://frid.io/</loc>
-    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -108,7 +128,13 @@
   
   <url>
     <loc>https://frid.io/golang/</loc>
-    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/1.11/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -170,6 +196,12 @@
   </url>
   
   <url>
+    <loc>https://frid.io/tags/drone-ci/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://frid.io/tags/files/</loc>
     <lastmod>2016-03-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -188,12 +220,18 @@
   </url>
   
   <url>
+    <loc>https://frid.io/tags/go/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://frid.io/around_the_web/</loc>
   </url>
   
   <url>
     <loc>https://frid.io/tags/golang/</loc>
-    <lastmod>2018-02-22T17:36:50-05:00</lastmod>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -224,6 +262,12 @@
   <url>
     <loc>https://frid.io/tags/hostkeycallback/</loc>
     <lastmod>2017-09-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/how-to/</loc>
+    <lastmod>2018-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -266,6 +310,12 @@
   <url>
     <loc>https://frid.io/tags/lsb/</loc>
     <lastmod>2017-04-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://frid.io/tags/modules/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -335,7 +385,7 @@
   
   <url>
     <loc>https://frid.io/tags/</loc>
-    <lastmod>2017-12-24T21:04:50-05:00</lastmod>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
