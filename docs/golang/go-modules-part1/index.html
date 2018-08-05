@@ -321,8 +321,12 @@ if (!doNotTrack) {
 <h2 class="text-left">Welcome, Go modules - part1</h2>
 
 
-<hr> <div class="text-right pb-3">
-Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>, <a href="https://frid.io/golang/go-modules-part3">part 3</a>
+<hr> 
+
+<div class="text-right pb-3">
+Go modules: part 1,
+<a href="https://frid.io/golang/go-modules-part2">part 2</a>,
+<a href="https://frid.io/golang/go-modules-part3">part 3</a>
 </div>
 
 <p>For those strictly interested in <mark>what is it and how do I use it?</mark> head over to <span class="lead"><a href="https://frid.io/golang/go-modules-part2">part2</a></span>.</p>
@@ -358,10 +362,10 @@ Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>
             <div class="col-lg-6 text-right">
                 <h4>
                     <code>GOPATH</code> 1.0</h4>
-                <p>An env variable pointing to a single Go workspace. Usually $HOME/go (default as of 1.8). Click
+                <p>An env variable pointing to one or more Go dirs scanned in order, first entry has highest precedence. Usually $HOME/go (default as of 1.8). Click
                     <a href="https://golang.org/cmd/go/#hdr-GOPATH_environment_variable">here</a> for more details</p>
                 <p>
-                    <code>go get</code> pulls and stores third party packages inside this workspace ($GOPATH/src). Other commands:
+                    <code>go get</code> pulls and stores third party packages ($GOPATH/src). Other commands:
                     <code>go test</code>,
                     <code>go build</code>, etc. use GOPATH to resolve imports.</p>
             </div>
@@ -391,7 +395,7 @@ Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>
                     <code>vendor</code> dir,
                     <a href="https://github.com/golang/proposal/blob/master/design/25719-go15vendor.md">1.5</a> <i class="fas fa-caret-right"></i> 1.6
                 </h4>
-                <p>In an attempt to achieve reproducibility, availability and play nice with third party tools. Go tools also use vendor, if present and contain .go files, to resolve imports.</p>
+                <p>Introduced as an attempt to achieve reproducibility, availability and play nice with third party tools. Go tools use vendor dir, if present and contains .go files, to resolve imports. The vendor dir will take precedence over GOPATH to resolve imports.</p>
             </div>
         </div>
         <!--path between 3-4-->
@@ -411,7 +415,7 @@ Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>
             <div class="col-lg-8 text-right">
                 <h4>Community-driven dependency managers</h4>
                 <p>There were many over the years, to list a few:<br>govendor, gb, glide, gom, godep, etc.</p>
-                <p>dep falls into it's own class. Briefly, it was a petri dish experiment
+                <p><code>dep</code> falls into it's own class. Briefly, it was a petri dish experiment
                     to better understand the problem space of package versioning and dependency management. Some hoped it would become part of the official Go tooling. It did not. No further comment outside a big <mark>thank you</mark> to all the contributors.</p>
             </div>
             <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
@@ -445,7 +449,7 @@ Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>
     </div>
 </div>
 
-<hr />
+<p><br></p>
 
 <p>I cannot express how excited I am for go modules! I vividly remember Feb. 20&rsquo;2018 (which also happens to be my birthday), when Russ released the <a href="https://research.swtch.com/vgo">Go &amp; Versioning</a> series, note the &ldquo;shorter followup posts&rdquo; section. I thought to myself, what an awesome present 🎁.</p>
 
@@ -456,54 +460,54 @@ Go modules: part 1, <a href="https://frid.io/golang/go-modules-part2">part 2</a>
 
 <li><p><a href="https://blog.golang.org/versioning-proposal">A Proposal for Package Versioning in Go</a> from the official blog.</p></li>
 
-<li><p>For brevity, <code>vgo</code> was an experimental (forked) version of Go that brought us an early implementation of Russ&rsquo;s proposal. As I write this, <a href="https://groups.google.com/forum/m/#!msg/golang-announce/RVR0FzIKBsU/PAxl4-ZVCAAJ">go1.11beta2</a> is released and has experimental support for <a href="https://github.com/golang/go/labels/modules">Go modules</a>. In my opinion, you can forget about <code>vgo</code> and just start using <code>go1.11beta2</code>, or <code>go1.11</code> when it lands ~ Aug 2018.</p></li>
+<li><p>From the godocs tip: <a href="https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more">Modules, module versions, and more</a></p></li>
+
+<li><p>The wiki: <a href="https://github.com/golang/go/wiki/Modules">Go 1.11 Modules</a></p></li>
 
 <li><p>Open GitHub issues with <a href="https://github.com/golang/go/issues?q=is%3Aopen+is%3Aissue+label%3Amodules">modules</a> label</p></li>
+
+<li><p>If you hear the term <code>vgo</code> <sup id="fnref:1"><a href="#fn:1">1</a></sup>, ignore it, do a mental conversion for go modules (available with go versions 1.11 or higher).</p></li>
 </ul>
 
 <hr />
 
-<p>Key concepts:</p>
+<h3 id="key-concepts">Key concepts:</h3>
 
 <ul>
 <li><a href="https://semver.org/">semantic versioning</a> + <span class="" data-toggle="tooltip" data-placement="top" title="If an old package and a new package have the same import path, the new package must be backwards compatible with the old package."><u>import compatibility rule</u></span> = <span class="lead mark"> <a href="https://research.swtch.com/vgo-import">semantic import versioning<a/></span><br />
 <br /></li>
 </ul>
 
-<p><div class="text-center"><br />
-    <img src="https://frid.io/img/sem_imp_ver.png" alt="semantic import versioning" width="500px"/><br />
-</div><br />
-<br></p>
+<p class="text-center">
+    <img src="https://frid.io/img/sem_imp_ver.png" alt="semantic import versioning" style="width: auto; max-height:250px;"/>
+</p>
 
 <ul>
 <li><p>Reproducible builds are achieved by tracking dependencies in a <mark>go.mod</mark> file.</p></li>
 
-<li><p>Verifiable builds are achieved with <mark>go.sum</mark>, a file in the module root that sits alongside go.mod.</p></li>
+<li><p>Verifiable builds are achieved with <mark>go.sum</mark>, a file that sits alongside go.mod.</p></li>
 
-<li><p><a href="https://tip.golang.org/cmd/go/#hdr-Module_proxy_protocol">Module proxy support</a>. This one is interesting because it maintains copies of modules outside your normal <abbr title="version control system">vcs</abbr>, enabling, in theory, faster and more reliable builds.</p>
+<li><p><a href="https://tip.golang.org/cmd/go/#hdr-Module_proxy_protocol">Module proxy support</a>. This one is interesting because it maintains copies of modules outside the traditional <abbr title="version control system">vcs</abbr>, enabling, in theory, faster and more reliable builds.</p>
 
 <ul>
 <li>introduces the env variable <code>GOPROXY</code><br /></li>
-<li><i class="fab fa-microsoft"></i> got in early, check out the <a href="https://medium.com/@arschles/project-athens-c80606497ce1">athens project, a proxy server</a><br />
+<li><i class="fab fa-microsoft"></i> got in early, check out the <a href="https://medium.com/@arschles/project-athens-c80606497ce1">athens project, a proxy server</a>. It&rsquo;s likely other big players will follow.<br />
 <br /></li>
 </ul></li>
 </ul>
 
+<div class="lead text-center">
+    <h1><a href="https://frid.io/golang/go-modules-part2">
+    part 2
+    </a></h1>
+</div>
+
 <hr />
 
-<p>Implementation deviations from the initial proposal and worthy highlights:</p>
-
-<ul>
-<li><p>this one improves on the usability of the Go command, splitting <code>go mod</code> flags into subcommands <a href="https://go-review.googlesource.com/c/go/+/126655">cl#126655</a>.</p></li>
-
-<li><p>relaxing the <code>replace</code> directive within the go.mod file, <a href="https://github.com/golang/go/issues/24825">issue#24825</a></p></li>
-
-<li><p>Code written prior to introduction of go modules, i.e., v2.0.0 or higher, is given an +incompatible suffix when converted to a module version, as in <mark>v2.0.0+incompatible</mark>. <a href="https://github.com/golang/go/issues/25967#issuecomment-408626868">issue#25967</a></p></li>
-
-<li><p>Initially it was proposed that vendoring should cease to exist because it&rsquo;s a duplicate of the local cache. But that is no longer the case, see this <a href="https://groups.google.com/forum/#!msg/golang-dev/FTMScX1fsYk/uEUSjBAHAwAJ">discussion</a>. I am adding this GitHub issue <a href="https://github.com/golang/go/issues/26585">comment</a> as a reminder to self for a future post.</p></li>
-
-<li><p>to easy the transition from non-module-ware Go versions (e.g., 1.10) to module-aware (1.11) this was introduced <a href="https://go-review.googlesource.com/c/go/+/109340">cl#109340</a></p></li>
-</ul>
+<ol>
+    <li id="fn:1"> For brevity, <code>vgo</code> was an experimental (forked) version of Go that brought us an early implementation of Russ's proposal. As I write this, <a href="https://groups.google.com/forum/m/#!msg/golang-announce/RVR0FzIKBsU/PAxl4-ZVCAAJ">go1.11beta2</a> is released and has experimental support for <a href="https://github.com/golang/go/labels/modules">Go modules</a>. You should now use <code>go1.11</code> or higher. <a href="#fnref:1">&#8617;</a>
+    </li>
+</ol>
  
                 </div>
             </div>

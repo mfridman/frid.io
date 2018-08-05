@@ -17,11 +17,12 @@
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/golang/go-modules-part3/</guid>
-      <description>Go modules: part 1, part 2, part 3  This will be coming soon&amp;hellip;
- Vendor is tailored for the dependencies of a specific module, not warming a cache.
- 🤔 from issue#26610
-For CI/CD this may be useful, cl#126656)
-and maybe this.. issue#24250</description>
+      <description>Go modules: part 1, part 2, part 3  coming soon&amp;hellip;
+for now you can check out their site drone.io and blog
+ Vendor is tailored for the dependencies of a specific module, not warming a cache. 🤔 from issue#26610
+ For CI/CD this may be useful, cl#126656
+ and maybe issue#24250
+  This section will be removed eventually Implementation deviations from the initial proposal and worthy highlights:</description>
     </item>
     
   </channel>

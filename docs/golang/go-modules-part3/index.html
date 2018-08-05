@@ -321,21 +321,45 @@ if (!doNotTrack) {
 <h2 class="text-left">Integrating Go modules with Drone CI</h2>
 
 
-<hr> <div class="text-right pb-3">
+<hr> 
+
+<div class="text-right pb-3">
 Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>, <a href="https://frid.io/golang/go-modules-part2">part 2</a>, part 3
 </div>
 
-<p>This will be coming soon&hellip;</p>
+<p>coming soon&hellip;</p>
 
-<blockquote>
-<p>Vendor is tailored for the dependencies of a specific module, not warming a cache.</p>
-</blockquote>
+<p>for now you can check out their site <a href="https://drone.io/">drone.io</a> and <a href="https://blog.drone.io/">blog</a></p>
 
-<p>🤔 from <a href="https://github.com/golang/go/issues/26610#issuecomment-407937618">issue#26610</a></p>
+<p class="text-center">
+    <img src="https://frid.io/svg/drone-ci.svg" alt="drone-ci"/>
+</p>
 
-<p>For CI/CD this may be useful, <a href="https://go-review.googlesource.com/c/go/+/126656">cl#126656)</a></p>
+<ul>
+<li><p>Vendor is tailored for the dependencies of a specific module, not warming a cache. 🤔 from <a href="https://github.com/golang/go/issues/26610#issuecomment-407937618">issue#26610</a></p></li>
 
-<p>and maybe this.. <a href="https://github.com/golang/go/issues/24250">issue#24250</a></p>
+<li><p>For CI/CD this may be useful, <a href="https://go-review.googlesource.com/c/go/+/126656">cl#126656</a></p></li>
+
+<li><p>and maybe <a href="https://github.com/golang/go/issues/24250">issue#24250</a></p></li>
+</ul>
+
+<hr />
+
+<h3 id="this-section-will-be-removed-eventually">This section will be removed eventually</h3>
+
+<p>Implementation deviations from the initial proposal and worthy highlights:</p>
+
+<ul>
+<li><p>this one improves on the usability of the Go command, splitting <code>go mod</code> flags into subcommands <a href="https://go-review.googlesource.com/c/go/+/126655">cl#126655</a>.</p></li>
+
+<li><p>relaxing the <code>replace</code> directive within the go.mod file, <a href="https://github.com/golang/go/issues/24825">issue#24825</a></p></li>
+
+<li><p>Code written prior to introduction of go modules, i.e., v2.0.0 or higher, is given an +incompatible suffix when converted to a module version, as in <mark>v2.0.0+incompatible</mark>. <a href="https://github.com/golang/go/issues/25967#issuecomment-408626868">issue#25967</a></p></li>
+
+<li><p>Initially it was proposed that vendoring should cease to exist because it&rsquo;s a duplicate of the local cache. But that is no longer the case, see this <a href="https://groups.google.com/forum/#!msg/golang-dev/FTMScX1fsYk/uEUSjBAHAwAJ">discussion</a>. I am adding this GitHub issue <a href="https://github.com/golang/go/issues/26585">comment</a> as a reminder to self for a future post.</p></li>
+
+<li><p>to easy the transition from non-module-ware Go versions (e.g., 1.10) to module-aware (1.11) this was introduced <a href="https://go-review.googlesource.com/c/go/+/109340">cl#109340</a></p></li>
+</ul>
  
                 </div>
             </div>

@@ -327,128 +327,216 @@ if (!doNotTrack) {
 Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>, part 2, <a href="https://frid.io/golang/go-modules-part3">part 3</a>
 </div>
 
-<p>The module commands relating to <code>go mod</code> may change: <a href="https://go-review.googlesource.com/c/go/+/126655">cl#126655</a>, I&rsquo;ll do my best to edit this post to reflect reality.</p>
-
 <h3 id="go-module">Go module</h3>
 
-<p>From the <a href="https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more">docs</a>: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.</p>
+<p>A <a href="https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more">go module</a> is a collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.</p>
 
 <ul>
-<li><p>a <code>go.mod</code> file is located in the root of your package. This location marks the <mark>module root</mark>, containing all packages in the root and subdirectories</p>
+<li><p>A <code>go.mod</code> file is placed in the root of the project. This location is known as the <mark>module root</mark> and contains all Go packages and subdirectories.</p>
 
 <ul>
-<li>note: subtrees <em>can</em> have their own <code>go.mod</code> files and will excluded<br />
+<li>note: subtrees, i.e., submodules, <em>can</em> have their own <code>go.mod</code> files and will excluded when performing operations affecting all packages within a module, e.g., <code>go test ./...</code><br />
 <br /></li>
 </ul></li>
 
-<li><p>we used to have GOPATH, but instead we now have the concept of a <mark>main module</mark></p>
+<li><p>We used to have GOPATH, but instead we now have the concept of a <mark>main module</mark></p>
 
 <ul>
-<li><code>go</code> commands will try to determine if the <abbr title="present working directory">$PWD</abbr> is in the module root (remember: this is where the <code>go.mod</code> file resides)? No, look up a directory, am I in the module root? No, look up a directory, am I .., etc.<br /></li>
-<li>being inside a module root or any of its subdirectories is referred to as being in <mark>module-aware</mark> mode<br />
+<li><code>go</code> commands will try to determine if the current working directory is the module root, i.e., location of the <code>go.mod</code> file. If not, it&rsquo;ll keep looking up one directory until either a <code>go.mod</code> file is found or none.<br /></li>
+<li>being inside a module root or any of its subdirectories is referred to as being in <mark>module-aware</mark> mode.<br />
 <br /></li>
 </ul></li>
 </ul>
-
-<hr />
-
-<h3 id="go-mod-file">go.mod file</h3>
-
-<ul>
-<li>dependencies of your imported packages are  with <code>// indirect</code><br /></li>
-<li>if a dependency has a v2.0.0 or higher or and no <code>go.mod</code> file it&rsquo;s suffixed with <code>+incompatible</code> (likewise for pseudo-versions, e.g., <code>v2.0.1-0.yyyymmddhhmmss-abcdefabcdef+incompatible</code>)<br />
-<br /></li>
-</ul>
-
-<p>and example file:</p>
-
-<pre class="prettyprint go">
-module github.com/mfridman/srfax
-
-require (
-    github.com/mitchellh/mapstructure v0.0.0-20180715050151-f15292f7a699
-    github.com/pkg/errors v0.7.0
-)
-
-exclude github.com/pkg/errors v0.7.1
-</pre>
 
 <hr />
 
 <h3 id="gopath-mode-vs-module-aware-mode">GOPATH mode vs module-aware mode</h3>
 
-<p>In <code>go1.11beta2</code>, and <code>1.11</code>, module support isn&rsquo;t enabled by default and is controlled by the env variable <code>GO111MODULE</code>.</p>
+<p>In <code>1.11</code>, module support is not enabled by default and is controlled by the env variable <code>GO111MODULE</code>.</p>
 
-<p>Default:</p>
+<p><code>GO111MODULE=auto</code> (or unset)<br />
+<i class="fas fa-arrow-right"></i> default: go modules only supported outside the GOPATH</p>
+
+<p><code>GO111MODULE=off</code><br />
+<i class="fas fa-arrow-right"></i> GOPATH mode: disable go module support, as if you&rsquo;re on <code>1.10</code></p>
+
+<p><code>GO111MODULE=on</code><br />
+<i class="fas fa-arrow-right"></i> module-aware mode: go commands will use go modules and never consult GOPATH to resolve imports</p>
+
+<hr />
+
+<h3 id="go-mod">go.mod</h3>
+
+<p>A <code>go.mod</code> file defines the precise set of packages available for use by go commands.</p>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> If the project is using a third-party dependency manager, e.g., dep, godep, glide, etc., then <code>go mod init</code> will add requirements based on the existing configuration, e.g., Gopkg.lock.</p>
+
+<p>To start a new module go to the root of your project (must not already contain a <code>go.mod</code>) and run:</p>
+
+<pre class="prettyprint lang-sh">
+go mod init 
+
+# The module name is guessed from import comments or vcs config
+# To override, add the module path like so
+go mod init github.com/mfridman/srfax
+</pre>
+
+<p>this will create a <code>go.mod</code> file in the current directory. Now run:</p>
+
+<pre class="prettyprint lang-sh">
+go get -d
+# The -d flag instructs go to download packages only, but not install them.
+
+cat go.mod 
+module github.com/mfridman/srfax
+
+require (
+    github.com/mitchellh/mapstructure v0.0.0-20180715050151-f15292f7a699
+    github.com/pkg/errors v0.8.0
+)
+</pre>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> A few things to note:</p>
 
 <ul>
-<li><code>GO111MODULE=auto</code>: go commands support modules outside the GOPATH (usually <code>$HOME/go</code>)<br />
-<br /></li>
+<li><p>In module-aware mode downloaded dependencies are still downloaded to <code>GOPATH/pkg/mod</code> and installed commands to <code>GOPATH/bin</code>, unless otherwise set.</p></li>
+
+<li><p>If a dependency is tagged <code>v2.0.0</code> or higher and contains no <code>go.mod</code> file it is suffixed with <code>+incompatible</code> (likewise for pseudo-versions, e.g., <code>v2.0.1-0.yyyymmddhhmmss-abcdefabcdef+incompatible</code>)</p></li>
+
+<li><p>Dependencies of imported packages are marked with <code>// indirect</code></p></li>
 </ul>
 
-<p>GOPATH mode:</p>
+<hr />
 
-<ul>
-<li><code>GO111MODULE=off</code>: disable go module support, as if you&rsquo;re on <code>1.10</code><br />
-<br /></li>
-</ul>
+<h3 id="day-to-day-commands">Day-to-day commands</h3>
 
-<p>module-aware mode:</p>
+<p>Out of the box your favorite go commands such as <code>build</code>, <code>install</code>, <code>run</code>, <code>test</code>, etc. will just work.</p>
 
-<ul>
-<li><code>GO111MODULE=on</code>: go commands will use go modules and never consult GOPATH to resolve imports<br />
-<br /></li>
-</ul>
+<p>As you run them, the <code>go.mod</code> file will automatically be updated and new dependencies will be downloaded to satisfy imports.</p>
 
-<p>&ndash;</p>
-
-<h3 id="commands">Commands</h3>
-
-<p>From here on we&rsquo;re assuming module-aware mode, which you can achieve in one of two ways:</p>
+<p>From here on we&rsquo;re assuming <mark>module-aware</mark> mode, which you can achieve in one of two ways:</p>
 
 <ol>
-<li>copy/move/start a project <em>outside</em> your $GOPATH, yes you heard right, anywhere.<br /></li>
-<li>set env variable to <code>GO111MODULE=on</code>. (option 1 is preferred)<br />
+<li>copy/move/start a project <em>outside</em> your GOPATH, yes you heard right! Anywhere.<br /></li>
+<li>set env variable to <code>GO111MODULE=on</code> and continue working in your GOPATH. (option 1 is preferred)<br />
 <br /></li>
 </ol>
 
-<p>Navigate to the root of your project and run (<i class="fas fa-exclamation-triangle warning-color"></i> go.mod cannot already exist):</p>
+<h4 id="upgrading">upgrading</h4>
 
 <pre class="prettyprint lang-sh">
-go mod init
+go get -d github.com/pkg/errors@v0.7.1
+go get -d github.com/pkg/errors@17b591d # records v.0.7.1
+go get -d github.com/pkg/errors@master  # records v0.8.1-0.20180311214515-816c9085562c
+go get -d github.com/pkg/errors@latest  # v0.8.0
 </pre>
 
-<p>this will create a <code>go.mod</code> file.</p>
-
-<p><i class="fas fa-exclamation-triangle warning-color"></i> If the project is using a third-party dependency manager, e.g., dep, godep, glide, etc., then <code>go mo init</code> will <em>add</em> requirements based on the existing configuration, e.g., Gopkg.lock.</p>
-
-<p>Out of the box go commands will &ldquo;just work&rdquo;. There are no additional steps. Your favorite go commands <code>build</code>, <code>install</code>, <code>run</code>, <code>test</code> will just work.</p>
-
-<p>As you run go commands the <code>go.mod</code> file will automatically be updated and new dependencies will be downloaded to satisfy imports.</p>
-
-<p>Note the follow command:</p>
+<h4 id="downgrading">downgrading</h4>
 
 <pre class="prettyprint lang-sh">
-go list
+go get -d github.com/pkg/errors@v0.6.0
 </pre>
 
-<p>which <em>also</em> triggers the behaviour mentioned above (updating go.mod and downloading deps)</p>
+<ul>
+<li>replacements and exclusions only apply when building module directly; they are ignored when the module is incorporated into a larger build.<br />
+<br /></li>
+</ul>
+
+<h4 id="excluding-version">excluding version</h4>
+
+<pre class="prettyprint lang-sh">
+go mod edit -exclude github.com/pkg/errors@v0.7.0
+
+# entry added to go.mod
+# exclude github.com/pkg/errors v0.7.0
+</pre>
+
+<h4 id="remove-exclusion">remove exclusion</h4>
+
+<pre class="prettyprint lang-sh">
+go mod edit -dropexclude github.com/pkg/errors@v0.7.0
+</pre>
+
+<h4 id="replace">replace</h4>
+
+<pre class="prettyprint lang-sh">
+# -replace=old[@v]=new[@v] 
+go mod edit -replace github.com/pkg/errors@v0.6.0=github.com/pkg/errors@v0.7.0
+
+# entry added to go.mod
+# replace github.com/pkg/errors v0.6.0 => github.com/pkg/errors v0.7.0
+</pre>
+
+<h4 id="dropping-replacement">dropping replacement</h4>
+
+<pre class="prettyprint lang-sh">
+# -dropreplace=old[@v] 
+go mod edit -dropreplace github.com/pkg/errors@v0.6.0
+</pre>
+
+<h4 id="updating-and-patching-one-or-all">updating and patching, one or all</h4>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> with no package arguments, &lsquo;go get&rsquo; applies to the main module</p>
+
+<p>minor or patch:</p>
+
+<pre class="prettyprint lang-sh">
+# update all dependencies to newer minor or patch releases
+go get -u
+
+# update single dependency to newest minor or patch release
+go get -u github.com/pkg/errors # v0.6.0 -> v0.8.0
+</pre>
+
+<p>patch only:</p>
+
+<pre class="prettyprint lang-sh">
+# update all dependencies to newer patch
+go get -d -u=patch
+
+# update single dependency to newest patch
+go get -d -u=patch github.com/pkg/errors # records v0.7.0 -> v0.7.1
+</pre>
 
 <hr />
 
 <h3 id="advanced-commands">Advanced commands</h3>
 
-<p>[WIP], maybe add this to its own section, advanced tips and tricks?</p>
+<p>There are a few of low-level commands available, but we&rsquo;ll explore those later on:</p>
 
 <pre class="prettyprint lang-sh">
-go mod edit   # old go mod -require ...
-go mod fix    # old go mod -fix
-go mod graph  # old go mod -graph
-go mod init   # old go mod -init
-go mod tidy   # old go mod -sync
-go mod vendor # old go mod -vendor
-go mod verify # old go mod -verify
+go mod graph
+# prints module requirements
+
+go mod tidy
+# keeps go.mod in sync with the module; adds modules required to build current module's packages and deps, removes unused modules. Also keeps go.sum updated
+
+go mod verify
+# checks deps of current module, which are stored in local downloaded cache, have not been modified since last download $GOPATH/pkg/mod/cache/download
+
+go mod vendor 
+# builds a vendor dir, includes all packages required to build and test all the current module's packages
+
+go mod fix
+# unlikely you need this because many go commands run this command under the hood
 </pre>
+
+<ul>
+<li>to make use of the <code>vendor</code> dir on can run:<br />
+<br /></li>
+</ul>
+
+<pre class="prettyprint lang-sh">
+go build -mod=vendor
+
+# note this flag also applied to go clean, get, install, list, run, and test
+</pre>
+
+<div class="lead text-center">
+    <h1><a href="https://frid.io/golang/go-modules-part3">
+    part 3
+    </a></h1>
+</div>
  
                 </div>
             </div>

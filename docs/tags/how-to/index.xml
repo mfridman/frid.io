@@ -17,9 +17,9 @@
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/golang/go-modules-part2/</guid>
-      <description>Go modules: part 1, part 2, part 3  The module commands relating to go mod may change: cl#126655, I&amp;rsquo;ll do my best to edit this post to reflect reality.
-Go module From the docs: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
- a go.mod file is located in the root of your package. This location marks the module root, containing all packages in the root and subdirectories</description>
+      <description>Go modules: part 1, part 2, part 3  Go module A go module is a collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
+ A go.mod file is placed in the root of the project. This location is known as the module root and contains all Go packages and subdirectories.
+ note: subtrees, i.e., submodules, can have their own go.</description>
     </item>
     
   </channel>

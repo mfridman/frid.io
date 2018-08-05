@@ -17,11 +17,12 @@
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/golang/go-modules-part3/</guid>
-      <description>Go modules: part 1, part 2, part 3  This will be coming soon&amp;hellip;
- Vendor is tailored for the dependencies of a specific module, not warming a cache.
- 🤔 from issue#26610
-For CI/CD this may be useful, cl#126656)
-and maybe this.. issue#24250</description>
+      <description>Go modules: part 1, part 2, part 3  coming soon&amp;hellip;
+for now you can check out their site drone.io and blog
+ Vendor is tailored for the dependencies of a specific module, not warming a cache. 🤔 from issue#26610
+ For CI/CD this may be useful, cl#126656
+ and maybe issue#24250
+  This section will be removed eventually Implementation deviations from the initial proposal and worthy highlights:</description>
     </item>
     
     <item>
@@ -30,9 +31,9 @@ and maybe this.. issue#24250</description>
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://frid.io/golang/go-modules-part2/</guid>
-      <description>Go modules: part 1, part 2, part 3  The module commands relating to go mod may change: cl#126655, I&amp;rsquo;ll do my best to edit this post to reflect reality.
-Go module From the docs: A collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
- a go.mod file is located in the root of your package. This location marks the module root, containing all packages in the root and subdirectories</description>
+      <description>Go modules: part 1, part 2, part 3  Go module A go module is a collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.
+ A go.mod file is placed in the root of the project. This location is known as the module root and contains all Go packages and subdirectories.
+ note: subtrees, i.e., submodules, can have their own go.</description>
     </item>
     
     <item>
