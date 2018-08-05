@@ -342,7 +342,6 @@ Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>,
 <li><a href="#dropping-replacement">dropping replacement</a><br /></li>
 <li><a href="#updating-and-patching">updating and patching</a><br /></li>
 <li><a href="#advanced-commands">Advanced commands</a><br />
-<br />
 <br /></li>
 </ul></li>
 </ul>
@@ -457,10 +456,9 @@ go get -d github.com/pkg/errors@latest  # v0.8.0
 go get -d github.com/pkg/errors@v0.6.0
 </pre>
 
-<ul>
-<li>replacements and exclusions only apply when building module directly; they are ignored when the module is incorporated into a larger build.<br />
-<br /></li>
-</ul>
+<p><br></p>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> replacements and exclusions only apply when building module directly; they are ignored when the module is incorporated into a larger build.</p>
 
 <h4 id="excluding-version">excluding version</h4>
 
@@ -493,6 +491,8 @@ go mod edit -replace github.com/pkg/errors@v0.6.0=github.com/pkg/errors@v0.7.0
 # -dropreplace=old[@v] 
 go mod edit -dropreplace github.com/pkg/errors@v0.6.0
 </pre>
+
+<p><br></p>
 
 <h4 id="updating-and-patching">updating and patching</h4>
 
