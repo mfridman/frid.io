@@ -327,6 +327,26 @@ if (!doNotTrack) {
 Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>, part 2, <a href="https://frid.io/golang/go-modules-part3">part 3</a>
 </div>
 
+<ul>
+<li><a href="#go-module">Go module</a><br /></li>
+<li><a href="#gopath-mode-vs-module-aware-mode">GOPATH mode vs module-aware mode</a><br /></li>
+<li><a href="#go-mod-file">go.mod file</a><br /></li>
+<li><a href="#day-to-day-commands">Day-to-day commands</a><br />
+
+<ul>
+<li><a href="#upgrading">upgrading</a><br /></li>
+<li><a href="#downgrading">downgrading</a><br /></li>
+<li><a href="#excluding-version">excluding version</a><br /></li>
+<li><a href="#remove-exclusion">remove exclusion</a><br /></li>
+<li><a href="#replace">replace</a><br /></li>
+<li><a href="#dropping-replacement">dropping replacement</a><br /></li>
+<li><a href="#updating-and-patching">updating and patching</a><br /></li>
+<li><a href="#advanced-commands">Advanced commands</a><br />
+<br />
+<br /></li>
+</ul></li>
+</ul>
+
 <h3 id="go-module">Go module</h3>
 
 <p>A <a href="https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more">go module</a> is a collection of related Go packages. A single unit that defines the minimum requirements that must be satisfied by their dependencies.</p>
@@ -365,7 +385,7 @@ Go modules: <a href="https://frid.io/golang/go-modules-part1" active>part 1</a>,
 
 <hr />
 
-<h3 id="go-mod">go.mod</h3>
+<h3 id="go-mod-file">go.mod file</h3>
 
 <p>A <code>go.mod</code> file defines the precise set of packages available for use by go commands.</p>
 
@@ -422,6 +442,8 @@ require (
 <br /></li>
 </ol>
 
+<p>Note, I typically run <code>go get</code> with the <code>-d</code> flag because I want the source code to be downloaded to my local computer.</p>
+
 <h4 id="upgrading">upgrading</h4>
 
 <pre class="prettyprint lang-sh">
@@ -474,7 +496,7 @@ go mod edit -replace github.com/pkg/errors@v0.6.0=github.com/pkg/errors@v0.7.0
 go mod edit -dropreplace github.com/pkg/errors@v0.6.0
 </pre>
 
-<h4 id="updating-and-patching-one-or-all">updating and patching, one or all</h4>
+<h4 id="updating-and-patching">updating and patching</h4>
 
 <p><i class="fas fa-exclamation-triangle warning-color"></i> with no package arguments, &lsquo;go get&rsquo; applies to the main module</p>
 
@@ -521,15 +543,22 @@ go mod fix
 # unlikely you need this because many go commands run this command under the hood
 </pre>
 
-<ul>
-<li>to make use of the <code>vendor</code> dir on can run:<br />
-<br /></li>
-</ul>
+<p>To use the vendor dir:</p>
+
+<p><i class="fas fa-exclamation-triangle warning-color"></i> This operation is <em>will</em> recreate the vendor dir. If you&rsquo;re using another package manager that already has vendor, everything will be wiped and rebuilt by this command.</p>
 
 <pre class="prettyprint lang-sh">
 go build -mod=vendor
 
-# note this flag also applied to go clean, get, install, list, run, and test
+# note the -mod flag also applies to go clean, get, install, list, run, and test
+</pre>
+
+<p>Lastly, I have some ideas about using the following command, which provides information about modules and their dependencies. It can also return JSON with the <code>-json</code> flag which is useful for downstream tools.</p>
+
+<pre class="prettyprint lang-sh">
+go list all
+# in module-mode = all packages in the main module and their dependencies. all
+# in GOPATH-mode = ALL packages on local system <- CAREFUL, this may take a long time
 </pre>
 
 <div class="lead text-center">
