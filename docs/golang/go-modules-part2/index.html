@@ -405,7 +405,7 @@ go mod init github.com/mfridman/srfax
 
 <pre class="prettyprint lang-sh">
 go get -d
-# The -d flag instructs go to download packages only, but not install them.
+# The -d flag instructs go to download packages, but not install them.
 
 cat go.mod 
 module github.com/mfridman/srfax
@@ -441,8 +441,6 @@ require (
 <li>set env variable to <code>GO111MODULE=on</code> and continue working in your GOPATH. (option 1 is preferred)<br />
 <br /></li>
 </ol>
-
-<p>Note, I typically run <code>go get</code> with the <code>-d</code> flag because I want the source code to be downloaded to my local computer.</p>
 
 <h4 id="upgrading">upgrading</h4>
 
