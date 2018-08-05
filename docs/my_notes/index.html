@@ -338,6 +338,28 @@ sudo rm -rf /usr/local/go
 wget -qO- https://dl.google.com/go/go1.5.2.darwin-amd64.tar.gz | sudo tar -C /usr/local -xz && go version
 # go version go1.5.2 darwin/amd64
 </pre>
+
+<h4 id="building-from-source">Building from source</h4>
+
+<pre class="prettyprint lang-sh">
+# assuming an existing go version already exists (no need to bootstrap)..
+
+mkdir ~/source && cd $_
+git clone https://go.googlesource.com/go
+
+# on subsequent runs, to pull latest changes locally
+# git pull origin master
+
+cd ./go/src
+./make.bash
+
+# set precedence, this will vary depending on your needs.
+# $HOME/source/go/bin/go vs /usr/local/go/bin/go
+# export PATH=$HOME/source/go/bin:$PATH
+
+go version
+# go version devel +5a720d229d Sat Aug 4 16:37:47 2018 +0000 darwin/amd64
+</pre>
  
                 </div>
             </div>
