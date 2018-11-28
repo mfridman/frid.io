@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Advanced on frid.io</title>
-    <link>https://frid.io/tags/advanced/</link>
-    <description>Recent content in Advanced on frid.io</description>
+    <title>Advanced on mfridman.com</title>
+    <link>http://mfridman.com/tags/advanced/</link>
+    <description>Recent content in Advanced on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/advanced/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/advanced/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upspin part 5: Advanced tips and tricks [WIP]</title>
-      <link>https://frid.io/blog/upspin-part-5/</link>
+      <link>http://mfridman.com/blog/upspin-part-5/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/blog/upspin-part-5/</guid>
+      <guid>http://mfridman.com/blog/upspin-part-5/</guid>
       <description>Please note: this is a work in progress and some items below may change without notice  FUSE daemon, upspinfs and cacheserver
  I lost my Domain keys, now what?
   FUSE daemon, upspinfs and cacheserver The bread and butter of Upspin is being able to bring your remote data into the local namespace, so those items look and feel as if they are part of the local file tree.</description>

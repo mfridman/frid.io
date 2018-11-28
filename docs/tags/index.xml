@@ -1,418 +1,418 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on frid.io</title>
-    <link>https://frid.io/tags/</link>
-    <description>Recent content in Tags on frid.io</description>
+    <title>Tags on mfridman.com</title>
+    <link>http://mfridman.com/tags/</link>
+    <description>Recent content in Tags on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>1.11</title>
-      <link>https://frid.io/tags/1.11/</link>
+      <link>http://mfridman.com/tags/1.11/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/1.11/</guid>
+      <guid>http://mfridman.com/tags/1.11/</guid>
       <description></description>
     </item>
     
     <item>
       <title>2017</title>
-      <link>https://frid.io/tags/2017/</link>
+      <link>http://mfridman.com/tags/2017/</link>
       <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/2017/</guid>
+      <guid>http://mfridman.com/tags/2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Advanced</title>
-      <link>https://frid.io/tags/advanced/</link>
+      <link>http://mfridman.com/tags/advanced/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/advanced/</guid>
+      <guid>http://mfridman.com/tags/advanced/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cacheserver</title>
-      <link>https://frid.io/tags/cacheserver/</link>
+      <link>http://mfridman.com/tags/cacheserver/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/cacheserver/</guid>
+      <guid>http://mfridman.com/tags/cacheserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Client</title>
-      <link>https://frid.io/tags/client/</link>
+      <link>http://mfridman.com/tags/client/</link>
       <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/client/</guid>
+      <guid>http://mfridman.com/tags/client/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Command Substitution</title>
-      <link>https://frid.io/tags/command-substitution/</link>
+      <link>http://mfridman.com/tags/command-substitution/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/command-substitution/</guid>
+      <guid>http://mfridman.com/tags/command-substitution/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ctf</title>
-      <link>https://frid.io/tags/ctf/</link>
+      <link>http://mfridman.com/tags/ctf/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/ctf/</guid>
+      <guid>http://mfridman.com/tags/ctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database</title>
-      <link>https://frid.io/tags/database/</link>
+      <link>http://mfridman.com/tags/database/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/database/</guid>
+      <guid>http://mfridman.com/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://frid.io/tags/docker/</link>
+      <link>http://mfridman.com/tags/docker/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/docker/</guid>
+      <guid>http://mfridman.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Drone Ci</title>
-      <link>https://frid.io/tags/drone-ci/</link>
+      <link>http://mfridman.com/tags/drone-ci/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/drone-ci/</guid>
+      <guid>http://mfridman.com/tags/drone-ci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Files</title>
-      <link>https://frid.io/tags/files/</link>
+      <link>http://mfridman.com/tags/files/</link>
       <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/files/</guid>
+      <guid>http://mfridman.com/tags/files/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fuse</title>
-      <link>https://frid.io/tags/fuse/</link>
+      <link>http://mfridman.com/tags/fuse/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/fuse/</guid>
+      <guid>http://mfridman.com/tags/fuse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://frid.io/tags/github/</link>
+      <link>http://mfridman.com/tags/github/</link>
       <pubDate>Sat, 17 Jun 2017 00:11:24 -0500</pubDate>
       
-      <guid>https://frid.io/tags/github/</guid>
+      <guid>http://mfridman.com/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://frid.io/tags/go/</link>
+      <link>http://mfridman.com/tags/go/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/go/</guid>
+      <guid>http://mfridman.com/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://frid.io/tags/golang/</link>
+      <link>http://mfridman.com/tags/golang/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/golang/</guid>
+      <guid>http://mfridman.com/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Google</title>
-      <link>https://frid.io/tags/google/</link>
+      <link>http://mfridman.com/tags/google/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/google/</guid>
+      <guid>http://mfridman.com/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gpg</title>
-      <link>https://frid.io/tags/gpg/</link>
+      <link>http://mfridman.com/tags/gpg/</link>
       <pubDate>Sat, 17 Jun 2017 00:11:24 -0500</pubDate>
       
-      <guid>https://frid.io/tags/gpg/</guid>
+      <guid>http://mfridman.com/tags/gpg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Half Blind</title>
-      <link>https://frid.io/tags/half-blind/</link>
+      <link>http://mfridman.com/tags/half-blind/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/half-blind/</guid>
+      <guid>http://mfridman.com/tags/half-blind/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hostkey</title>
-      <link>https://frid.io/tags/hostkey/</link>
+      <link>http://mfridman.com/tags/hostkey/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/hostkey/</guid>
+      <guid>http://mfridman.com/tags/hostkey/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hostkeycallback</title>
-      <link>https://frid.io/tags/hostkeycallback/</link>
+      <link>http://mfridman.com/tags/hostkeycallback/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/hostkeycallback/</guid>
+      <guid>http://mfridman.com/tags/hostkeycallback/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How To</title>
-      <link>https://frid.io/tags/how-to/</link>
+      <link>http://mfridman.com/tags/how-to/</link>
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/how-to/</guid>
+      <guid>http://mfridman.com/tags/how-to/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://frid.io/tags/hugo/</link>
+      <link>http://mfridman.com/tags/hugo/</link>
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
       
-      <guid>https://frid.io/tags/hugo/</guid>
+      <guid>http://mfridman.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interfaces</title>
-      <link>https://frid.io/tags/interfaces/</link>
+      <link>http://mfridman.com/tags/interfaces/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
-      <guid>https://frid.io/tags/interfaces/</guid>
+      <guid>http://mfridman.com/tags/interfaces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://frid.io/tags/java/</link>
+      <link>http://mfridman.com/tags/java/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/java/</guid>
+      <guid>http://mfridman.com/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jekyll</title>
-      <link>https://frid.io/tags/jekyll/</link>
+      <link>http://mfridman.com/tags/jekyll/</link>
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
       
-      <guid>https://frid.io/tags/jekyll/</guid>
+      <guid>http://mfridman.com/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Least Significant Bit</title>
-      <link>https://frid.io/tags/least-significant-bit/</link>
+      <link>http://mfridman.com/tags/least-significant-bit/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/least-significant-bit/</guid>
+      <guid>http://mfridman.com/tags/least-significant-bit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lfi</title>
-      <link>https://frid.io/tags/lfi/</link>
+      <link>http://mfridman.com/tags/lfi/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/lfi/</guid>
+      <guid>http://mfridman.com/tags/lfi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lsb</title>
-      <link>https://frid.io/tags/lsb/</link>
+      <link>http://mfridman.com/tags/lsb/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/lsb/</guid>
+      <guid>http://mfridman.com/tags/lsb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modules</title>
-      <link>https://frid.io/tags/modules/</link>
+      <link>http://mfridman.com/tags/modules/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/modules/</guid>
+      <guid>http://mfridman.com/tags/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mongodb</title>
-      <link>https://frid.io/tags/mongodb/</link>
+      <link>http://mfridman.com/tags/mongodb/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/mongodb/</guid>
+      <guid>http://mfridman.com/tags/mongodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nosql</title>
-      <link>https://frid.io/tags/nosql/</link>
+      <link>http://mfridman.com/tags/nosql/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/nosql/</guid>
+      <guid>http://mfridman.com/tags/nosql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Perspectives</title>
-      <link>https://frid.io/tags/perspectives/</link>
+      <link>http://mfridman.com/tags/perspectives/</link>
       <pubDate>Sun, 24 Dec 2017 21:04:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/perspectives/</guid>
+      <guid>http://mfridman.com/tags/perspectives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pico</title>
-      <link>https://frid.io/tags/pico/</link>
+      <link>http://mfridman.com/tags/pico/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/pico/</guid>
+      <guid>http://mfridman.com/tags/pico/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Plaid</title>
-      <link>https://frid.io/tags/plaid/</link>
+      <link>http://mfridman.com/tags/plaid/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/plaid/</guid>
+      <guid>http://mfridman.com/tags/plaid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rethinkdb</title>
-      <link>https://frid.io/tags/rethinkdb/</link>
+      <link>http://mfridman.com/tags/rethinkdb/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://frid.io/tags/rethinkdb/</guid>
+      <guid>http://mfridman.com/tags/rethinkdb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reverse</title>
-      <link>https://frid.io/tags/reverse/</link>
+      <link>http://mfridman.com/tags/reverse/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/reverse/</guid>
+      <guid>http://mfridman.com/tags/reverse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sql Injection</title>
-      <link>https://frid.io/tags/sql-injection/</link>
+      <link>http://mfridman.com/tags/sql-injection/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/sql-injection/</guid>
+      <guid>http://mfridman.com/tags/sql-injection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ssh</title>
-      <link>https://frid.io/tags/ssh/</link>
+      <link>http://mfridman.com/tags/ssh/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/ssh/</guid>
+      <guid>http://mfridman.com/tags/ssh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Steganography</title>
-      <link>https://frid.io/tags/steganography/</link>
+      <link>http://mfridman.com/tags/steganography/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/steganography/</guid>
+      <guid>http://mfridman.com/tags/steganography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tipstricks</title>
-      <link>https://frid.io/tags/tipstricks/</link>
+      <link>http://mfridman.com/tags/tipstricks/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/tipstricks/</guid>
+      <guid>http://mfridman.com/tags/tipstricks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Upspin</title>
-      <link>https://frid.io/tags/upspin/</link>
+      <link>http://mfridman.com/tags/upspin/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/upspin/</guid>
+      <guid>http://mfridman.com/tags/upspin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Upspinfs</title>
-      <link>https://frid.io/tags/upspinfs/</link>
+      <link>http://mfridman.com/tags/upspinfs/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/upspinfs/</guid>
+      <guid>http://mfridman.com/tags/upspinfs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Upspinserver</title>
-      <link>https://frid.io/tags/upspinserver/</link>
+      <link>http://mfridman.com/tags/upspinserver/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/upspinserver/</guid>
+      <guid>http://mfridman.com/tags/upspinserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>https://frid.io/tags/web/</link>
+      <link>http://mfridman.com/tags/web/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/web/</guid>
+      <guid>http://mfridman.com/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xor</title>
-      <link>https://frid.io/tags/xor/</link>
+      <link>http://mfridman.com/tags/xor/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/tags/xor/</guid>
+      <guid>http://mfridman.com/tags/xor/</guid>
       <description></description>
     </item>
     

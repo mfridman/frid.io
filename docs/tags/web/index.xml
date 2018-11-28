@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on frid.io</title>
-    <link>https://frid.io/tags/web/</link>
-    <description>Recent content in Web on frid.io</description>
+    <title>Web on mfridman.com</title>
+    <link>http://mfridman.com/tags/web/</link>
+    <description>Recent content in Web on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Echo</title>
-      <link>https://frid.io/ctf/plaid-2017/echo/</link>
+      <link>http://mfridman.com/ctf/plaid-2017/echo/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/ctf/plaid-2017/echo/</guid>
+      <guid>http://mfridman.com/ctf/plaid-2017/echo/</guid>
       <description>Challenge: If you hear enough, you may hear the whispers of a key&amp;hellip;
 If you see app.py well enough, you will notice the UI sucks&amp;hellip;
 No hints.

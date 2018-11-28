@@ -290,7 +290,7 @@ if (!doNotTrack) {
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
-    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
+    <a class="navbar-brand px-2 mt-1" href="http://mfridman.com/">
         <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
@@ -301,16 +301,16 @@ if (!doNotTrack) {
     <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
         <ul class="navbar-nav">
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://frid.io/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+                <a class="nav-link" href="http://mfridman.com/golang/">g<img src="http://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/blog/">blog</a>
+                <a class="nav-link" href="http://mfridman.com/blog/">blog</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
+                <a class="nav-link" href="http://mfridman.com/ctf/">ctf</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/about/">about</a>
+                <a class="nav-link" href="http://mfridman.com/about/">about</a>
             </li>
         </ul>
     </div>
@@ -324,10 +324,10 @@ if (!doNotTrack) {
         Jul 2018 &nbsp;&nbsp; | &nbsp;&nbsp;
         
         
-        <a href="https://frid.io/tags/upspin">upspin</a>&nbsp;&nbsp;
+        <a href="http://mfridman.com/tags/upspin">upspin</a>&nbsp;&nbsp;
         
         
-        <a href="https://frid.io/tags/upspinserver">upspinserver</a>&nbsp;&nbsp;
+        <a href="http://mfridman.com/tags/upspinserver">upspinserver</a>&nbsp;&nbsp;
         
         
     </small>
@@ -371,7 +371,7 @@ if (!doNotTrack) {
 
 <h3 id="prerequisites">Prerequisites</h3>
 
-<p>In <a href="https://frid.io/blog/upspin-part-2">part 2</a> you already setup an Upspin user. For this tutorial I&rsquo;ll be using: <code>fridman0101@gmail.com</code></p>
+<p>In <a href="http://mfridman.com/blog/upspin-part-2">part 2</a> you already setup an Upspin user. For this tutorial I&rsquo;ll be using: <code>fridman0101@gmail.com</code></p>
 
 <p>You should also have an Internet domain where you can add DNS records. I&rsquo;ll be using: <code>upspin.online</code></p>
 
@@ -381,7 +381,7 @@ if (!doNotTrack) {
 
 <h3 id="tell-upspin-about-host-name">Tell Upspin about host name</h3>
 
-<p>We do not need to run <code>upspin signup</code> because we already created a user with <code>upspin-ui</code> in <a href="https://frid.io/blog/upspin-part-2">part 2</a>.</p>
+<p>We do not need to run <code>upspin signup</code> because we already created a user with <code>upspin-ui</code> in <a href="http://mfridman.com/blog/upspin-part-2">part 2</a>.</p>
 
 <p>Instead we need to tell the Upspin world that we have chosen a location for our dir/store server, accessible at the same host name.</p>
 
@@ -445,13 +445,13 @@ upspin setupdomain -domain=upspin.online
 <p>This step will vary depending on your internet domain registrar, here is an example for <a href="https://www.namecheap.com/">namecheap</a>:</p>
 
 <div class="text-center pb-3">
-    <img  src="https://frid.io/img/name-cheap-1.png" alt="name-cheap-1.png" class="img-fluid"/>
+    <img  src="http://mfridman.com/img/name-cheap-1.png" alt="name-cheap-1.png" class="img-fluid"/>
 </div>
 
 <p>Domain List &gt; Advanced DNS &gt; add a TXT record as specified in the resulting text from the <code>upspin setupdomain -domain=upspin.online</code> command.</p>
 
 <div class="text-center pb-3">
-    <img  src="https://frid.io/img/name-cheap-2.png" alt="name-cheap-2.png" class="img-fluid"/>
+    <img  src="http://mfridman.com/img/name-cheap-2.png" alt="name-cheap-2.png" class="img-fluid"/>
 </div>
 
 <p>At this point you&rsquo;ll be waiting either a few minutes or a few hours for changes to propagate. You can run the following command to check the status:</p>
@@ -475,7 +475,7 @@ host -t TXT upspin.online
 <p>You&rsquo;ll want your VM to have a static IP. On DigitalOcean navigate to Networking &gt; Floating IPs and assign your droplet a floating, i.e., static, IPv4 address.</p>
 
 <div class="text-center pb-3">
-    <img  src="https://frid.io/img/digital-ocean-1.png" alt="digital-ocean-1.png" class="img-fluid" width=75%/>
+    <img  src="http://mfridman.com/img/digital-ocean-1.png" alt="digital-ocean-1.png" class="img-fluid" width=75%/>
 </div>
 
 <hr />
@@ -487,7 +487,7 @@ host -t TXT upspin.online
 <p>Here is a screenshot from namecheap or follow this <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-do-i-create-a-subdomain-for-my-domain">guide</a></p>
 
 <div class="text-center pb-3">
-    <img  src="https://frid.io/img/name-cheap-3.png" alt="name-cheap-3.png" class="img-fluid"/>
+    <img  src="http://mfridman.com/img/name-cheap-3.png" alt="name-cheap-3.png" class="img-fluid"/>
 </div>
 
 <hr />
@@ -617,7 +617,7 @@ upspin setupserver -host=my.upspin.online -domain=upspin.online
 # Created root "fridman0101@gmail.com".
 </pre>
 
-<p>Side note, if you mess up navigate to <a href="https://frid.io/blog/upspin-part-5">advanced tips and tricks</a>, I&rsquo;ll have a section on fixing this up.</p>
+<p>Side note, if you mess up navigate to <a href="http://mfridman.com/blog/upspin-part-5">advanced tips and tricks</a>, I&rsquo;ll have a section on fixing this up.</p>
 
 <p>On the remote server, you&rsquo;ll notice a new folder <code>/home/mfridman/upspin/server</code> which contains a bunch of goodies.</p>
 

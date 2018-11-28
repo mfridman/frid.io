@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>1.11 on frid.io</title>
-    <link>https://frid.io/tags/1.11/</link>
-    <description>Recent content in 1.11 on frid.io</description>
+    <title>1.11 on mfridman.com</title>
+    <link>http://mfridman.com/tags/1.11/</link>
+    <description>Recent content in 1.11 on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/1.11/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/1.11/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Integrating Go modules with Drone CI</title>
-      <link>https://frid.io/golang/go-modules-part3/</link>
+      <link>http://mfridman.com/golang/go-modules-part3/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/golang/go-modules-part3/</guid>
+      <guid>http://mfridman.com/golang/go-modules-part3/</guid>
       <description>Go modules: part 1, part 2, part 3  coming soon&amp;hellip;
 for now you can check out their site drone.io and blog
  Vendor is tailored for the dependencies of a specific module, not warming a cache. 🤔 from issue#26610
@@ -27,10 +27,10 @@ for now you can check out their site drone.io and blog
     
     <item>
       <title>Welcome, Go modules - part2</title>
-      <link>https://frid.io/golang/go-modules-part2/</link>
+      <link>http://mfridman.com/golang/go-modules-part2/</link>
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/golang/go-modules-part2/</guid>
+      <guid>http://mfridman.com/golang/go-modules-part2/</guid>
       <description>Go modules: part 1, part 2, part 3   Go module
  GOPATH mode vs module-aware mode
  go.mod file
@@ -48,10 +48,10 @@ for now you can check out their site drone.io and blog
     
     <item>
       <title>Welcome, Go modules - part1</title>
-      <link>https://frid.io/golang/go-modules-part1/</link>
+      <link>http://mfridman.com/golang/go-modules-part1/</link>
       <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/golang/go-modules-part1/</guid>
+      <guid>http://mfridman.com/golang/go-modules-part1/</guid>
       <description>Go modules: part 1, part 2, part 3  For those strictly interested in what is it and how do I use it? head over to part2.
 I&amp;rsquo;ll skip majority of the historic bits and add a timeline for context. The path towards Go modules&amp;hellip;
   Makefiles pre-1.0  In the beginning, there were Makefiles such as these, scripts, maybe a 🧙 and lots of 

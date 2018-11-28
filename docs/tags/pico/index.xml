@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pico on frid.io</title>
-    <link>https://frid.io/tags/pico/</link>
-    <description>Recent content in Pico on frid.io</description>
+    <title>Pico on mfridman.com</title>
+    <link>http://mfridman.com/tags/pico/</link>
+    <description>Recent content in Pico on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/pico/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/pico/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Little School Bus</title>
-      <link>https://frid.io/ctf/pico-2017/little-schoolbus/</link>
+      <link>http://mfridman.com/ctf/pico-2017/little-schoolbus/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/ctf/pico-2017/little-schoolbus/</guid>
+      <guid>http://mfridman.com/ctf/pico-2017/little-schoolbus/</guid>
       <description>Had a blast participating with a few local DC416 folks in the 2017 picoCTF!
 Challenge: Can you help me find the data in this littleschoolbus.bmp?
 Hint: Look at least significant bit (LSB) encoding!!
@@ -25,10 +25,10 @@ In retrospect the solution was fairly straightforward, but, tunnel vision got th
     
     <item>
       <title>No Eyes</title>
-      <link>https://frid.io/ctf/pico-2017/no-eyes/</link>
+      <link>http://mfridman.com/ctf/pico-2017/no-eyes/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/ctf/pico-2017/no-eyes/</guid>
+      <guid>http://mfridman.com/ctf/pico-2017/no-eyes/</guid>
       <description>Challenge: The website isn&amp;rsquo;t really me much, but you can still get the admin password, right?
 Hint: Sometimes an error message can be just as useful
 This one was really rewarding.
@@ -39,10 +39,10 @@ Entering a single quote results in an error, great, there is a problem with the 
     
     <item>
       <title>coffee</title>
-      <link>https://frid.io/ctf/pico-2017/coffee/</link>
+      <link>http://mfridman.com/ctf/pico-2017/coffee/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/ctf/pico-2017/coffee/</guid>
+      <guid>http://mfridman.com/ctf/pico-2017/coffee/</guid>
       <description>Challenge: You found a suspicious USB drive in a jar of pickles. It contains this file
 $ file freeThePickles.class freeThePickles.class: compiled Java class data, version 52.0 (Java 1.8) Hint: Is there a way to get the source of the program?
 Although this challenge didn&amp;rsquo;t call for it, if you want to disassemble a class file use javap like so&amp;hellip;

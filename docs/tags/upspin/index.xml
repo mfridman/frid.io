@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Upspin on frid.io</title>
-    <link>https://frid.io/tags/upspin/</link>
-    <description>Recent content in Upspin on frid.io</description>
+    <title>Upspin on mfridman.com</title>
+    <link>http://mfridman.com/tags/upspin/</link>
+    <description>Recent content in Upspin on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/upspin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/upspin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upspin part 5: Advanced tips and tricks [WIP]</title>
-      <link>https://frid.io/blog/upspin-part-5/</link>
+      <link>http://mfridman.com/blog/upspin-part-5/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/blog/upspin-part-5/</guid>
+      <guid>http://mfridman.com/blog/upspin-part-5/</guid>
       <description>Please note: this is a work in progress and some items below may change without notice  FUSE daemon, upspinfs and cacheserver
  I lost my Domain keys, now what?
   FUSE daemon, upspinfs and cacheserver The bread and butter of Upspin is being able to bring your remote data into the local namespace, so those items look and feel as if they are part of the local file tree.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Upspin part 3: Configuring an Upspin server [WIP]</title>
-      <link>https://frid.io/blog/upspin-part-3/</link>
+      <link>http://mfridman.com/blog/upspin-part-3/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/blog/upspin-part-3/</guid>
+      <guid>http://mfridman.com/blog/upspin-part-3/</guid>
       <description>Please note: this is a work in progress and some items below may change without notice  Intro
  Prerequisites
  Tell Upspin about your host name
@@ -43,10 +43,10 @@
     
     <item>
       <title>Upspin part 2: Configuring an Upspin user</title>
-      <link>https://frid.io/blog/upspin-part-2/</link>
+      <link>http://mfridman.com/blog/upspin-part-2/</link>
       <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/blog/upspin-part-2/</guid>
+      <guid>http://mfridman.com/blog/upspin-part-2/</guid>
       <description>Intro
  Installing the tools
  1 - Download binaries directly
@@ -59,10 +59,10 @@ For the sake of this tutorial I&amp;rsquo;ll be hosting a publicly accessible fi
     
     <item>
       <title>Upspin part 1: My $HOME</title>
-      <link>https://frid.io/blog/upspin-part-1/</link>
+      <link>http://mfridman.com/blog/upspin-part-1/</link>
       <pubDate>Mon, 25 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/blog/upspin-part-1/</guid>
+      <guid>http://mfridman.com/blog/upspin-part-1/</guid>
       <description>Background For some time I imagined a world where all I&amp;rsquo;d need to access my data was something, be it a laptop, cellphone or embedded microchip, that would authenticate me and grant access to all data available to me. In this world I could bring said authentication anywhere, e.g., a library or Chiba City, and start accessing data with whatever tools available. Imagine a keyboard, mouse and monitor at the library or tablet at an airport.</description>
     </item>
     

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reverse on frid.io</title>
-    <link>https://frid.io/tags/reverse/</link>
-    <description>Recent content in Reverse on frid.io</description>
+    <title>Reverse on mfridman.com</title>
+    <link>http://mfridman.com/tags/reverse/</link>
+    <description>Recent content in Reverse on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/reverse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/reverse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>coffee</title>
-      <link>https://frid.io/ctf/pico-2017/coffee/</link>
+      <link>http://mfridman.com/ctf/pico-2017/coffee/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://frid.io/ctf/pico-2017/coffee/</guid>
+      <guid>http://mfridman.com/ctf/pico-2017/coffee/</guid>
       <description>Challenge: You found a suspicious USB drive in a jar of pickles. It contains this file
 $ file freeThePickles.class freeThePickles.class: compiled Java class data, version 52.0 (Java 1.8) Hint: Is there a way to get the source of the program?
 Although this challenge didn&amp;rsquo;t call for it, if you want to disassemble a class file use javap like so&amp;hellip;

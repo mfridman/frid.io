@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nosql on frid.io</title>
-    <link>https://frid.io/tags/nosql/</link>
-    <description>Recent content in Nosql on frid.io</description>
+    <title>Nosql on mfridman.com</title>
+    <link>http://mfridman.com/tags/nosql/</link>
+    <description>Recent content in Nosql on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Feb 2018 17:36:50 -0500</lastBuildDate>
     
-	<atom:link href="https://frid.io/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://mfridman.com/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A mongoDB Go Driver - by the mongoDB folks</title>
-      <link>https://frid.io/golang/a-new-mongodb-go-driver/</link>
+      <link>http://mfridman.com/golang/a-new-mongodb-go-driver/</link>
       <pubDate>Thu, 22 Feb 2018 17:36:50 -0500</pubDate>
       
-      <guid>https://frid.io/golang/a-new-mongodb-go-driver/</guid>
+      <guid>http://mfridman.com/golang/a-new-mongodb-go-driver/</guid>
       <description>So this is exciting, the mongoDB team is working on an official mongoDB Go driver. The official announcement can be found at MongoDB Go Driver Alpha 1 released
 For those interested why mongoDB chose to write a driver from the ground-up as apposed to forking mgo read their engineering blog
 The repo can be found on github mongo-go-drive and bug reports should be filed over on jira.mongodb.org
