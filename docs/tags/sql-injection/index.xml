@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql Injection on mfridman.com</title>
-    <link>http://mfridman.com/tags/sql-injection/</link>
+    <link>https://mfridman.com/tags/sql-injection/</link>
     <description>Recent content in Sql Injection on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>No Eyes</title>
-      <link>http://mfridman.com/ctf/pico-2017/no-eyes/</link>
+      <link>https://mfridman.com/ctf/pico-2017/no-eyes/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/pico-2017/no-eyes/</guid>
+      <guid>https://mfridman.com/ctf/pico-2017/no-eyes/</guid>
       <description>Challenge: The website isn&amp;rsquo;t really me much, but you can still get the admin password, right?
 Hint: Sometimes an error message can be just as useful
 This one was really rewarding.

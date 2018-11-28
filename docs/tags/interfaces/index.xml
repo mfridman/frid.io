@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interfaces on mfridman.com</title>
-    <link>http://mfridman.com/tags/interfaces/</link>
+    <link>https://mfridman.com/tags/interfaces/</link>
     <description>Recent content in Interfaces on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Feb 2018 20:07:41 -0500</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Shine on You Crazy Interface - part2</title>
-      <link>http://mfridman.com/golang/shine-on-you-crazy-interface2/</link>
+      <link>https://mfridman.com/golang/shine-on-you-crazy-interface2/</link>
       <pubDate>Mon, 05 Feb 2018 20:07:41 -0500</pubDate>
       
-      <guid>http://mfridman.com/golang/shine-on-you-crazy-interface2/</guid>
+      <guid>https://mfridman.com/golang/shine-on-you-crazy-interface2/</guid>
       <description>No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
 Notice in part1 we actually made use of this interface to format the songs type.
 func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name+&#34; &#34;+fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:</description>
@@ -24,10 +24,10 @@ func (s songs) String() string { var ss []string for i := range s { ss = append(
     
     <item>
       <title>Shine on You Crazy Interface - part1</title>
-      <link>http://mfridman.com/golang/shine-on-you-crazy-interface/</link>
+      <link>https://mfridman.com/golang/shine-on-you-crazy-interface/</link>
       <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/golang/shine-on-you-crazy-interface/</guid>
+      <guid>https://mfridman.com/golang/shine-on-you-crazy-interface/</guid>
       <description>Go&amp;rsquo;s interfaces are brilliant. It&amp;rsquo;s not immediately apparent and at first can be confusing, but after a while its brilliance shines through.
 Simply understand that if a concrete type posses all necessary methods it, the concrete type, can implicitly satisfy an interface.
 In Go, interfaces are considered abstract types, meaning we do not know what an interface really is, only what it can do.

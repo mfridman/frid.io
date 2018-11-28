@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Client on mfridman.com</title>
-    <link>http://mfridman.com/tags/client/</link>
+    <link>https://mfridman.com/tags/client/</link>
     <description>Recent content in Client on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/client/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/client/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upspin part 2: Configuring an Upspin user</title>
-      <link>http://mfridman.com/blog/upspin-part-2/</link>
+      <link>https://mfridman.com/blog/upspin-part-2/</link>
       <pubDate>Mon, 18 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/blog/upspin-part-2/</guid>
+      <guid>https://mfridman.com/blog/upspin-part-2/</guid>
       <description>Intro
  Installing the tools
  1 - Download binaries directly

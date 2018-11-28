@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lfi on mfridman.com</title>
-    <link>http://mfridman.com/tags/lfi/</link>
+    <link>https://mfridman.com/tags/lfi/</link>
     <description>Recent content in Lfi on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/lfi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/lfi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mindreader</title>
-      <link>http://mfridman.com/ctf/google-2017/mindreader/</link>
+      <link>https://mfridman.com/ctf/google-2017/mindreader/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/google-2017/mindreader/</guid>
+      <guid>https://mfridman.com/ctf/google-2017/mindreader/</guid>
       <description>2017 was a tough one. Nonetheless, big thanks to  for hosting an event.
 Challenge: Can you read my mind? No hints.
 All you get is an input box:

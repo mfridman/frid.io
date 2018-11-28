@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Drone Ci on mfridman.com</title>
-    <link>http://mfridman.com/tags/drone-ci/</link>
+    <link>https://mfridman.com/tags/drone-ci/</link>
     <description>Recent content in Drone Ci on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/drone-ci/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/drone-ci/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Integrating Go modules with Drone CI</title>
-      <link>http://mfridman.com/golang/go-modules-part3/</link>
+      <link>https://mfridman.com/golang/go-modules-part3/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/golang/go-modules-part3/</guid>
+      <guid>https://mfridman.com/golang/go-modules-part3/</guid>
       <description>Go modules: part 1, part 2, part 3  coming soon&amp;hellip;
 for now you can check out their site drone.io and blog
  Vendor is tailored for the dependencies of a specific module, not warming a cache. 🤔 from issue#26610

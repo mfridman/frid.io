@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gpg on mfridman.com</title>
-    <link>http://mfridman.com/tags/gpg/</link>
+    <link>https://mfridman.com/tags/gpg/</link>
     <description>Recent content in Gpg on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Jun 2017 00:11:24 -0500</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Generate GPG key, add to GitHub and verify identity</title>
-      <link>http://mfridman.com/blog/gpg-and-all-that/</link>
+      <link>https://mfridman.com/blog/gpg-and-all-that/</link>
       <pubDate>Sat, 17 Jun 2017 00:11:24 -0500</pubDate>
       
-      <guid>http://mfridman.com/blog/gpg-and-all-that/</guid>
+      <guid>https://mfridman.com/blog/gpg-and-all-that/</guid>
       <description>But why? GPG signature verification
 A few gotchas.
  Make sure to verify the email addresses associated with your GPG key.

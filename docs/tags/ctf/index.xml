@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ctf on mfridman.com</title>
-    <link>http://mfridman.com/tags/ctf/</link>
+    <link>https://mfridman.com/tags/ctf/</link>
     <description>Recent content in Ctf on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mindreader</title>
-      <link>http://mfridman.com/ctf/google-2017/mindreader/</link>
+      <link>https://mfridman.com/ctf/google-2017/mindreader/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/google-2017/mindreader/</guid>
+      <guid>https://mfridman.com/ctf/google-2017/mindreader/</guid>
       <description>2017 was a tough one. Nonetheless, big thanks to  for hosting an event.
 Challenge: Can you read my mind? No hints.
 All you get is an input box:
@@ -26,10 +26,10 @@ Checking the page source doesn&amp;rsquo;t reveal anything fruitful. In hindsigh
     
     <item>
       <title>Echo</title>
-      <link>http://mfridman.com/ctf/plaid-2017/echo/</link>
+      <link>https://mfridman.com/ctf/plaid-2017/echo/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/plaid-2017/echo/</guid>
+      <guid>https://mfridman.com/ctf/plaid-2017/echo/</guid>
       <description>Challenge: If you hear enough, you may hear the whispers of a key&amp;hellip;
 If you see app.py well enough, you will notice the UI sucks&amp;hellip;
 No hints.
@@ -39,10 +39,10 @@ Disclaimer, was not solved within the allotted time.</description>
     
     <item>
       <title>Little School Bus</title>
-      <link>http://mfridman.com/ctf/pico-2017/little-schoolbus/</link>
+      <link>https://mfridman.com/ctf/pico-2017/little-schoolbus/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/pico-2017/little-schoolbus/</guid>
+      <guid>https://mfridman.com/ctf/pico-2017/little-schoolbus/</guid>
       <description>Had a blast participating with a few local DC416 folks in the 2017 picoCTF!
 Challenge: Can you help me find the data in this littleschoolbus.bmp?
 Hint: Look at least significant bit (LSB) encoding!!
@@ -51,10 +51,10 @@ In retrospect the solution was fairly straightforward, but, tunnel vision got th
     
     <item>
       <title>No Eyes</title>
-      <link>http://mfridman.com/ctf/pico-2017/no-eyes/</link>
+      <link>https://mfridman.com/ctf/pico-2017/no-eyes/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/pico-2017/no-eyes/</guid>
+      <guid>https://mfridman.com/ctf/pico-2017/no-eyes/</guid>
       <description>Challenge: The website isn&amp;rsquo;t really me much, but you can still get the admin password, right?
 Hint: Sometimes an error message can be just as useful
 This one was really rewarding.
@@ -65,10 +65,10 @@ Entering a single quote results in an error, great, there is a problem with the 
     
     <item>
       <title>coffee</title>
-      <link>http://mfridman.com/ctf/pico-2017/coffee/</link>
+      <link>https://mfridman.com/ctf/pico-2017/coffee/</link>
       <pubDate>Fri, 14 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/ctf/pico-2017/coffee/</guid>
+      <guid>https://mfridman.com/ctf/pico-2017/coffee/</guid>
       <description>Challenge: You found a suspicious USB drive in a jar of pickles. It contains this file
 $ file freeThePickles.class freeThePickles.class: compiled Java class data, version 52.0 (Java 1.8) Hint: Is there a way to get the source of the program?
 Although this challenge didn&amp;rsquo;t call for it, if you want to disassemble a class file use javap like so&amp;hellip;

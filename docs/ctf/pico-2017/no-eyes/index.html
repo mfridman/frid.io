@@ -290,7 +290,7 @@ if (!doNotTrack) {
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
-    <a class="navbar-brand px-2 mt-1" href="http://mfridman.com/">
+    <a class="navbar-brand px-2 mt-1" href="https://mfridman.com/">
         <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
@@ -301,16 +301,16 @@ if (!doNotTrack) {
     <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
         <ul class="navbar-nav">
             <li class="nav-item pl-4">
-                <a class="nav-link" href="http://mfridman.com/golang/">g<img src="http://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
+                <a class="nav-link" href="https://mfridman.com/golang/">g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="http://mfridman.com/blog/">blog</a>
+                <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="http://mfridman.com/ctf/">ctf</a>
+                <a class="nav-link" href="https://mfridman.com/ctf/">ctf</a>
             </li>
             <li class="nav-item pl-4">
-                <a class="nav-link" href="http://mfridman.com/about/">about</a>
+                <a class="nav-link" href="https://mfridman.com/about/">about</a>
             </li>
         </ul>
     </div>
@@ -333,13 +333,13 @@ if (!doNotTrack) {
 
 <p>So, the landing page looked like this:</p>
 
-<p><img src="http://mfridman.com/img/landing_page.png" alt=""/></p>
+<p><img src="https://mfridman.com/img/landing_page.png" alt=""/></p>
 
 <p>Based on the description we assume the username is <em>admin</em> so let&rsquo;s focus on the password field.</p>
 
 <p>Entering a single quote results in an error, great, there is a problem with the query, we know the syntax and it appears to be injectable.</p>
 
-<p><img src="http://mfridman.com/img/sql_error.png" alt=""/></p>
+<p><img src="https://mfridman.com/img/sql_error.png" alt=""/></p>
 
 <h4 id="injectables">Injectables</h4>
 
@@ -347,7 +347,7 @@ if (!doNotTrack) {
 
 <p><code>' or 1=1--</code> results in an interesting message:</p>
 
-<p><img src="http://mfridman.com/img/login.png" alt=""/></p>
+<p><img src="https://mfridman.com/img/login.png" alt=""/></p>
 
 <p>We were stuck here for a bit, but, one night I got an idea based on these 2 pieces of information:</p>
 
@@ -372,7 +372,7 @@ if (!doNotTrack) {
 
 <p>A bit of Go code, found on <a href="https://github.com/mfridman/ctf-tools/blob/master/sqlInjection/halfBlind/main.go">github</a>, and a few POST requests later, 1,215 to be exact:</p>
 
-<p><img src="http://mfridman.com/img/noEyes.gif" alt=""/></p>
+<p><img src="https://mfridman.com/img/noEyes.gif" alt=""/></p>
 
 <p>&hellip;and our flag is:</p>
 

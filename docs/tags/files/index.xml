@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Files on mfridman.com</title>
-    <link>http://mfridman.com/tags/files/</link>
+    <link>https://mfridman.com/tags/files/</link>
     <description>Recent content in Files on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Mar 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://mfridman.com/tags/files/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/files/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dealing with files in Go</title>
-      <link>http://mfridman.com/golang/working-with-files/</link>
+      <link>https://mfridman.com/golang/working-with-files/</link>
       <pubDate>Mon, 21 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://mfridman.com/golang/working-with-files/</guid>
+      <guid>https://mfridman.com/golang/working-with-files/</guid>
       <description>File existence Useful when you want to have consistency checking file existence, with a bit more granularity.
 func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success, file exists, exit early if err == nil { return true, nil } // check for an os.ErrNotExist, &#34;file does not exist&#34;. Return false and no errors. if os.IsNotExist(err) { return false, nil } // error from stat return false, err }  Used as follows:</description>
     </item>

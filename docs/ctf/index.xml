@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ctfs on mfridman.com</title>
-    <link>http://mfridman.com/ctf/</link>
+    <link>https://mfridman.com/ctf/</link>
     <description>Recent content in Ctfs on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://mfridman.com/ctf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
