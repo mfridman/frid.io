@@ -286,7 +286,7 @@ Anyways, back to the challenge. I used a &amp;ldquo;cloud-based&amp;rdquo; decom
       <guid>https://frid.io/golang/goroutine-patterns/</guid>
       <description>Below are some patterns and ideas I&amp;rsquo;ve come across wrt channels and goroutines. Just remember&amp;hellip;
 ...if you reach into your toolbox and decide to use goroutines always ask: how  and when  will those goroutines stop  This section will likely be split off into more specific posts in the future.
-limit number of working goroutines with a channel Often times you don&amp;rsquo;t need thousands of goroutines working at once, especially true when communicating with external resources, e.</description>
+limit number of working goroutines with buffered channels Often times you don&amp;rsquo;t need thousands of goroutines working at once, especially true when communicating with external resources, e.</description>
     </item>
     
     <item>
