@@ -6,135 +6,116 @@
  * @license		MIT License
  */
 
-(function($){
+(function($) {
+  $.fn.shuffleLetters = function(prop) {
+    var options = $.extend(
+      {
+        step: 4, // How many times should the letters be changed
+        fps: 16, // Frames Per Second
+        text: "", // Use this text instead of the contents
+        callback: function() {} // Run once the animation is complete
+      },
+      prop
+    );
 
-	$.fn.shuffleLetters = function(prop){
+    return this.each(function() {
+      var el = $(this),
+        str = "";
 
-		var options = $.extend({
-			"step"		: 4,			// How many times should the letters be changed
-			"fps"		: 16,			// Frames Per Second
-			"text"		: "", 			// Use this text instead of the contents
-			"callback"	: function(){}	// Run once the animation is complete
-		},prop)
+      // Preventing parallel animations using a flag;
 
-		return this.each(function(){
+      if (el.data("animated")) {
+        return true;
+      }
 
-			var el = $(this),
-				str = "";
+      el.data("animated", true);
 
+      if (options.text) {
+        str = options.text.split("");
+      } else {
+        str = el.text().split("");
+      }
 
-			// Preventing parallel animations using a flag;
+      // The types array holds the type for each character;
+      // Letters holds the positions of non-space characters;
 
-			if(el.data('animated')){
-				return true;
-			}
+      var types = [],
+        letters = [];
 
-			el.data('animated',true);
+      // Looping through all the chars of the string
 
+      for (var i = 0; i < str.length; i++) {
+        var ch = str[i];
 
-			if(options.text) {
-				str = options.text.split('');
-			}
-			else {
-				str = el.text().split('');
-			}
+        if (ch == " ") {
+          types[i] = "space";
+          continue;
+        } else if (/[a-z]/.test(ch)) {
+          types[i] = "lowerLetter";
+        } else if (/[A-Z]/.test(ch)) {
+          types[i] = "upperLetter";
+        } else {
+          types[i] = "symbol";
+        }
 
-			// The types array holds the type for each character;
-			// Letters holds the positions of non-space characters;
+        letters.push(i);
+      }
 
-			var types = [],
-				letters = [];
+      el.html("");
 
-			// Looping through all the chars of the string
+      // Self executing named function expression:
 
-			for(var i=0;i<str.length;i++){
+      (function shuffle(start) {
+        // This code is run options.fps times per second
+        // and updates the contents of the page element
 
-				var ch = str[i];
+        var i,
+          len = letters.length,
+          strCopy = str.slice(0); // Fresh copy of the string
 
-				if(ch == " "){
-					types[i] = "space";
-					continue;
-				}
-				else if(/[a-z]/.test(ch)){
-					types[i] = "lowerLetter";
-				}
-				else if(/[A-Z]/.test(ch)){
-					types[i] = "upperLetter";
-				}
-				else {
-					types[i] = "symbol";
-				}
+        if (start > len) {
+          // The animation is complete. Updating the
+          // flag and triggering the callback;
 
-				letters.push(i);
-			}
+          el.data("animated", false);
+          options.callback(el);
+          return;
+        }
 
-			el.html("");
+        // All the work gets done here
+        for (i = Math.max(start, 0); i < len; i++) {
+          // The start argument and options.step limit
+          // the characters we will be working on at once
 
-			// Self executing named function expression:
+          if (i < start + options.step) {
+            // Generate a random character at thsi position
+            strCopy[letters[i]] = randomChar(types[letters[i]]);
+          } else {
+            strCopy[letters[i]] = "";
+          }
+        }
 
-			(function shuffle(start){
+        el.text(strCopy.join(""));
 
-				// This code is run options.fps times per second
-				// and updates the contents of the page element
+        setTimeout(function() {
+          shuffle(start + 1);
+        }, 1000 / options.fps);
+      })(-options.step);
+    });
+  };
 
-				var i,
-					len = letters.length,
-					strCopy = str.slice(0);	// Fresh copy of the string
+  function randomChar(type) {
+    var pool = "";
 
-				if(start>len){
+    if (type == "lowerLetter") {
+      pool = "abcdefghijklmnopqrstuvwxyz0123456789";
+    } else if (type == "upperLetter") {
+      pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    } else if (type == "symbol") {
+      pool = ",.?/\\(^)![]{}*&^%$#'\"";
+    }
 
-					// The animation is complete. Updating the
-					// flag and triggering the callback;
-
-					el.data('animated',false);
-					options.callback(el);
-					return;
-				}
-
-				// All the work gets done here
-				for(i=Math.max(start,0); i < len; i++){
-
-					// The start argument and options.step limit
-					// the characters we will be working on at once
-
-					if( i < start+options.step){
-						// Generate a random character at thsi position
-						strCopy[letters[i]] = randomChar(types[letters[i]]);
-					}
-					else {
-						strCopy[letters[i]] = "";
-					}
-				}
-
-				el.text(strCopy.join(""));
-
-				setTimeout(function(){
-
-					shuffle(start+1);
-
-				},1000/options.fps);
-
-			})(-options.step);
-
-
-		});
-	};
-
-	function randomChar(type){
-		var pool = "";
-
-		if (type == "lowerLetter"){
-			pool = "abcdefghijklmnopqrstuvwxyz0123456789";
-		}
-		else if (type == "upperLetter"){
-			pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		}
-		else if (type == "symbol"){
-			pool = ",.?/\\(^)![]{}*&^%$#'\"";
-		}
-
-		var arr = pool.split('');
-		return arr[Math.floor(Math.random()*arr.length)];
-	}
-
+    var arr = pool.split("");
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 })(jQuery);

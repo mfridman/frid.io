@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
     <meta name="author" content="Michael Fridman">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
@@ -14,174 +14,175 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
     
     <style type="text/css">
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color: #fdfdfd;
-        font-size: 1.1em;
-    }
+  body {
+    font-family: "Nunito", sans-serif;
+    background-color: #fdfdfd;
+    font-size: 1.1em;
+  }
 
-    .navbar {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 1.5em;
-    }
+  .navbar {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5em;
+  }
 
-    .center {
-        text-align: center;
-    }
+  .center {
+    text-align: center;
+  }
 
-    .git-purple {
-        color: #6e5494;
-    }
+  .git-purple {
+    color: #6e5494;
+  }
 
-    .warning-color {
-        color: #FDDD00;
-    }
+  .warning-color {
+    color: #fddd00;
+  }
 
-    .h1,
-    h1 {
-        font-size: 1.8em;
-    }
+  .h1,
+  h1 {
+    font-size: 1.8em;
+  }
 
+   
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
      
+    margin-bottom: 60px;
+  }
 
-    html {
-        position: relative;
-        min-height: 100%;
-    }
-
-    body {
-         
-        margin-bottom: 60px;
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-         
-        height: 60px;
-        line-height: 60px;
-         
-    }
-
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
      
-
-    hr {
-        border: 0;
-        height: 10;
-        margin: 30px 0 30px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-
-
+    height: 60px;
+    line-height: 60px;
      
+  }
 
-     
+   
 
-     
+  hr {
+    border: 0;
+    height: 10;
+    margin: 30px 0 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-    code {
-        font-size: 80%;
-        color: #0086b3;
+   
+
+   
+
+   
+
+  code {
+    font-size: 80%;
+    color: #0086b3;
+  }
+
+  pre {
+    padding: 10px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .prettyprint {
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #333;
+  }
+
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ccc;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #f6f8fa;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    .str {
+      color: #183691;
     }
+    .kwd {
+      color: #a71d5d;
+    }
+    .com {
+      color: #969896;
+    }
+    .typ {
+      color: #0086b3;
+    }
+    .lit {
+      color: #0086b3;
+    }
+    .pun {
+      color: #333;
+    }
+    .opn {
+      color: #333;
+    }
+    .clo {
+      color: #333;
+    }
+    .tag {
+      color: navy;
+    }
+    .atn {
+      color: #795da3;
+    }
+    .atv {
+      color: #183691;
+    }
+    .dec {
+      color: #333;
+    }
+    .var {
+      color: teal;
+    }
+    .fun {
+      color: #900;
+    }
+  }
 
-    pre {
-        padding: 10px;
-        white-space: pre-wrap;
-        font-size: 80%;
-        background: #f6f8fa;
-        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
-        border: 0 !important;
-    }
-
-    .prettyprint {
-        white-space: pre-wrap;
-        font-size: 80%;
-        background: #f6f8fa;
-        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
-        border: 0 !important;
-    }
-
-    .pln {
-        color: #333
-    }
-
-    ol.linenums {
-        margin-top: 0;
-        margin-bottom: 0;
-        color: #ccc
-    }
-
-    li.L0,
-    li.L1,
-    li.L2,
-    li.L3,
-    li.L4,
-    li.L5,
-    li.L6,
-    li.L7,
-    li.L8,
-    li.L9 {
-        padding-left: 1em;
-        background-color: #f6f8fa;
-        list-style-type: decimal
-    }
-
-    @media screen {
-        .str {
-            color: #183691
-        }
-        .kwd {
-            color: #a71d5d
-        }
-        .com {
-            color: #969896
-        }
-        .typ {
-            color: #0086b3
-        }
-        .lit {
-            color: #0086b3
-        }
-        .pun {
-            color: #333
-        }
-        .opn {
-            color: #333
-        }
-        .clo {
-            color: #333
-        }
-        .tag {
-            color: navy
-        }
-        .atn {
-            color: #795da3
-        }
-        .atv {
-            color: #183691
-        }
-        .dec {
-            color: #333
-        }
-        .var {
-            color: teal
-        }
-        .fun {
-            color: #900
-        }
-    }
-
-    .newspaper {
-        column-count: 3;
-        column-width: 100px;
-    }
-    .fuchsia{
-        color: #CE3262;
-    }
+  .newspaper {
+    column-count: 3;
+    column-width: 100px;
+  }
+  .fuchsia {
+    color: #ce3262;
+  }
 </style>
+
     <style type="text/css">
     .circle {
         padding: 13px 20px;
@@ -289,32 +290,45 @@ if (!doNotTrack) {
     <div class="container pt-2">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
-    <a class="navbar-brand px-2 mt-1" href="https://mfridman.com/">
-        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                <nav
+  class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded"
+>
+  <a class="navbar-brand px-2 mt-1" href="https://mfridman.com/">
+    <i class="fas fa-lg fa-terminal"></i>
+    <span style="font-size:1.5em;" class="titlemixup">mf</span>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#myNavBar"
+    aria-controls="myNavBar"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
-        <ul class="navbar-nav">
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.com/golang/">g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.com/ctf/">ctf</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://mfridman.com/about/">about</a>
-            </li>
-        </ul>
-    </div>
+  <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
+    <ul class="navbar-nav">
+      <li class="nav-item pl-4">
+        <a class="nav-link" href="https://mfridman.com/golang/"
+          >g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px" />lang</a
+        >
+      </li>
+      <li class="nav-item pl-4">
+        <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+      </li>
+      <li class="nav-item pl-4">
+        <a class="nav-link" href="https://mfridman.com/ctf/">ctf</a>
+      </li>
+      <li class="nav-item pl-4">
+        <a class="nav-link" href="https://mfridman.com/about/">about</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+
                 <div class="mt-4">
                      
 
@@ -380,13 +394,21 @@ Go modules: <a href="https://mfridman.com/golang/go-modules-part1" active>part 1
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"
+></script>
+
+<script src="https://mfridman.com/js/jquery.shuffleLetters.js"></script>
+<script src="https://mfridman.com/js/script.js"></script>
 
 <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 </script>
+
 </body>
 
 </html>
