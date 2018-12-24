@@ -17,12 +17,9 @@
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
       
       <guid>https://mfridman.com/blog/from-jekyll-to-hugo/</guid>
-      <description>Done and Launched.
-Still a work in progress [WIP], but here we are.
-To start local server: hugo server -D --disableFastRender
-link
+      <description>Done and launched. Still a work in progress, but here we are.
 Really liking Hugo so far!
-To link a page within the site, e.g., part 2</description>
+To start local server: hugo server -D --disableFastRender and navigate to link</description>
     </item>
     
   </channel>

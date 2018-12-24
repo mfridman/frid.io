@@ -6,10 +6,21 @@
     <description>Recent content on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spotify wrapped, 2018</title>
+      <link>https://mfridman.com/blog/music-2018/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/music-2018/</guid>
+      <description>Apparently, I listen to non-mainstream artists 163% more than the average Spotify listener.
+My top 12 (usually 6, but this year was good imo):
+            </description>
+    </item>
     
     <item>
       <title>Integrating Go modules with Drone CI</title>
@@ -176,12 +187,19 @@ A few members of DC416 and I started playing as a Team capturing digital flags.<
       <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
       
       <guid>https://mfridman.com/blog/from-jekyll-to-hugo/</guid>
-      <description>Done and Launched.
-Still a work in progress [WIP], but here we are.
-To start local server: hugo server -D --disableFastRender
-link
+      <description>Done and launched. Still a work in progress, but here we are.
 Really liking Hugo so far!
-To link a page within the site, e.g., part 2</description>
+To start local server: hugo server -D --disableFastRender and navigate to link</description>
+    </item>
+    
+    <item>
+      <title>Spotify wrapped, 2017</title>
+      <link>https://mfridman.com/blog/music-2017/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/music-2017/</guid>
+      <description>My top 6:
+      </description>
     </item>
     
     <item>

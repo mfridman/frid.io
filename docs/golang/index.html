@@ -1,17 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat."
+    />
+    <meta name="author" content="Michael Fridman" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
-    <meta name="author" content="Michael Fridman">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-        crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400"
+      rel="stylesheet"
+    />
     
     <style type="text/css">
   body {
@@ -282,15 +299,13 @@ if (!doNotTrack) {
 }
 </script>
 
+  </head>
 
-</head>
-
-
-<body onload="PR.prettyPrint()">
+  <body onload="PR.prettyPrint()">
     <div class="container pt-2">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <nav
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <nav
   class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded"
 >
   <a class="navbar-brand px-2 mt-1" href="https://mfridman.com/">
@@ -320,163 +335,133 @@ if (!doNotTrack) {
         <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
       </li>
       <li class="nav-item pl-4">
-        <a class="nav-link" href="https://mfridman.com/ctf/">ctf</a>
-      </li>
-      <li class="nav-item pl-4">
         <a class="nav-link" href="https://mfridman.com/about/">about</a>
       </li>
     </ul>
   </div>
 </nav>
 
-                <div class="mt-4">
-                    
-<p>
-    <p>I <em>really</em> like the <a href="https://golang.org/">Go programming language</a>, its community, the ecosystem, and remarkable stability &amp; simplicity. Even more so, I&rsquo;m glad Go is not striving to be like <a href="https://youtu.be/rFejpH_tAHM?t=1m4s">every other language</a> when it comes to features. Over the years it has been incredible watching Go <i class="fas fa-plane-departure"></i>. To this day I continue thinking, writing and solving problems with Go.</p>
+          <div class="mt-4">
+<p><p>I <em>really</em> like the <a href="https://golang.org/">Go programming language</a>, its community, the ecosystem, and remarkable stability &amp; simplicity. Even more so, I&rsquo;m glad Go is not striving to be like <a href="https://youtu.be/rFejpH_tAHM?t=1m4s">every other language</a> when it comes to features. Over the years it has been incredible watching Go <i class="fas fa-plane-departure"></i>. To this day I continue thinking, writing and solving problems with Go.</p>
 
-<p>Go is not a &ldquo;flavor of the month&rdquo; &ldquo;shiny&rdquo; &ldquo;toy&rdquo; that hipsters use, but more a tool that enables programmers and engineers to write maintainable software that addresses specific problems. As an aside, there is a distinction between programming and software engineering, and in my opinion Go enables both. Check out the post <a href="https://research.swtch.com/vgo-eng">What is Software Engineering?</a> and a <a href="https://www.youtube.com/watch?v=tISy7EJQPzI&amp;t=8m17s">video summarizing the concept</a>.</p>
+<p>Go is not the &ldquo;flavor of the month&rdquo;, &ldquo;shiny toy&rdquo; that hipsters use, but more a tool that enables programmers and engineers to write maintainable software that addresses specific problems. As an aside, there is a distinction between programming and software engineering, and in my opinion Go enables both. Check out the post <a href="https://research.swtch.com/vgo-eng">What is Software Engineering?</a> and a <a href="https://www.youtube.com/watch?v=tISy7EJQPzI&amp;t=8m17s">video summarizing the concept</a>.</p>
 
 <p><img src="https://mfridman.com/img/gophermega2.png" alt="gophermega" style="height: 62px;"/> The gopher mascot was designed by <a href="https://reneefrench.blogspot.com/">Renee French</a> / <a href="https://creativecommons.org/licenses/by/3.0/">CC 3.0</a>. For more info check out the <a href="https://blog.golang.org/gopher">Go Blog</a></p>
 
 <p>I&rsquo;ll be using this space to jot down all things Go. If you have questions, constructive criticism, find a mistake, or just want to say Hi feel free to reach out <a href="mailto:mf192@icloud.com"><i class="fa fa-lg fa-envelope" style="color: #CE3262"></i></a></p>
-
 </p>
 
 <ul class="nav justify-content-center">
-    <li class="nav-item mx-4">
-        <h4>
-            <a class="nav-link" href="https://mfridman.com/my_notes/">My notes</a>
-        </h4>
-    </li>
-    <li class="nav-item mx-4">
-        <h4>
-            <a class="nav-link" href="https://mfridman.com/around_the_web/">Around the web</a>
-        </h4>
-    </li>
+  <li class="nav-item mx-4">
+    <h4><a class="nav-link" href="https://mfridman.com/my_notes/">My notes</a></h4>
+  </li>
+  <li class="nav-item mx-4">
+    <h4><a class="nav-link" href="https://mfridman.com/around_the_web/">Around the web</a></h4>
+  </li>
 </ul>
 
-<hr>
+
+<hr />
 <h3 class="titlemixup">Recent:</h3>
 
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Jul 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Jul 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Jul 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/go-modules-part2/">Welcome, Go modules - part2</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Jul 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/go-modules-part2/">Welcome, Go modules - part2</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Jul 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/go-modules-part1/">Welcome, Go modules - part1</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Jul 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/go-modules-part1/">Welcome, Go modules - part1</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Feb 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - part2</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Feb 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - part2</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Feb 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - part1</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Feb 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - part1</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Jan 2018
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/err-thoughts/">To err, or not to err</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Jan 2018</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/err-thoughts/">To err, or not to err</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Sep 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/go-ssh-hostkey/">Validating host keys in Go&#39;s ssh package</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Sep 2017</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/go-ssh-hostkey/">Validating host keys in Go&#39;s ssh package</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Dec 2016
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/goroutine-patterns/">Channel your inner communication, little goroutines</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Dec 2016</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/goroutine-patterns/">Channel your inner communication, little goroutines</a>
+  </div>
 </div>
 
 
 <div class="row">
-    <div class="col-sm-3 text-muted py-1">
-        Mar 2016
-    </div>
-    <div class="col-sm-8">
-        <a href="https://mfridman.com/golang/working-with-files/">Dealing with files in Go</a>
-    </div>
+  <div class="col-sm-3 text-muted py-1">Mar 2016</div>
+  <div class="col-sm-8">
+    <a href="https://mfridman.com/golang/working-with-files/">Dealing with files in Go</a>
+  </div>
 </div>
 
 
-
-                </div>
-            </div>
+</div>
         </div>
-
-
+      </div>
     </div>
 
-    <div class="text-center">
-        <footer class="footer">
-    Made with
-    <a href="https://gohugo.io">Hugo</a> and hosted by
-    <a href="https://pages.github.com/">
-        <i class="fab fa-lg fa-github-alt git-purple"></i>
-    </a>
+    <div class="text-center"><footer class="footer">
+  <a href="https://gohugo.io">Hugo</a> &nbsp;·&nbsp;
+  <a href="https://pages.github.com/">
+    <i class="fab fa-lg fa-github-alt git-purple"></i>
+  </a>
+  &nbsp;·&nbsp;
+  <a href="https://www.cloudflare.com">
+    <img class="pb-2" src="https://mfridman.com/svg/cloudflare.svg" width="128px" alt="cloudflare" />
+  </a>
 </footer>
-    </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -496,6 +481,5 @@ if (!doNotTrack) {
   });
 </script>
 
-</body>
-
+  </body>
 </html>
