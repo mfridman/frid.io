@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
 	<meta name="generator" content="Hugo 0.51" />
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta
-      name="description"
-      content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat."
-    />
-    <meta name="author" content="Michael Fridman" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
+  <meta name="author" content="Michael Fridman" />
 
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-      crossorigin="anonymous"
-    />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400"
-      rel="stylesheet"
-    />
-    
-    <style type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
+  
+  <style type="text/css">
   body {
     font-family: "Nunito", sans-serif;
     background-color: #fdfdfd;
@@ -201,7 +186,7 @@
   }
 </style>
 
-    <style type="text/css">
+  <style type="text/css">
     .circle {
         padding: 13px 20px;
         border-radius: 50%;
@@ -283,10 +268,10 @@
         top: calc(50% - 3px);
     }
 </style>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-    
-    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -300,49 +285,40 @@ if (!doNotTrack) {
 }
 </script>
 
-  </head>
+</head>
 
-  <body onload="PR.prettyPrint()">
-    <div class="container pt-2">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <nav
-  class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded"
->
-  <a class="navbar-brand px-2 mt-1" href="https://mfridman.com/">
+<body onload="PR.prettyPrint()">
+  <div class="container pt-2">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 mb-2">
+        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded">
+  <a class="navbar-brand px-2" href="https://mfridman.com/">
     <i class="fas fa-lg fa-terminal"></i>
     <span style="font-size:1.5em;">mf</span>
   </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#myNavBar"
-    aria-controls="myNavBar"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
-    <ul class="navbar-nav">
-      <li class="nav-item pl-4">
-        <a class="nav-link" href="https://mfridman.com/golang/"
-          >g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px" />lang</a
-        >
+  <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item px-3">
+        <a class="nav-link" href="https://mfridman.com/golang/">g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px" />lang</a>
       </li>
-      <li class="nav-item pl-4">
+      <li class="nav-item px-3">
         <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
       </li>
-      <li class="nav-item pl-4">
+      <li class="nav-item px-3">
         <a class="nav-link" href="https://mfridman.com/about/">about</a>
       </li>
     </ul>
   </div>
 </nav>
-
-          <div class="mt-4">
+      </div>
+      <div class="col-lg-10 pt-4">
+        <div class="container">
+          
 <div class="text-muted text-center py-3">
   <h1>Stay curious, keep learning, help others, be humble.</h1>
 </div>
@@ -362,122 +338,123 @@ if (!doNotTrack) {
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Dec 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/blog/music-2018/">Spotify wrapped, 2018</a>
-  </div>
+<div class="text-muted">Dec 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/blog/music-2018/">Spotify wrapped, 2018</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jul 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
-  </div>
+
+
+<div class="text-muted">Jul 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jul 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/go-modules-part2/">Welcome, Go modules - part2</a>
-  </div>
+
+
+<div class="text-muted">Jul 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part2/">Welcome, Go modules - part2</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jul 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/go-modules-part1/">Welcome, Go modules - part1</a>
-  </div>
+
+
+<div class="text-muted">Jul 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part1/">Welcome, Go modules - part1</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jul 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/blog/upspin-part-5/">Upspin part 5: Advanced tips and tricks [WIP]</a>
-  </div>
+
+
+<div class="text-muted">Jul 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-5/">Upspin part 5: Advanced tips and tricks [WIP]</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jul 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/blog/upspin-part-3/">Upspin part 3: Configuring an Upspin server [WIP]</a>
-  </div>
+
+
+<div class="text-muted">Jul 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-3/">Upspin part 3: Configuring an Upspin server [WIP]</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Jun 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/blog/upspin-part-2/">Upspin part 2: Configuring an Upspin user</a>
-  </div>
+
+
+<div class="text-muted">Jun 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-2/">Upspin part 2: Configuring an Upspin user</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Feb 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
-  </div>
+
+
+<div class="text-muted">Feb 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Feb 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - part2</a>
-  </div>
+
+
+<div class="text-muted">Feb 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/shine-on-you-crazy-interface2/">Shine on You Crazy Interface - part2</a>
 </div>
 
 
 
 
 
-<div class="row">
-  <div class="col-md-2 text-muted py-1">Feb 2018</div>
-  <div class="col-md-10">
-    <a href="https://mfridman.com/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - part1</a>
-  </div>
+
+
+<div class="text-muted">Feb 2018</div>
+<div class="py-1">
+  <a class="pl-4 py-1" href="https://mfridman.com/golang/shine-on-you-crazy-interface/">Shine on You Crazy Interface - part1</a>
 </div>
+
+
 
 
 
 <div class="text-center"></div>
 
-</div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="text-center"><footer class="footer">
+  <div class="text-center"><footer class="footer">
   <a href="https://gohugo.io">Hugo</a> &nbsp;·&nbsp;
   <a href="https://pages.github.com/">
     <i class="fab fa-lg fa-github-alt git-purple"></i>
@@ -489,7 +466,7 @@ if (!doNotTrack) {
 </footer>
 </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script
   src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
@@ -507,5 +484,6 @@ if (!doNotTrack) {
   });
 </script>
 
-  </body>
+</body>
+
 </html>

@@ -1,265 +1,385 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Containerized and rewritten in Golang. Automation, devops, coffee, repeat.">
-    <meta name="author" content="Michael Fridman">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
+  <meta name="author" content="Michael Fridman" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet">
-    
-    <style type="text/css">
-    body {
-        font-family: 'Nunito', sans-serif;
-        background-color: #fdfdfd;
-        font-size: 1.1em;
-    }
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous" />
 
-    .navbar {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 1.5em;
-    }
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
+  
+  <style type="text/css">
+  body {
+    font-family: "Nunito", sans-serif;
+    background-color: #fdfdfd;
+    font-size: 1.1em;
+  }
 
-    .center {
-        text-align: center;
-    }
+  .navbar {
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5em;
+  }
 
-    .git-purple{
-        color: #6e5494;
-    }
+  .center {
+    text-align: center;
+  }
 
-    .h1, h1{
-        font-size: 1.8em;
-    }
+  .git-purple {
+    color: #6e5494;
+  }
 
+  .warning-color {
+    color: #fddd00;
+  }
+
+  .h1,
+  h1 {
+    font-size: 1.8em;
+  }
+
+   
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
      
+    margin-bottom: 60px;
+  }
 
-    html {
-        position: relative;
-        min-height: 100%;
-    }
-
-    body {
-         
-        margin-bottom: 60px;
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-         
-        height: 60px;
-        line-height: 60px;
-         
-    }
-
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
      
-
-    pre{
-        font-size: 80%;
-    }
-
-    hr {
-        border: 0;
-        height: 10;
-        margin: 30px 0 30px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-
-
+    height: 60px;
+    line-height: 60px;
      
+  }
 
-     
+   
 
-     
+  hr {
+    border: 0;
+    height: 10;
+    margin: 30px 0 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-    code{
-        font-size: 80%;
-        color: #0086b3;
+   
+
+   
+
+   
+
+  code {
+    font-size: 80%;
+    color: #0086b3;
+  }
+
+  pre {
+    padding: 10px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .prettyprint {
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #333;
+  }
+
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ccc;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #f6f8fa;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    .str {
+      color: #183691;
     }
-
-    .prettyprint {
-        font-size: 80%;
-        background: #fff;
-        font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
-        border: 0 !important;
+    .kwd {
+      color: #a71d5d;
     }
-
-    .pln {
-        color: #333
+    .com {
+      color: #969896;
     }
-
-    ol.linenums {
-        margin-top: 0;
-        margin-bottom: 0;
-        color: #ccc
+    .typ {
+      color: #0086b3;
     }
-
-    li.L0,
-    li.L1,
-    li.L2,
-    li.L3,
-    li.L4,
-    li.L5,
-    li.L6,
-    li.L7,
-    li.L8,
-    li.L9 {
-        padding-left: 1em;
-        background-color: #fff;
-        list-style-type: decimal
+    .lit {
+      color: #0086b3;
     }
-
-    @media screen {
-        .str {
-            color: #183691
-        }
-        .kwd {
-            color: #a71d5d
-        }
-        .com {
-            color: #969896
-        }
-        .typ {
-            color: #0086b3
-        }
-        .lit {
-            color: #0086b3
-        }
-        .pun {
-            color: #333
-        }
-        .opn {
-            color: #333
-        }
-        .clo {
-            color: #333
-        }
-        .tag {
-            color: navy
-        }
-        .atn {
-            color: #795da3
-        }
-        .atv {
-            color: #183691
-        }
-        .dec {
-            color: #333
-        }
-        .var {
-            color: teal
-        }
-        .fun {
-            color: #900
-        }
+    .pun {
+      color: #333;
     }
+    .opn {
+      color: #333;
+    }
+    .clo {
+      color: #333;
+    }
+    .tag {
+      color: navy;
+    }
+    .atn {
+      color: #795da3;
+    }
+    .atv {
+      color: #183691;
+    }
+    .dec {
+      color: #333;
+    }
+    .var {
+      color: teal;
+    }
+    .fun {
+      color: #900;
+    }
+  }
+
+  .newspaper {
+    column-count: 3;
+    column-width: 100px;
+  }
+  .fuchsia {
+    color: #ce3262;
+  }
 </style>
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <style type="text/css">
+    .circle {
+        padding: 13px 20px;
+        border-radius: 50%;
+        background-color: #CE3262;
+        color: #fff;
+        max-height: 50px;
+        z-index: 2;
+    }
+
+    .how-it-works.row .col-2 {
+        align-self: stretch;
+    }
+
+    .how-it-works.row .col-2::after {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #CE3262;
+        z-index: 1;
+    }
+
+    .how-it-works.row .col-2.bottom::after {
+        height: 50%;
+        left: 50%;
+        top: 50%;
+    }
+
+    .how-it-works.row .col-2.full::after {
+        height: 100%;
+        left: calc(50% - 3px);
+    }
+
+    .how-it-works.row .col-2.top::after {
+        height: 50%;
+        top: 0;
+    }
+
+
+    .timeline div {
+        padding: 0;
+        height: 40px;
+    }
+
+    .timeline hr {
+        border-top: 3px solid #CE3262;
+        margin: 0;
+        top: 17px;
+        position: relative;
+    }
+
+    .timeline .col-2 {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .timeline .corner {
+        border: 3px solid #CE3262;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .timeline .top-right {
+        left: 50%;
+        top: -50%;
+    }
+
+    .timeline .left-bottom {
+        left: -50%;
+        top: calc(50% - 3px);
+    }
+
+    .timeline .top-left {
+        left: -50%;
+        top: -50%;
+    }
+
+    .timeline .right-bottom {
+        left: 50%;
+        top: calc(50% - 3px);
+    }
+</style>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121978585-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
 </head>
 
-
 <body onload="PR.prettyPrint()">
-    <div class="container pt-2">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
-    <a class="navbar-brand px-2 mt-1" href="https://frid.io/">
-        <i class="fas fa-lg fa-terminal"></i> <span style="font-size:1.5em;">mf</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="container pt-2">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 mb-2">
+        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded">
+  <a class="navbar-brand px-2" href="https://mfridman.com/">
+    <i class="fas fa-lg fa-terminal"></i>
+    <span style="font-size:1.5em;">mf</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse justify-content-center" id="myNavBar">
-        <ul class="navbar-nav">
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/golang/">g<img src="https://gophercon.ca/static/svg/gopher-icon.svg" alt="o" width="24px">lang</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/blog/">blog</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/ctf/">ctf</a>
-            </li>
-            <li class="nav-item pl-4">
-                <a class="nav-link" href="https://frid.io/about/">about</a>
-            </li>
-        </ul>
-    </div>
+  <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item px-3">
+        <a class="nav-link" href="https://mfridman.com/golang/">g<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="24px" />lang</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+      </li>
+      <li class="nav-item px-3">
+        <a class="nav-link" href="https://mfridman.com/about/">about</a>
+      </li>
+    </ul>
+  </div>
 </nav>
-                <div class="mt-4">
-                    
+      </div>
+      <div class="col-lg-10 pt-4">
+        <div class="container">
+          
 <p>
     
 </p>
-<hr>
 
 
 
-<div class="row">
-    <div class="col-sm-3 text-muted">
-        Apr 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://frid.io/ctf/pico-2017/little-schoolbus/">Little School Bus</a>
-    </div>
+<div class="py-2">
+    <h4>2017</h4>
 </div>
 
+<div class="text-muted pl-2">April</div>
 
-<div class="row">
-    <div class="col-sm-3 text-muted">
-        Apr 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://frid.io/ctf/pico-2017/no-eyes/">No Eyes</a>
-    </div>
+<div class="py-1">
+    <a class="pl-4 py-1" href="https://mfridman.com/ctf/pico-2017/little-schoolbus/">Little School Bus</a>
 </div>
 
+<div class="py-1">
+    <a class="pl-4 py-1" href="https://mfridman.com/ctf/pico-2017/no-eyes/">No Eyes</a>
+</div>
 
-<div class="row">
-    <div class="col-sm-3 text-muted">
-        Apr 2017
-    </div>
-    <div class="col-sm-8">
-        <a href="https://frid.io/ctf/pico-2017/coffee/">coffee</a>
-    </div>
+<div class="py-1">
+    <a class="pl-4 py-1" href="https://mfridman.com/ctf/pico-2017/coffee/">coffee</a>
 </div>
 
 
 
-                </div>
-            </div>
+
         </div>
-
-
+      </div>
     </div>
+  </div>
 
-    <div class="text-center">
-        <footer class="footer">
-    Made with
-    <a href="https://gohugo.io">Hugo</a> and hosted by
-    <a href="https://github.com">
-        <i class="fab fa-lg fa-github-alt git-purple" ></i>
-    </a>
+  <div class="text-center"><footer class="footer">
+  <a href="https://gohugo.io">Hugo</a> &nbsp;·&nbsp;
+  <a href="https://pages.github.com/">
+    <i class="fab fa-lg fa-github-alt git-purple"></i>
+  </a>
+  &nbsp;·&nbsp;
+  <a href="https://www.cloudflare.com">
+    <img class="pb-2" src="https://mfridman.com/svg/cloudflare.svg" width="128px" alt="cloudflare" />
+  </a>
 </footer>
-    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"
+></script>
+
+
+<script src="https://mfridman.com/js/jquery.shuffleLetters.js"></script>
+<script src="https://mfridman.com/js/script.js"></script>
+
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+
 </body>
 
 </html>
