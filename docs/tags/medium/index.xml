@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Medium on mfridman.com</title>
+    <link>https://mfridman.com/tags/medium/</link>
+    <description>Recent content in Medium on mfridman.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mfridman.com/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Not a small tweet, not a large blog. Medium.</title>
+      <link>https://mfridman.com/blog/hello-goodbye-medium/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/hello-goodbye-medium/</guid>
+      <description>Medium has played a big role in the tech world.
+Unfortunately, I suspect one day Medium will cease to operate due to lack of profits and a sluggish revenue model.
+(I really hope I&amp;rsquo;m wrong)
+But, if Medium does goes kaboom, what will happen to the content? Will a larger entity buy Medium and if so, who will really own that content? Is it fair for content to vanish into thin air because the company that pays the cloud provider bills can no longer operate?</description>
+    </item>
+    
+  </channel>
+</rss>
