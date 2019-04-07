@@ -7,11 +7,11 @@
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
   <meta name="author" content="Michael Fridman" />
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
 
   <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
   
@@ -20,11 +20,15 @@
     font-family: "Nunito", sans-serif;
     background-color: #fdfdfd;
     font-size: 1.1em;
+    padding-top: 3.5rem;
   }
 
   .navbar {
     font-family: "Roboto Mono", monospace;
-    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
   }
 
   .center {
@@ -135,42 +139,55 @@
     .str {
       color: #183691;
     }
+
     .kwd {
       color: #a71d5d;
     }
+
     .com {
       color: #969896;
     }
+
     .typ {
       color: #0086b3;
     }
+
     .lit {
       color: #0086b3;
     }
+
     .pun {
       color: #333;
     }
+
     .opn {
       color: #333;
     }
+
     .clo {
       color: #333;
     }
+
     .tag {
       color: navy;
     }
+
     .atn {
       color: #795da3;
     }
+
     .atv {
       color: #183691;
     }
+
     .dec {
       color: #333;
     }
+
     .var {
       color: teal;
     }
+
     .fun {
       color: #900;
     }
@@ -180,11 +197,11 @@
     column-count: 3;
     column-width: 100px;
   }
+
   .fuchsia {
     color: #ce3262;
   }
 </style>
-
   <style type="text/css">
     .circle {
         padding: 13px 20px;
@@ -287,79 +304,91 @@ if (!doNotTrack) {
 </head>
 
 <body onload="PR.prettyPrint()">
+  <div class="header">
+  <nav class="navbar navbar-expand-sm navbar-light border-bottom fixed-top">
+    <a class="navbar-brand px-2" href="https://mfridman.com/">
+      <i class="fas fa-terminal"></i>
+      mf
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o"
+              width="18px" /></a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/about/">about</a>
+        </li>
+        <li class="nav-item px-3 py-2 fa-lg" style="color: Dodgerblue;">
+          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
   <div class="container pt-2">
     <div class="row justify-content-center">
-      <div class="col-lg-10 mb-2">
-        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded">
-  <a class="navbar-brand px-2" href="https://mfridman.com/">
-    <i class="fas fa-lg fa-terminal"></i>
-    <span style="font-size:1.5em;">mf</span>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse text-align-right" id="myNavBar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="28px" /></a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/about/">about</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-      </div>
       <div class="col-lg-10 pt-4">
         <div class="container">
            
 
 <h2 id="hi-i-m-mike">Hi, I&rsquo;m Mike.</h2>
 
-<p><del>Eventually, I will find <i>time</i> to update this site.</del><br />
-<del>2011,2012,2013,2014(new domain),2015,2016.</del></p>
+<p><del>Eventually, I will find <i>time</i> to update this site. 2011,2012,2013,2014(new domain),2015,2016.</del></p>
 
-<p><del>It&rsquo;s 2017(new domain), and I found time?! Early days but work in progress. 2018 was a blur.</del></p>
+<p><del>2017(new domain), and I found time??!! Nope. Early days but work in progress. 2018 was a blur.</del></p>
 
 <p>2019, back to original domain.</p>
 
-<hr />
+<p><img class="rounded mx-auto d-block" src="https://mfridman.com/svg/undraw_back_in_the_day_knsh.svg" alt="a boy, sitting, and a computer"
+  width=250px /></p>
 
 <h3 id="about">About</h3>
 
-<p>Tech. Computers. Code. Flipping bits. Cleaning cruft. Keeping an open mind and learning while drinking coffee and tea.</p>
+<p>Tech. Computers. Code. Flipping bits. Cleaning cruft. Keeping an open mind and always learning. Coffee and tea.</p>
 
-<p>Long live open source.</p>
+<p>In it to improve the internals and understand the implementations.</p>
 
-<p>Music and lines of code go well together. If you ventured this far down the rabbit hole, here are my top played songs for: <a href="https://mfridman.com/blog/music-2017">2017</a>, <a href="https://mfridman.com/blog/music-2018">2018</a>. Note, non-mainstream.</p>
+<p>Long live open source and good sci-fi.</p>
+
+<p>Music and lines of code go well together. If you ventured this far down the rabbit hole, here are my top played songs for <a href="https://mfridman.com/blog/music-2017">2017</a>, <a href="https://mfridman.com/blog/music-2018">2018</a>. Note, non-mainstream.</p>
 
 <p>My age, divided by 2.14, is the number of years I&rsquo;ve been a dog owner. &#10084; 🐶</p>
 
-<p>One day I&rsquo;d like to get back into electronics as a hobby; maybe build a <a href="https://www.defcon.org/html/links/dc-badge.html">defcon</a> badge. Pick up a 3D printer?</p>
+<p>One day I&rsquo;d like to get back into electronics as a hobby; maybe build a <a
+  href="https://www.defcon.org/html/links/dc-badge.html">defcon</a> badge. Pick up a 3D printer?</p>
 
-<p>Jog, cycle, play squash.</p>
+<p>Jog, cycle, spin, play squash.</p>
 
-<p>I used to capture digital 🚩s and pwn machines. Did a few <a href="https://mfridman.com/ctf">ctf writeups</a>.</p>
+<p>I used to capture digital 🚩s and pwn machines. Did a few <a href="https://mfridman.com/ctf">ctf write-ups</a>.</p>
+
+<hr />
 
 <div class="text-center">
-    <a href="mailto:mf192@icloud.com">
-        <i class="fa fa-envelope pl-3" style="color: #9CC1CE"></i>
-    </a>
+  Want to send some electronic bytes? Email at..
+  <a href="mailto:mf192@icloud.com?subject=Just%20saying%20👋">
+    <img src="https://mfridman.com/svg/undraw_mail_cg1t.svg" alt="a boy and a computer" width=32px />
+  </a>
 </div>
 
-<p><!-- Embed 500px pic --><br />
-  <!-- <div class='pixels-photo'>
+<!-- Embed 500px pic -->
+
+<!-- <div class='pixels-photo'>
     <p>
       <img src='https://drscdn.500px.org/photo/106998565/m%3D900/7bd66357668a048e065e0b6b810e9807' alt='Macro glimpse of the IoT by Michael Fridman on 500px.com'>
     </p>
     <a href='https://500px.com/photo/106998565/macro-glimpse-of-the-iot-by-michael-fridman' alt='Macro glimpse of the IoT by Michael Fridman on 500px.com'></a>
   </div>
-  <script type='text/javascript' src='https://500px.com/embed.js'></script> --></p>
+  <script type='text/javascript' src='https://500px.com/embed.js'></script> -->
  
         </div>
       </div>

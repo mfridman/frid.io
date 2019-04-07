@@ -7,11 +7,11 @@
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
   <meta name="author" content="Michael Fridman" />
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
 
   <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
   
@@ -20,11 +20,15 @@
     font-family: "Nunito", sans-serif;
     background-color: #fdfdfd;
     font-size: 1.1em;
+    padding-top: 3.5rem;
   }
 
   .navbar {
     font-family: "Roboto Mono", monospace;
-    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
   }
 
   .center {
@@ -135,42 +139,55 @@
     .str {
       color: #183691;
     }
+
     .kwd {
       color: #a71d5d;
     }
+
     .com {
       color: #969896;
     }
+
     .typ {
       color: #0086b3;
     }
+
     .lit {
       color: #0086b3;
     }
+
     .pun {
       color: #333;
     }
+
     .opn {
       color: #333;
     }
+
     .clo {
       color: #333;
     }
+
     .tag {
       color: navy;
     }
+
     .atn {
       color: #795da3;
     }
+
     .atv {
       color: #183691;
     }
+
     .dec {
       color: #333;
     }
+
     .var {
       color: teal;
     }
+
     .fun {
       color: #900;
     }
@@ -180,11 +197,11 @@
     column-count: 3;
     column-width: 100px;
   }
+
   .fuchsia {
     color: #ce3262;
   }
 </style>
-
   <style type="text/css">
     .circle {
         padding: 13px 20px;
@@ -287,34 +304,39 @@ if (!doNotTrack) {
 </head>
 
 <body onload="PR.prettyPrint()">
+  <div class="header">
+  <nav class="navbar navbar-expand-sm navbar-light border-bottom fixed-top">
+    <a class="navbar-brand px-2" href="https://mfridman.com/">
+      <i class="fas fa-terminal"></i>
+      mf
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o"
+              width="18px" /></a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/about/">about</a>
+        </li>
+        <li class="nav-item px-3 py-2 fa-lg" style="color: Dodgerblue;">
+          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
   <div class="container pt-2">
     <div class="row justify-content-center">
-      <div class="col-lg-10 mb-2">
-        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded">
-  <a class="navbar-brand px-2" href="https://mfridman.com/">
-    <i class="fas fa-lg fa-terminal"></i>
-    <span style="font-size:1.5em;">mf</span>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse text-align-right" id="myNavBar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="28px" /></a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/about/">about</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-      </div>
       <div class="col-lg-10 pt-4">
         <div class="container">
           

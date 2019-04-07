@@ -7,11 +7,11 @@
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
   <meta name="author" content="Michael Fridman" />
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
 
   <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
   
@@ -20,11 +20,15 @@
     font-family: "Nunito", sans-serif;
     background-color: #fdfdfd;
     font-size: 1.1em;
+    padding-top: 3.5rem;
   }
 
   .navbar {
     font-family: "Roboto Mono", monospace;
-    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
   }
 
   .center {
@@ -135,42 +139,55 @@
     .str {
       color: #183691;
     }
+
     .kwd {
       color: #a71d5d;
     }
+
     .com {
       color: #969896;
     }
+
     .typ {
       color: #0086b3;
     }
+
     .lit {
       color: #0086b3;
     }
+
     .pun {
       color: #333;
     }
+
     .opn {
       color: #333;
     }
+
     .clo {
       color: #333;
     }
+
     .tag {
       color: navy;
     }
+
     .atn {
       color: #795da3;
     }
+
     .atv {
       color: #183691;
     }
+
     .dec {
       color: #333;
     }
+
     .var {
       color: teal;
     }
+
     .fun {
       color: #900;
     }
@@ -180,11 +197,11 @@
     column-count: 3;
     column-width: 100px;
   }
+
   .fuchsia {
     color: #ce3262;
   }
 </style>
-
   <style type="text/css">
     .circle {
         padding: 13px 20px;
@@ -287,34 +304,39 @@ if (!doNotTrack) {
 </head>
 
 <body onload="PR.prettyPrint()">
+  <div class="header">
+  <nav class="navbar navbar-expand-sm navbar-light border-bottom fixed-top">
+    <a class="navbar-brand px-2" href="https://mfridman.com/">
+      <i class="fas fa-terminal"></i>
+      mf
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o"
+              width="18px" /></a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/about/">about</a>
+        </li>
+        <li class="nav-item px-3 py-2 fa-lg" style="color: Dodgerblue;">
+          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
   <div class="container pt-2">
     <div class="row justify-content-center">
-      <div class="col-lg-10 mb-2">
-        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom rounded">
-  <a class="navbar-brand px-2" href="https://mfridman.com/">
-    <i class="fas fa-lg fa-terminal"></i>
-    <span style="font-size:1.5em;">mf</span>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse text-align-right" id="myNavBar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o" width="28px" /></a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="https://mfridman.com/about/">about</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-      </div>
       <div class="col-lg-10 pt-4">
         <div class="container">
           
@@ -333,27 +355,31 @@ if (!doNotTrack) {
 
 <hr> 
 
-<p>Medium has played a big role in the tech world.</p>
+<p>Medium has played a big role throughout the tech world since their <a href="https://medium.com/@ev/welcome-to-medium-9e53ca408c48">Welcome to Medium</a> post on Aug 14, 2012.</p>
 
-<p>Unfortunately, I suspect one day <a href="https://medium.com">Medium</a> will cease to operate due to lack of profits and a sluggish revenue model.</p>
+<p>Unfortunately, I suspect one day <a href="https://medium.com">Medium</a> will cease to operate (or be acquired at a discount) due to a sluggish revenue model.</p>
 
-<p>(I really hope I&rsquo;m wrong)</p>
+<p>But, if Medium does goes kaboom, what happens to that content? Will it <em>all</em> still be available online in some other form? If Medium gets acquired, who&rsquo;ll <em>really</em> own the content?</p>
 
-<p>But, if Medium does goes kaboom, what will happen to the content? Will a larger entity buy Medium and if so, <em>who</em> will really own that content? Is it fair for content to vanish into thin air because the company that pays the cloud provider bills can no longer operate?</p>
+<p>Is it possible all that great content will vanish because no one can (or will) pay the cloud bill? Shame. If it does come down to that, I hope Medium exposes an API to export data.</p>
 
-<p>Not really vanish! I believe there is an API of sorts, not sure if it allows to backup existing content? Or maybe an exit-and-export strategy?</p>
+<p>We&rsquo;ll leave the philosophicals to the pundits.</p>
 
-<p>We&rsquo;ll leave it to the pundits. Also, check out the <a href="https://medium.com/@ev/welcome-to-medium-9e53ca408c48">Welcome to Medium</a> post from Aug 14, 2012.</p>
+<blockquote>
+<p>Every so often I am reminded how elegant the world wide web can be when one owns a domain and maintains content within.</p>
+</blockquote>
+
+<hr />
 
 <p>Instead, while Medium <em>is</em> around. I thought I&rsquo;d curate a list of some of my favorite &ldquo;publications&rdquo; and articles. Lots more will be added on an ongoing basis with a focus on:</p>
 
 <ul>
-<li>all things from the Go ecosystem<br /></li>
+<li>all things surrounding the Go ecosystem<br /></li>
 <li>distributed systems<br /></li>
-<li>API designs, from REST to RPCs<br /></li>
+<li>WASM (and recently WASI)<br /></li>
+<li>APIs<br /></li>
 <li>protobufs<br /></li>
-<li>WASM<br /></li>
-<li>#cloudstuff<br />
+<li>cloudstuff<br />
 <br /></li>
 </ul>
 
@@ -409,7 +435,7 @@ if (!doNotTrack) {
 <br /></li>
 </ul>
 
-<p>.. add many many more to come</p>
+<p>.. add other to come</p>
  
         </div>
       </div>
