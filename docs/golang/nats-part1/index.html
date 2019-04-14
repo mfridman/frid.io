@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.51" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
@@ -341,136 +340,58 @@ if (!doNotTrack) {
       <div class="col-lg-10 pt-4">
         <div class="container">
           
-<div class="text-muted text-center py-3">
-  <h1>Stay curious, keep learning, help others, be humble.</h1>
-</div>
 
-<blockquote class="blockquote small py-2">
-  <p class="text-left">
-    Jotting down <i>current</i> ideas and opinions for my future-self and others
-    with similar interests.
-  </p>
+<h1>
+    NATS core: an always available dial-tone - part 1
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Mar 2019 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/go">go</a>
+        &nbsp;&nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/golang">golang</a>
+        &nbsp;&nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/nats">NATS</a>
+        &nbsp;&nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/messaging">messaging</a>
+        &nbsp;&nbsp;&nbsp;
+        
+    </small>
+</h1>
 
-  <p class="text-left ">
-    Disclaimer, <code>time.Now()</code> changes, and so may the aforementioned.
-  </p>
+<hr> <ul>
+<li>performance and simplicity<br />
+<br /></li>
+</ul>
+
+<blockquote>
+<p>simplicity buys you opportunity</p>
 </blockquote>
 
-<h2 class="titlemixup">Recent:</h2>
-
-
-
-<div class="text-muted">Mar 2019</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/golang/nats-part1/">NATS core: an always available dial-tone - part 1</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jan 2019</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/blog/hello-goodbye-medium/">Not a small tweet, not a large blog. Medium.</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Dec 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/blog/music-2018/">Spotify wrapped, 2018</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jul 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part3/">Integrating Go modules with Drone CI</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jul 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part2/">Welcome, Go modules - part2</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jul 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/golang/go-modules-part1/">Welcome, Go modules - part1</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jul 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-5/">Upspin part 5: Advanced tips and tricks [WIP]</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jul 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-3/">Upspin part 3: Configuring an Upspin server [WIP]</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Jun 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/blog/upspin-part-2/">Upspin part 2: Configuring an Upspin user</a>
-</div>
-
-
-
-
-
-
-
-<div class="text-muted">Feb 2018</div>
-<div class="py-1">
-  <a class="pl-4 py-1" href="https://mfridman.com/golang/a-new-mongodb-go-driver/">A mongoDB Go Driver - by the mongoDB folks</a>
-</div>
-
-
-
-
-
-<div class="text-center"></div>
-
-
+<ul>
+<li>consice feature set<br /></li>
+<li>no built-in persistence of messages<br /></li>
+<li>no exactly-once-delivery promises<br />
+<br />
+<br /></li>
+</ul>
+
+<blockquote>
+<p>fastest, simplest, and most reliable way of writing and reading to a socket to communicate with N nodes (1 to 1 or 1 to many)</p>
+</blockquote>
+
+<p>Design:<br />
+- TCP/IP based<br />
+- pure pub/sub<br />
+- plain text protocol<br />
+- fire and forget .. at most once</p>
+
+<p>how to get req/resp with pure pub/sub<br />
+- ephemeral subscription inbox</p>
+ 
         </div>
       </div>
     </div>

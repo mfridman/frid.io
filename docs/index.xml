@@ -6,10 +6,29 @@
     <description>Recent content on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NATS core: an always available dial-tone - part 1</title>
+      <link>https://mfridman.com/golang/nats-part1/</link>
+      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/golang/nats-part1/</guid>
+      <description>performance and simplicity
+   simplicity buys you opportunity
+  consice feature set
+ no built-in persistence of messages
+ no exactly-once-delivery promises
+   fastest, simplest, and most reliable way of writing and reading to a socket to communicate with N nodes (1 to 1 or 1 to many)
+ Design:
+- TCP/IP based
+- pure pub/sub
+- plain text protocol
+- fire and forget .</description>
+    </item>
     
     <item>
       <title>Not a small tweet, not a large blog. Medium.</title>
@@ -334,12 +353,9 @@ func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.com/around_the_web/</guid>
-      <description>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original creators for their time and contribution(s).
-In due time I&amp;rsquo;d like to:
- add tags to the content below
- automate syncing Go-related articles from my Pocket account
- add a section highlighting notable corners of the internet, i.e., folks and orgs who have a tonne of great Go content
-  Some items are marked with , these are just my favorites.</description>
+      <description>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original authors for teaching us something new and sharing their experiences. I don&amp;rsquo;t necessarily agree with some viewpoints, idioms, styles, etc. but it&amp;rsquo;s worthy keeping them around to foster healthy discussions.
+Some items are marked with , these are my favorites.
+Blogs &amp; Posts   Go for Industrial Programming  Go’s march to low-latency GC  5 advanced testing techniques in Go  Go &amp;#43;= Package Versioning (Go &amp;amp; Versioning, Part 1)   Advanced Testing in Go  Using context cancellation in Go?</description>
     </item>
     
     <item>

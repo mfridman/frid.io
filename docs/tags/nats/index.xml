@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nats on mfridman.com</title>
+    <link>https://mfridman.com/tags/nats/</link>
+    <description>Recent content in Nats on mfridman.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mfridman.com/tags/nats/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NATS core: an always available dial-tone - part 1</title>
+      <link>https://mfridman.com/golang/nats-part1/</link>
+      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/golang/nats-part1/</guid>
+      <description>performance and simplicity
+   simplicity buys you opportunity
+  consice feature set
+ no built-in persistence of messages
+ no exactly-once-delivery promises
+   fastest, simplest, and most reliable way of writing and reading to a socket to communicate with N nodes (1 to 1 or 1 to many)
+ Design:
+- TCP/IP based
+- pure pub/sub
+- plain text protocol
+- fire and forget .</description>
+    </item>
+    
+  </channel>
+</rss>

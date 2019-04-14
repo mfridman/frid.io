@@ -6,10 +6,29 @@
     <description>Recent content in Go on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NATS core: an always available dial-tone - part 1</title>
+      <link>https://mfridman.com/golang/nats-part1/</link>
+      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/golang/nats-part1/</guid>
+      <description>performance and simplicity
+   simplicity buys you opportunity
+  consice feature set
+ no built-in persistence of messages
+ no exactly-once-delivery promises
+   fastest, simplest, and most reliable way of writing and reading to a socket to communicate with N nodes (1 to 1 or 1 to many)
+ Design:
+- TCP/IP based
+- pure pub/sub
+- plain text protocol
+- fire and forget .</description>
+    </item>
     
     <item>
       <title>Integrating Go modules with Drone CI</title>
