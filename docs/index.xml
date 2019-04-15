@@ -6,10 +6,34 @@
     <description>Recent content on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go, from around the web</title>
+      <link>https://mfridman.com/around_the_web/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/around_the_web/</guid>
+      <description>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original authors for teaching us something new and sharing their experiences. I don&amp;rsquo;t necessarily agree with some viewpoints, idioms, styles, etc. but it&amp;rsquo;s worthy keeping them around to foster healthy discussions.
+Some items are marked with , these are my favorites.
+Blogs &amp; Posts   Go for Industrial Programming  Go’s march to low-latency GC  5 advanced testing techniques in Go  Go &amp;#43;= Package Versioning (Go &amp;amp; Versioning, Part 1)   Advanced Testing in Go  Using context cancellation in Go?</description>
+    </item>
+    
+    <item>
+      <title>Implementing Hugo shortcodes</title>
+      <link>https://mfridman.com/blog/hugo-shortcodes/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/hugo-shortcodes/</guid>
+      <description>Hugo shortcodes are super convenient snippets of code that can be invoked anywhere within your Hugo site. Think of them as embeddable, custom templates.
+In a prior version of this website there was a different mechanism of generating the list seen on this page: Go, from around the web
+Briefly, a shortcode read in a markdown file containing a list of inline-style links:
+[Go for Industrial Programming](https://peter.bourgon.org/go-for-industrial-programming/)
+The shortcode snippet looked something like this:</description>
+    </item>
     
     <item>
       <title>NATS core: an always available dial-tone - part 1</title>
@@ -345,17 +369,6 @@ limit number of working goroutines with buffered channels Often times you don&am
       <guid>https://mfridman.com/golang/working-with-files/</guid>
       <description>File existence Useful when you want to have consistency checking file existence, with a bit more granularity.
 func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success, file exists, exit early if err == nil { return true, nil } // check for an os.ErrNotExist, &#34;file does not exist&#34;. Return false and no errors. if os.IsNotExist(err) { return false, nil } // error from stat return false, err }  Used as follows:</description>
-    </item>
-    
-    <item>
-      <title>Go, from around the web</title>
-      <link>https://mfridman.com/around_the_web/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mfridman.com/around_the_web/</guid>
-      <description>This page lists, in no particular order, awesome Go content from around the web. Big thanks to the original authors for teaching us something new and sharing their experiences. I don&amp;rsquo;t necessarily agree with some viewpoints, idioms, styles, etc. but it&amp;rsquo;s worthy keeping them around to foster healthy discussions.
-Some items are marked with , these are my favorites.
-Blogs &amp; Posts   Go for Industrial Programming  Go’s march to low-latency GC  5 advanced testing techniques in Go  Go &amp;#43;= Package Versioning (Go &amp;amp; Versioning, Part 1)   Advanced Testing in Go  Using context cancellation in Go?</description>
     </item>
     
     <item>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on mfridman.com</title>
-    <link>https://mfridman.com/tags/hugo/</link>
-    <description>Recent content in Hugo on mfridman.com</description>
+    <title>Shortcodes on mfridman.com</title>
+    <link>https://mfridman.com/tags/shortcodes/</link>
+    <description>Recent content in Shortcodes on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mfridman.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mfridman.com/tags/shortcodes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,17 +22,6 @@ In a prior version of this website there was a different mechanism of generating
 Briefly, a shortcode read in a markdown file containing a list of inline-style links:
 [Go for Industrial Programming](https://peter.bourgon.org/go-for-industrial-programming/)
 The shortcode snippet looked something like this:</description>
-    </item>
-    
-    <item>
-      <title>From Jekyll to Hugo</title>
-      <link>https://mfridman.com/blog/from-jekyll-to-hugo/</link>
-      <pubDate>Sun, 17 Dec 2017 00:52:08 -0500</pubDate>
-      
-      <guid>https://mfridman.com/blog/from-jekyll-to-hugo/</guid>
-      <description>Done and launched. Still a work in progress, but here we are.
-Really liking Hugo so far!
-To start local server: hugo server -D --disableFastRender and navigate to link</description>
     </item>
     
   </channel>
