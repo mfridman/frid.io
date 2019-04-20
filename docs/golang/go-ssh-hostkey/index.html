@@ -25,7 +25,7 @@
 
   .navbar {
     font-family: "Roboto Mono", monospace;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
     -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
     box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
@@ -198,8 +198,25 @@
     column-width: 100px;
   }
 
+   
   .fuchsia {
     color: #ce3262;
+  }
+
+  .c64-red{
+    color:#DA3D38;
+  }
+  .c64-orange{
+    color:#DE724F;
+  }
+  .c64-yellow{
+    color:#F6D14B;
+  }
+  .c64-green{
+    color:#6BB758;
+  }
+  .c64-blue{
+    color:#46A6E9;
   }
 </style>
   <style type="text/css">
@@ -319,17 +336,19 @@ if (!doNotTrack) {
       <ul class="navbar-nav ml-auto">
         <li class="nav-item px-3">
           <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://mfridman.com/svg/gopher-icon.svg" alt="o"
-              width="18px" /></a>
+              width="20px" /></a>
         </li>
         <li class="nav-item px-3">
           <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
         </li>
         <li class="nav-item px-3">
-          <a class="nav-link" href="https://mfridman.com/about/">about</a>
+          <a class="nav-link" href="https://mfridman.com/about/">
+            <span class="c64-red">a</span><span class="c64-orange">b</span><span class="c64-yellow">o</span><span class="c64-green">u</span><span class="c64-blue">t</span>
+          </a>
         </li>
-        <li class="nav-item px-3 py-2 fa-lg" style="color: Dodgerblue;">
-          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github"></i></a>
+        <li class="nav-item px-3 py-2 fa-lg">
+          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter c64-blue"></i></a>
+          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github c64-blue"></i></a>
         </li>
       </ul>
     </div>
