@@ -303,6 +303,8 @@
 </style>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://mfridman.com/wasm/wasm_exec.js"></script>
+  <script src="https://mfridman.com/wasm/load_wasm.js"></script>
   
   
 <script type="application/javascript">
@@ -703,16 +705,6 @@ upspin get fridman0101@gmail.com/made-it.txt
   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
-<script src="https://mfridman.com/wasm/wasm_exec.js"></script>
-<script>
-  const go = new Go();
-  WebAssembly.instantiateStreaming(
-    fetch("/wasm/main.wasm"),
-    go.importObject
-  ).then(result => {
-    go.run(result.instance);
-  });
-</script>
 
 <script>
   $(function () {
