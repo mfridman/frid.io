@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go Meetup on mfridman.com</title>
+    <link>https://mfridman.com/tags/go-meetup/</link>
+    <description>Recent content in Go Meetup on mfridman.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mfridman.com/tags/go-meetup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Toronto Meetup - Aug 2019</title>
+      <link>https://mfridman.com/blog/goto_recap_2019/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/goto_recap_2019/</guid>
+      <description>The Go Toronto meetup, GoTO for short, has been running on and off for many years since its inception in 2013. Huge shoutout to Tim and Zach for keeping it afloat, all the speakers for their insightful talks, the various companies whose offices we crashed and lastly all the folks that come out.
+Check out the &amp;ldquo;What we&amp;rsquo;re about&amp;rdquo; section of the Meetup page for more info about the meetup itself.</description>
+    </item>
+    
+  </channel>
+</rss>

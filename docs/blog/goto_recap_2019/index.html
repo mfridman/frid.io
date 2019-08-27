@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
+  <meta name="author" content="Michael Fridman" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
+  
+  <style type="text/css">
+  body {
+    font-family: "Nunito", sans-serif;
+    background-color: #fdfdfd;
+    font-size: 1.1em;
+    padding-top: 3.5rem;
+  }
+
+  .navbar {
+    font-family: "Roboto Mono", monospace;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .git-purple {
+    color: #6e5494;
+  }
+
+  .warning-color {
+    color: #fddd00;
+  }
+
+  .h1,
+  h1 {
+    font-size: 1.8em;
+  }
+
+   
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+     
+    margin-bottom: 60px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+     
+    height: 60px;
+    line-height: 60px;
+     
+  }
+
+   
+
+  hr {
+    border: 0;
+    height: 10;
+    margin: 30px 0 30px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+   
+
+   
+
+   
+
+  code {
+    font-size: 80%;
+    color: #0086b3;
+  }
+
+  pre {
+    padding: 10px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .prettyprint {
+    white-space: pre-wrap;
+    font-size: 80%;
+    background: #f6f8fa;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
+      Consolas, monospace;
+    border: 0 !important;
+  }
+
+  .pln {
+    color: #333;
+  }
+
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ccc;
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #f6f8fa;
+    list-style-type: decimal;
+  }
+
+  @media screen {
+    .str {
+      color: #183691;
+    }
+
+    .kwd {
+      color: #a71d5d;
+    }
+
+    .com {
+      color: #969896;
+    }
+
+    .typ {
+      color: #0086b3;
+    }
+
+    .lit {
+      color: #0086b3;
+    }
+
+    .pun {
+      color: #333;
+    }
+
+    .opn {
+      color: #333;
+    }
+
+    .clo {
+      color: #333;
+    }
+
+    .tag {
+      color: navy;
+    }
+
+    .atn {
+      color: #795da3;
+    }
+
+    .atv {
+      color: #183691;
+    }
+
+    .dec {
+      color: #333;
+    }
+
+    .var {
+      color: teal;
+    }
+
+    .fun {
+      color: #900;
+    }
+  }
+
+  .newspaper {
+    column-count: 3;
+    column-width: 100px;
+  }
+
+   
+  .fuchsia {
+    color: #ce3262;
+  }
+
+  .c64-red{
+    color:#DA3D38;
+  }
+  .c64-orange{
+    color:#DE724F;
+  }
+  .c64-yellow{
+    color:#F6D14B;
+  }
+  .c64-green{
+    color:#6BB758;
+  }
+  .c64-blue{
+    color:#46A6E9;
+  }
+
+  .display-5{
+    font-size: 3rem;
+  }
+  .display-6{
+    font-size: 2.5rem;
+  }
+  .display-7{
+    font-size: 2rem;
+  }
+
+</style>
+  <style type="text/css">
+    .circle {
+        padding: 13px 20px;
+        border-radius: 50%;
+        background-color: #CE3262;
+        color: #fff;
+        max-height: 50px;
+        z-index: 2;
+    }
+
+    .how-it-works.row .col-2 {
+        align-self: stretch;
+    }
+
+    .how-it-works.row .col-2::after {
+        content: "";
+        position: absolute;
+        border-left: 3px solid #CE3262;
+        z-index: 1;
+    }
+
+    .how-it-works.row .col-2.bottom::after {
+        height: 50%;
+        left: 50%;
+        top: 50%;
+    }
+
+    .how-it-works.row .col-2.full::after {
+        height: 100%;
+        left: calc(50% - 3px);
+    }
+
+    .how-it-works.row .col-2.top::after {
+        height: 50%;
+        top: 0;
+    }
+
+
+    .timeline div {
+        padding: 0;
+        height: 40px;
+    }
+
+    .timeline hr {
+        border-top: 3px solid #CE3262;
+        margin: 0;
+        top: 17px;
+        position: relative;
+    }
+
+    .timeline .col-2 {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .timeline .corner {
+        border: 3px solid #CE3262;
+        width: 100%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .timeline .top-right {
+        left: 50%;
+        top: -50%;
+    }
+
+    .timeline .left-bottom {
+        left: -50%;
+        top: calc(50% - 3px);
+    }
+
+    .timeline .top-left {
+        left: -50%;
+        top: -50%;
+    }
+
+    .timeline .right-bottom {
+        left: 50%;
+        top: calc(50% - 3px);
+    }
+</style>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://mfridman.com/wasm/wasm_exec.js"></script>
+  <script src="https://mfridman.com/wasm/load_wasm.js"></script>
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121978585-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head>
+
+<body onload="PR.prettyPrint()">
+  <div class="header">
+  <nav class="navbar navbar-expand-sm navbar-light border-bottom fixed-top">
+    <a class="navbar-brand px-2" href="https://mfridman.com/">
+      <i class="fas fa-terminal"></i>
+      mf
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-align-right" id="myNavBar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://res.cloudinary.com/mfridman/image/upload/v1566696601/mfridman.com/svg/gopher-icon_jxlmdf.svg" width="20px" /></a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="https://mfridman.com/about/">
+            <span class="c64-red">a</span><span class="c64-orange">b</span><span class="c64-yellow">o</span><span class="c64-green">u</span><span class="c64-blue">t</span>
+          </a>
+        </li>
+        <li class="nav-item px-3 py-2 fa-lg">
+          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter c64-blue"></i></a>
+          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github c64-blue"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+  <div class="container pt-2">
+    <div class="row justify-content-center">
+      <div class="col-lg-11 pt-4">
+        <div class="container">
+          
+
+<h1>
+    Go Toronto Meetup - Aug 2019
+    <br>
+    <small class="text-muted" style="font-size:0.5em">
+        Aug 2019 &nbsp;&nbsp; | &nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/toronto">toronto</a>
+        &nbsp;&nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/go-meetup">go meetup</a>
+        &nbsp;&nbsp;&nbsp;
+        
+        <a class="text-decoration-none" href="https://mfridman.com/tags/golang">golang</a>
+        &nbsp;&nbsp;&nbsp;
+        
+    </small>
+</h1>
+
+<hr> 
+
+<div class="container pb-4">
+  <div class="row align-items-center">
+        <div class="col p-2 text-center">
+            <img class="img-fluid rounded" src="https://res.cloudinary.com/mfridman/image/upload/v1566865054/mfridman.com/img/DSC03812_tlj5we.jpg" />
+        </div>
+        <div class="col p-2 text-center ">
+            <img class="img-fluid rounded" src="https://res.cloudinary.com/mfridman/image/upload/s--aPpK75n3--/c_scale,q_jpegmini,w_1693/v1566865435/mfridman.com/img/DSC03824_czajla.jpg" />
+        </div>
+    </div>
+</div>
+
+<p>The <a href="https://www.meetup.com/go-toronto/">Go Toronto meetup</a>, GoTO for short, has been running on and off for many years since its inception in 2013. Huge shoutout to Tim and Zach for keeping it afloat, all the speakers for their insightful talks, the various companies whose offices we crashed and lastly all the folks that come out.</p>
+
+<p>Check out the &ldquo;What we&rsquo;re about&rdquo; section of the Meetup page for more info about the meetup itself.</p>
+
+<p>Gophers have drifted in and out of the meetup, but the language <em>and</em> community are still as relevant as ever.</p>
+
+<p>This year <a href="https://golang.org">Go</a> will be celebrating a <a href="https://opensource.googleblog.com/2009/11/hey-ho-lets-go.html">10-year</a> milestone and <a href="https://blog.golang.org/go-version-1-is-released">7 years of a stable 1.0 release</a>. So the local meetup, the passionate Go developers around the world, all contributors and the core team itself will have much to reflect upon.</p>
+
+<p>But that&rsquo;s another post for another day. Back to meetup fun.</p>
+
+<hr />
+
+<h3 id="location">Location</h3>
+
+<p>The kind folks over at <a href="https://horizongames.net">Horizon Blockchain Games</a> offered to host the meetup on Aug 21&rsquo;2019 at their office in the Kensington Market neighbourhood.</p>
+
+<p><span class="display-4">🍕🍕</span> ?? You betcha.</p>
+
+<p>Support from companies is what makes or breaks these meetups. We have been fortunate to have an enthusiastic and supportive ecosystem in Toronto.</p>
+
+<p>In the spirit of the community both marketing and sales pitches are usually kept to a minimum, but sponsors are encouraged to chat about what they&rsquo;re up to, what their team is like and whether they are hiring. In my opinion this is a win-win situation. Meetup folks get exposed to companies using or adopting Go, various tech stacks and a general feel for the company and industry as a whole.</p>
+
+<p>Gopher marks the spot, can you spot The Gopher?</p>
+
+<div class="col p-2 text-center rounded d-none d-lg-block">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_2175/v1566866009/mfridman.com/img/DSC03818_2_m27xbh.jpg" width="70%"/>
+</div>
+<div class="col p-2 text-center rounded d-lg-none">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_2175/v1566866009/mfridman.com/img/DSC03818_2_m27xbh.jpg" />
+</div>
+
+<hr />
+
+<h3 id="speakers">Speakers</h3>
+
+<p>The first speaker was <a href="https://twitter.com/peterk">Peter Kieltyka</a>.</p>
+
+<blockquote class="blockquote text-center text-monospace">
+  <p class="lead mb-0">webrpc: a simpler way to write api services</p>
+</blockquote>
+
+<div class="col p-2 text-center rounded d-none d-lg-block">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_1619/v1566874907/mfridman.com/img/IMG_3280_s2uemh.jpg" width="70%"/>
+</div>
+<div class="col p-2 text-center rounded d-lg-none">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_1619/v1566874907/mfridman.com/img/IMG_3280_s2uemh.jpg" />
+</div>
+
+<p><br></p>
+
+<p>Google slides located <a href="https://drive.google.com/open?id=1S3TtoW__1IljQcXW4r4W0Xo4IeGi2Om1W8RsHs-ezOs">here</a> and the project there: <a href="https://github.com/webrpc/webrpc">github.com/webrpc/webrpc</a></p>
+
+<p>Personal bias, I was quite excited and super intrigued by this talk because I&rsquo;ve come to appreciate the power, safety and resulting simplicity of generated code, especially after using <a href="https://github.com/twitchtv/twirp">twitchtv/twirp</a> for quite some time.</p>
+
+<p>Think about all the upfront work, and maintenance, in a RESTful api:</p>
+
+<ul>
+<li>routing, URL schemas<br /></li>
+<li>hand-written clients<br /></li>
+<li>dealing with and making <em>conscious</em> decisions on <a href="https://tools.ietf.org/html/rfc7231">http semantics</a><br /></li>
+<li>serialization<br /></li>
+<li>etc.<br />
+<br /></li>
+</ul>
+
+<p>Seriously, after one accepts code generated clients and servers one becomes liberated. It&rsquo;s a feeling akin to the &ldquo;he is the one&rdquo; scene from the 1999 Matrix movie.</p>
+
+<p><button class="btn btm-sm btn-link" type="button" data-toggle="collapse" data-target="#collapseNeo" aria-expanded="false" aria-controls="collapseNeo">/collapse annoying giphy</button></p>
+
+<iframe id="collapseNeo" src="https://giphy.com/embed/rvsIuQkF1iL3G" width="480" height="202" frameBorder="0" class="giphy-embed show" allowFullScreen></iframe>
+
+<p><br></p>
+
+<p>I&rsquo;ve experimented with <a href="https://github.com/machinebox/remoto">machinebox/remoto</a> and <a href="https://github.com/grpc/grpc-go">gRPC</a>. Also <a href="https://github.com/src-d/proteus">proteus</a>, which works backwards by using Go code as a source of truth to generate protobuf (as an intermediary) and then to other languages.</p>
+
+<p>But I never found the right development ergonomics as compared to twirp. But that&rsquo;s a post in itself for another day.</p>
+
+<p>As Peter points out, the goal of webrpc is quite simple:</p>
+
+<blockquote class="blockquote text-center py-4">
+  <p class="mb-0">Make it super easy and quick to develop type-safe Web Services for modern web applications</p>
+</blockquote>
+
+<p>The idea is to reduce the amount of boilerplate code one writes and focus on the business logic, i.e., the &ldquo;handlers&rdquo; and the corresponding requests / responses. Furthermore, RPC frameworks provide an elegant way to interact with services, all parts of the application feel as if they are a single function call away.</p>
+
+<p>Why not encapsulate the boring bits, with sane defaults, and focus on what matters?</p>
+
+<p>I could probably spend hours talking and writing about this topic, but for now I&rsquo;ll point the reader to the meetup recording, to be posted <a href="https://www.youtube.com/channel/UCXecyuIlbNbHunFI7tMKCSg">here</a> shortly, and the <a href="https://drive.google.com/open?id=1S3TtoW__1IljQcXW4r4W0Xo4IeGi2Om1W8RsHs-ezOs">slides</a>.</p>
+
+<p>A memorable quote, from this talk, arguably a great t-shirt slogan:</p>
+
+<blockquote class="blockquote text-center py-4">
+  <p class="display-6 mb-0"><i>REST is making me tired</i></p>
+</blockquote>
+
+<hr>
+
+<p>The second speaker was <a href="https://twitter.com/dosco">Vikram Rangnekar</a>.</p>
+
+<blockquote class="blockquote text-center text-monospace">
+  <p class="lead mb-0">writing high-performance code in go</p>
+</blockquote>
+
+<div class="col p-2 text-center rounded d-none d-lg-block">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_1619/v1566874907/mfridman.com/img/IMG_3284_gctyo2.jpg" width="70%"/>
+</div>
+<div class="col p-2 text-center rounded d-lg-none">
+    <img class="img-fluid" src="https://res.cloudinary.com/mfridman/image/upload/c_scale,w_1619/v1566874907/mfridman.com/img/IMG_3284_gctyo2.jpg" />
+</div>
+
+<p><br></p>
+
+<p>The talk content can be found <a href="https://github.com/dosco/super-graph/blob/master/slides/highperf.slide">here</a>., recordings <a href="https://www.youtube.com/channel/UCXecyuIlbNbHunFI7tMKCSg">there</a>.</p>
+
+<p>If I get some time I&rsquo;ll spin up a server to host these <code>.slide</code> files (ideally there would be a service that takes a link, parses the .slide file and displays it live). For now, if you&rsquo;re feeling adventurous download <a href="https://godoc.org/golang.org/x/tools/present">x/tools/present</a> and run <code>present ./...</code> from the root of the <code>/slides</code> directory.</p>
+
+<p>So, performance.</p>
+
+<ul>
+<li>code that runs fast<br /></li>
+<li>minimize I/O latency<br /></li>
+<li>efficient, in terms of GC (garbage collector, side note, really interesting blog post <a href="https://blog.golang.org/ismmkeynote">here</a>)<br /></li>
+<li>etc.<br />
+<br /></li>
+</ul>
+
+<p>I&rsquo;d argue majority of software should be written with the following in mind: correctness, readability and simplicity as opposed to being very performant from the onset. Focusing on writing good software will prevent most scaling issues from happening in the first place; <em>I think</em> that was one of the underlying points of this talk.</p>
+
+<p>That&rsquo;s not to say you shouldn&rsquo;t spend time properly designing systems up-front. There is a fine balance between the two extremes of never think about scaling vs making every line of code as performant as possible.</p>
+
+<p>Thankfully the act of choosing Go will get you pretty far in terms of performance.</p>
+
+<p>But, at some point (in the event your project becomes popular enough) you nay be tasked with debugging performance-related issues.</p>
+
+<p>There <strong>will</strong> be lots of low-hanging fruit.</p>
+
+<p>Go provides tools to benchmark and dig deeper into the internals of your code, out-of-the-box!</p>
+
+<p>The <code>testing</code> package supports benchmarking to gauge the performance of your code. Make sure there is a baseline metric, so as you refactor programs the performance doesn&rsquo;t decrease. This should be measurable and incorporated into a CI pipeline.</p>
+
+<p>Profiling data can be consumed by <a href="https://github.com/google/pprof">pprof</a>. Vikram goes on with examples on using pprof to hone in on top allocating functions and subsequently on reducing allocations.</p>
+
+<p>Interesting talk!</p>
+
+<p>Lastly, if you&rsquo;re interested in this area check out <a href="https://github.com/dgryski/go-perfbook">dgryski/go-perfbook</a>.</p>
+
+<p>Suggestions, corrections, concerns? <a href="mailto:mf192@icloud.com?subject=Just%20saying%20👋">reach out</a></p>
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center"><footer class="footer">
+  <a href="https://gohugo.io">Hugo</a> &nbsp;·&nbsp;
+  <a href="https://pages.github.com/">
+    <i class="fab fa-lg fa-github-alt git-purple"></i>
+  </a>
+  &nbsp;·&nbsp;
+  <a href="https://www.cloudflare.com">
+    <img class="pb-2" src="https://mfridman.com/svg/cloudflare.svg" width="128px" alt="cloudflare" />
+  </a>
+</footer>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+</body>
+
+</html>
