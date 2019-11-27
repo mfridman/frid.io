@@ -6,10 +6,22 @@
     <description>Recent content on mfridman.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mfridman.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Toronto Meetup - Nov 2019 #GoTurns10</title>
+      <link>https://mfridman.com/blog/goto_goturns10_2019/</link>
+      <pubDate>Tue, 26 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/goto_goturns10_2019/</guid>
+      <description>The language that promised to make us ❤️ programming again, Go, celebrated a milestone on November 2019.
+Marking 10 years since it was initially announced to the world: Hey! Ho! Let’s Go!
+Read more here from the official Go Blog: Go Turns 10
+The Go Toronto meetup has been running on and off for many years since ~2013. Big shoutout, again, to Tim and Zach for keeping the lights on.</description>
+    </item>
     
     <item>
       <title>Go Toronto Meetup - Aug 2019</title>
@@ -157,6 +169,24 @@ e.g., git config --global user.email &amp;quot;email@example.com&amp;quot; (glob
  Download GPG suite, which will enable adding key(s) to the macOS keychain.
   Before proceeding, please check for existing keys and make backups!!!
 To list keys in secret keyring run: gpg --list-secret-keys.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mfridman.com/blog/untitled-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/untitled-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mfridman.com/blog/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfridman.com/blog/untitled/</guid>
+      <description></description>
     </item>
     
   </channel>
