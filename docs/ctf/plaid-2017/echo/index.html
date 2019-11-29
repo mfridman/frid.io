@@ -5,14 +5,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   
-  
+  <meta property="og:title" content="Echo" />
+<meta property="og:description" content="Challenge: If you hear enough, you may hear the whispers of a key&hellip;
+If you see app.py well enough, you will notice the UI sucks&hellip;
+No hints.
+PPP (plaid parliament of pwning) puts on one of the best online Jeopardy CTFs. I wish I had more time that weekend (runs for 48hrs only) and a full team, either way I decided to give it a go.
+Disclaimer, was not solved within the allotted time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mfridman.com/ctf/plaid-2017/echo/" /><meta property="article:published_time" content="2017-04-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-04-24T00:00:00&#43;00:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Echo"/>
+<meta name="twitter:description" content="Challenge: If you hear enough, you may hear the whispers of a key&hellip;
+If you see app.py well enough, you will notice the UI sucks&hellip;
+No hints.
+PPP (plaid parliament of pwning) puts on one of the best online Jeopardy CTFs. I wish I had more time that weekend (runs for 48hrs only) and a full team, either way I decided to give it a go.
+Disclaimer, was not solved within the allotted time."/>
+
+  <meta name="twitter:creator" content="@_mfridman"/>
   
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
   <meta name="author" content="Michael Fridman" />
 
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
@@ -433,7 +449,7 @@ If you see <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1c
 <p>Taking a closer look at <a href="https://gist.github.com/mfridman/28c68388e5b2b3ad2bfe7c2bb1cfc40d">app.py</a> we see a few interesting things:</p>
 
 <ol>
-<li><p>a <img src="https://res.cloudinary.com/mfridman/image/upload/v1566696601/mfridman.com/svg/docker-icon_etqnrg.svg" style="height: 36px;"/> container spawns and processes input tweets (140 chars max/tweet)</p></li>
+<li><p>a <img src="https://mfridman.com/svg/docker-icon.svg" alt="" style="height: 36px;"/> container spawns and processes input tweets (140 chars max/tweet)</p></li>
 
 <li><p>the flag is &ldquo;encrypted&rdquo; with a bitwise XOR</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#069;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> flag:

@@ -5,14 +5,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   
-  
+  <meta property="og:title" content="Shine on You Crazy Interface - part2" />
+<meta property="og:description" content="No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
+Notice in part1 we actually made use of this interface to format the songs type.
+func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name&#43;&#34; &#34;&#43;fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mfridman.com/golang/shine-on-you-crazy-interface2/" /><meta property="article:published_time" content="2018-02-05T20:07:41-05:00"/>
+<meta property="article:modified_time" content="2018-02-05T20:07:41-05:00"/>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shine on You Crazy Interface - part2"/>
+<meta name="twitter:description" content="No interface discussion is complete without talking about the fmt.Stringer interface. This is a classic when introducing the topic of interfaces.
+Notice in part1 we actually made use of this interface to format the songs type.
+func (s songs) String() string { var ss []string for i := range s { ss = append(ss, s[i].name&#43;&#34; &#34;&#43;fmt.Sprint(s[i].release.Year())) } return strings.Join(ss, &#34;, &#34;) }  When we called a print function the output was nicely formatted:"/>
+
+  <meta name="twitter:creator" content="@_mfridman"/>
   
   <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
   <meta name="author" content="Michael Fridman" />
 
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />

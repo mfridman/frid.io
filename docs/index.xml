@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Go Toronto Meetup - Nov 2019 #GoTurns10</title>
+      <title>GoTo meetup recap - #GoTurns10 edition</title>
       <link>https://mfridman.com/blog/goto_goturns10_2019/</link>
       <pubDate>Tue, 26 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://mfridman.com/blog/goto_goturns10_2019/</guid>
       <description>The language that promised to make us ❤️ programming again, Go, celebrated a milestone on November 2019.
-Marking 10 years since it was initially announced to the world: Hey! Ho! Let’s Go!
+Marking 10 years since it was initially announced to the world: Hey! Ho! Let&amp;rsquo;s Go!
 Read more here from the official Go Blog: Go Turns 10
 The Go Toronto meetup has been running on and off for many years since ~2013. Big shoutout, again, to Tim and Zach for keeping the lights on.</description>
     </item>
@@ -391,24 +391,6 @@ limit number of working goroutines with buffered channels Often times you don&am
       <guid>https://mfridman.com/golang/working-with-files/</guid>
       <description>File existence Useful when you want to have consistency checking file existence, with a bit more granularity.
 func exists(file string) (bool, error) { _, err := os.Stat(file) // stat success, file exists, exit early if err == nil { return true, nil } // check for an os.ErrNotExist, &#34;file does not exist&#34;. Return false and no errors. if os.IsNotExist(err) { return false, nil } // error from stat return false, err }  Used as follows:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://mfridman.com/blog/untitled-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mfridman.com/blog/untitled-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://mfridman.com/blog/untitled/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mfridman.com/blog/untitled/</guid>
-      <description></description>
     </item>
     
     <item>
