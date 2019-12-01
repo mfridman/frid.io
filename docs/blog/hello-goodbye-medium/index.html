@@ -21,7 +21,7 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
 
   <meta name="twitter:creator" content="@_mfridman"/>
   
-  <meta name="description" content="Containerized and rewritten in Go. All things tech. Coffee. Repeat." />
+  <meta name="description" content="Containerized and rewritten in Go. Build things. Teamwork." />
   <meta name="author" content="Michael Fridman" />
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -29,22 +29,55 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
 
-  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono:400" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+
+
   
   <style type="text/css">
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   body {
-    font-family: "Nunito", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #fdfdfd;
-    font-size: 1.1em;
-    padding-top: 3.5rem;
+  }
+   
+
+   
+  @media (min-width: 0px) {
+    body {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 576px) {
+     
+    body {
+      font-size: 1.1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+   
+  @media (min-width: 768px) {
+  }
+
+   
+  @media (min-width: 992px) {
+  }
+
+   
+  @media (min-width: 1200px) {
   }
 
   .navbar {
-    font-family: "Roboto Mono", monospace;
-    background: rgba(255, 255, 255, 0.95);
-    -webkit-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
-    -moz-box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
-    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.25);
+    font-family: 'Raleway', sans-serif;
   }
 
   .center {
@@ -59,9 +92,13 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
     color: #fddd00;
   }
 
-  .h1,
-  h1 {
-    font-size: 1.8em;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Raleway', sans-serif;
   }
 
    
@@ -69,11 +106,6 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
   html {
     position: relative;
     min-height: 100%;
-  }
-
-  body {
-     
-    margin-bottom: 60px;
   }
 
   .footer {
@@ -220,23 +252,23 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
   }
 
   .c64-red {
-    color: #DA3D38;
+    color: #da3d38;
   }
 
   .c64-orange {
-    color: #DE724F;
+    color: #de724f;
   }
 
   .c64-yellow {
-    color: #F6D14B;
+    color: #f6d14b;
   }
 
   .c64-green {
-    color: #6BB758;
+    color: #6bb758;
   }
 
   .c64-blue {
-    color: #46A6E9;
+    color: #46a6e9;
   }
 
   .display-5 {
@@ -251,6 +283,7 @@ But, if Medium does goes kaboom, what happens to that content? Will it all still
     font-size: 2rem;
   }
 </style>
+
   <style type="text/css">
     .circle {
         padding: 13px 20px;
@@ -355,38 +388,53 @@ if (!doNotTrack) {
 </head>
 
 <body onload="PR.prettyPrint()">
-  <div class="header">
-  <nav class="navbar navbar-expand-sm navbar-light border-bottom fixed-top">
-    <a class="navbar-brand px-2" href="https://mfridman.com/">
-      <i class="fas fa-terminal"></i>
-      mf
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand navbar-light shadow-sm">
+  <a class="navbar-brand" href="https://mfridman.com/">
+    <i class="fas fa-terminal"></i>
+    mf
+  </a>
 
-    <div class="collapse navbar-collapse text-align-right" id="myNavBar">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item px-3">
-          <a class="nav-link" href="https://mfridman.com/golang/">G&nbsp;<img src="https://res.cloudinary.com/mfridman/image/upload/v1566696601/mfridman.com/svg/gopher-icon_jxlmdf.svg" width="20px" /></a>
-        </li>
-        <li class="nav-item px-3">
-          <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
-        </li>
-        <li class="nav-item px-3">
-          <a class="nav-link" href="https://mfridman.com/about/">
-            <span class="c64-red">a</span><span class="c64-orange">b</span><span class="c64-yellow">o</span><span class="c64-green">u</span><span class="c64-blue">t</span>
-          </a>
-        </li>
-        <li class="nav-item px-3 py-2 fa-lg">
-          <a href="https://twitter.com/_mfridman" target="_blank"><i class="fab fa-twitter c64-blue"></i></a>
-          <a href="https://github.com/mfridman" target="_blank"><i class="fab fa-github c64-blue"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+  <div class="collapse navbar-collapse"></div>
+  <ul class="navbar-nav mr-auto nav ">
+    <li class="nav-item px-sm-3">
+      <a class="nav-link" href="https://mfridman.com/golang/"
+        >G&nbsp;<img
+          src="https://res.cloudinary.com/mfridman/image/upload/v1566696601/mfridman.com/svg/gopher-icon_jxlmdf.svg"
+          width="20px"
+      /></a>
+    </li>
+    <li class="nav-item"><span class="nav-link">|</span></li>
+    <li class="nav-item px-sm-3">
+      <a class="nav-link" href="https://mfridman.com/blog/">blog</a>
+    </li>
+    <li class="nav-item"><span class="nav-link text-muted">|</span></li>
+    <li class="nav-item px-sm-3">
+      <a class="nav-link" href="https://mfridman.com/about/">
+        <span class="c64-red">a</span><span class="c64-orange">b</span
+        ><span class="c64-yellow">o</span><span class="c64-green">u</span
+        ><span class="c64-blue">t</span>
+      </a>
+    </li>
+
+    
+    <li class="nav-item d-none d-md-block">
+      <span class="nav-link text-muted">|</span>
+    </li>
+
+    <li class="nav-item fa-lg d-none d-md-block">
+      <a class="nav-link" href="https://twitter.com/_mfridman" target="_blank"
+        ><i class="fab fa-twitter c64-blue"></i
+      ></a>
+    </li>
+    <li class="nav-item fa-lg d-none d-md-block">
+      <a class="nav-link" href="https://github.com/mfridman" target="_blank"
+        ><i class="fab fa-github c64-blue"></i
+      ></a>
+    </li>
+    
+  </ul>
+</nav>
+
   <div class="container pt-2">
     <div class="row justify-content-center">
       <div class="col-lg-11 pt-4">
@@ -396,7 +444,7 @@ if (!doNotTrack) {
 <h1>
     Not a small tweet, not a large blog. Medium.
     <br>
-    <small class="text-muted" style="font-size:0.5em">
+    <small class="text-muted" style="font-size:1rem">
         Jan 2019 &nbsp;&nbsp; | &nbsp;&nbsp;
         
         <a class="text-decoration-none" href="https://mfridman.com/tags/medium">medium</a>
@@ -405,7 +453,7 @@ if (!doNotTrack) {
     </small>
 </h1>
 
-<hr> 
+
 
 <p>Medium has played a big role throughout the tech world since their <a href="https://medium.com/@ev/welcome-to-medium-9e53ca408c48">Welcome to Medium</a> post on Aug 14, 2012.</p>
 
@@ -494,14 +542,19 @@ if (!doNotTrack) {
     </div>
   </div>
 
-  <div class="text-center"><footer class="footer">
+  <div class="text-center"><footer>
   <a href="https://gohugo.io">Hugo</a> &nbsp;·&nbsp;
   <a href="https://pages.github.com/">
     <i class="fab fa-lg fa-github-alt git-purple"></i>
   </a>
   &nbsp;·&nbsp;
   <a href="https://www.cloudflare.com">
-    <img class="pb-2" src="https://mfridman.com/svg/cloudflare.svg" width="128px" alt="cloudflare" />
+    <img
+      class="pb-2"
+      src="https://mfridman.com/svg/cloudflare.svg"
+      width="128px"
+      alt="cloudflare"
+    />
   </a>
 </footer>
 </div>
